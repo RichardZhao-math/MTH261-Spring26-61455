@@ -709,5 +709,58 @@
         </p>
       </statement>
     </theorem>
+
+    <p>
+      Next week, we will develop a (more sophisticated) version of the above theorem (using the rank of the matrices) when we learn more about matrices (and matrix equations). 
+      For now, we will just use the term "pivot column" instead of "rank" for our augmented matrices. 
+    </p>
+
+    <exercise>
+      <p>
+        Each of the following matrices represents the augmented matrix of a system of linear equations. 
+        Determine whether the system is consistent or not, and if it is consistent, determine whether the solution is unique. 
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>\begin{bmatrix}1 \amp 0 \amp 2 \amp \mid \amp 0\\ 0 \amp 3 \amp 0 \amp \mid \amp 4\\ 0 \amp 0 \amp 1 \amp \mid \amp 0\end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\begin{bmatrix}0 \amp 1 \amp 2 \amp 3 \amp \mid \amp 4 \\ 0 \amp 0 \amp 5 \amp 6 \amp \mid \amp 7 \\ 0 \amp 0 \amp 0 \amp 0 \amp \mid \amp 8 \end{bmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\begin{bmatrix}1 \amp 0 \amp 0 \amp 0 \amp \mid \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \amp \mid \amp 1 \\ 0 \amp 0 \amp 0 \amp 1 \amp \mid \amp 1\end{bmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <solution>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                The system is consistent because there is no pivot position in the rightmost column. 
+                Also, there is exactly one solution because there are three pivot positions and three variables. 
+              </p>
+            </li>
+            <li>
+              <p>
+                The system is inconsistent because there is a pivot position in the rightmost column. 
+              </p>
+            </li>
+            <li>
+              <p>
+                The system is consistent because there is no pivot position in the rightmost column. 
+                Also, there are infinitely many solutions because there are only three pivot positions but four variables, so there is a free variable. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </exercise>
   </subsection>
 </section>
