@@ -3,10 +3,6 @@
 <chapter xml:id="ch1-SystemLinearEquation" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Systems of Linear Equations</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
-
   <!-- include sections -->
   <xi:include href="sec11-SolutionsElementaryOperations.ptx" />
   <xi:include href="sec12-GaussianElimination.ptx" />
