@@ -244,6 +244,105 @@ var ptx_lunr_docs = [
   "body": " Each of the following matrices represents the augmented matrix of a system of linear equations. Determine whether the system is consistent or not, and if it is consistent, determine whether the solution is unique.                       The system is consistent because there is no pivot position in the rightmost column. Also, there is exactly one solution because there are three pivot positions and three variables.    The system is inconsistent because there is a pivot position in the rightmost column.    The system is consistent because there is no pivot position in the rightmost column. Also, there are infinitely many solutions because there are only three pivot positions but four variables, so there is a free variable.      "
 },
 {
+  "id": "sec13-HomogeneousEquations",
+  "level": "1",
+  "url": "sec13-HomogeneousEquations.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "Homogeneous Equations",
+  "body": " Homogeneous Equations   In this section, we explore a special type of systems of linear equations, called the homogeneous systems of linear equations .    After this section, students will be able to:     solve homogeneous systems of linear equations using Gaussian elimination algorithm.    write the general solution of a homogeneous system as a linear combination of basic vectors (written as column vectors).       Richard claims that the following system of linear equations has at least one solution (hence a consistent system) at the first glance. Why does Richard know about it quickly?   Recall something is called a solution if it satisfies all the equations in the system. Can you guess-and-check a solution to this system quickly?    If you plug in zero for every variable, you will get zero on the left-hand side of every equation and solve all of them! So is a solution to this system of linear equations.  When you have all zeros for the constant terms, you always have this solution (all variables equal to zero), which is called the \" trivial solution \".    In this section, we will learn about a super important special kind of system of equations called homogeneous systems .  A homogeneous system of equations (or a system of homogeneous equations) is just a special case where all of the constants to the right of the equal sign are zero.  For example, we worked with the following system of linear equations in the last section: This is NOT a homogeneous system since the constants on the right-hand side are not all zero. We can make it homogeneous by changing the number on the right-hand side of every equation to a zero as follows: Then we have a homogeneous system!   Note: Just to be clear, this is a different system of linear equations. However, we will see later that it is actually related to the original one in an important way!  Usually, a system of linear equations can have either (1) zero, (2) one, or (3) infinitely many solutions. But it is impossible for a homogeneous system to have zero solutions! As we figured out the investigation question, every homogeneous system has at least the trivial solution (where all the variables are zero). So a homogeneous system either has one solution (trivial) OR it has infinitely many solutions .  Let's solve our homogeneous system in the investigation! First, we will write the augmented matrix for the system: We can actually do the exact same steps that we did with the non-homogeneous version. The only difference is that the constant column doesn't require any work since all the entries hold steady at zero.  So if we put it into row echelon form, we get: Now we can convert back to a system of linear equations and we get: Just like with the regular version, and are the leading variables and is a free variable. We can back substitute into the first equation to get and write the solution in parametric form: or by writing what an arbitrary point in the solution set looks like:    Basis Vectors and Linear Combinations  Now, notice that we can factor out a in the solution and see that the set of solutions is of the form where can be any real number. That means every solution of the system is a multiple of .  We call this a \" basis \" or \" basic vector\" of the solution set (Actually \"basis\" is much more common, but the author uses \"basic\" in the textbook...).   Pretend that we had a (homogeneous) system of 4 linear equations in 5 variables and we put the augmented matrix into row echelon form and got: The leading variables are , , and , so our free variables are and . That is, we should be able to solve for the other three variables in terms of and .  Let's convert it to a system of linear equations: We know that and we can back substitute into the second equation to get as well.  Back substituting into the first equation, we get Now we can write an arbitrary point in the solution set as Now we can split this up into two vectors, one with only 's and one with only 's: This means that every solution is a linear combination of the \"basic\" solutions and .   Points in -dimensional space are represented as ordered -tuples. For example, the point is a point in -space (we represent -space by ). In linear algebra, such points can also be represented as matrices (row vectors) or matrices (column vectors). So can be represented as the row vector or the column vector In this class, we will mostly use column vectors for reasons that will become clear in Section 2.2.   Recall that we did our earlier example we got the solution which we broke up into the sum of two points like this: Then we factor out the and to get   Now, we can rewrite all of this using column vectors! An arbitrary solution (in parametric form) would look like Notice that any vector of this form is a solution to the homogeneous system of linear equations. The and can be any number!  In particular, this means that both and are solutions! That is one reason why they are called the basic solutions (it explains the \"solution\" part). We will learn more about wht they are called \"basic\" in the future!   To make sure we are all on the same page, recall we define two operations on vectors: vector addition and scalar multiplication . They are both defined component-wise . That is,   to add two vectors, we just add together the corresponding entries, and    to multiply a vector by a scalar, we just multiply every entry by that scalar.     Now let's talk about linear combinations! A linear combination of a set of vectors is a sum of scalar multiples of those vectors.      is a linear combination of and since      is also a linear combination of and since      The expression represents the set of all possible linear combinations of and .   Solve the following homogeneous system of linear equations and write an arbitrary solution as a linear combination of basic solutions (written as column vectors):    Let's start by writing the augmented matrix for the system: We will solve the system using the Gaussian elimination algorithm.  Step 1: Swap Row 1 and Row 2 so that we get a leading without using any fractions:   Step 2: Add times Row 1 to Row 2 (and replace Row 2), add times Row 1 to Row 3 (and replace Row 3), and add times Row 1 to Row 4 (and replace Row 4) to get:   Step 3: Multiply Row 2, Row 3, and Row 4 by (observe the last three rows are exactly the same!) to get:   Step 4: Add times Row 2 to Row 3 (and replace Row 3) and add times Row 2 to Row 4 (and replace Row 4) to get:   We can see from the leading s that and are the leading variables and and are the free variables. We can also see this from converting back to a system of linear equations: We can solve for in terms of , , and to get: We can also solve for in terms of and to get: Then we can back substitute this expression for into the first equation to get: Now let's write our general solution as a column vector! Every solution looks like    If you want to turn the augmented matrix into reduced row echelon form...  To get the augmented matrix into reduced row echelon form, we will just need to do one more step after Step 4.  Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get:   Converting it back to the system of linear equations, we get: Similarly, we see that and are the free variables, and hence we will represent and in terms of and :   Then we can write our general solution as a column vector! Every solution looks like      We are actually exposed to some big concepts in linear algebra, like linear combinations and basic vectors. We will loop back to these concepts formally later when we get to the theory of vector spaces. For now, it is totally fine if you have only a vague understanding of these concepts. Remember the overall goal of this section is to learn how to solve homogeneous systems of linear equations!   "
+},
+{
+  "id": "sec13-HomogeneousEquations-2-2",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#sec13-HomogeneousEquations-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     solve homogeneous systems of linear equations using Gaussian elimination algorithm.    write the general solution of a homogeneous system as a linear combination of basic vectors (written as column vectors).    "
+},
+{
+  "id": "sec13-HomogeneousEquations-3",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#sec13-HomogeneousEquations-3",
+  "type": "Investigation",
+  "number": "1.3.1",
+  "title": "",
+  "body": " Richard claims that the following system of linear equations has at least one solution (hence a consistent system) at the first glance. Why does Richard know about it quickly?   Recall something is called a solution if it satisfies all the equations in the system. Can you guess-and-check a solution to this system quickly?    If you plug in zero for every variable, you will get zero on the left-hand side of every equation and solve all of them! So is a solution to this system of linear equations.  When you have all zeros for the constant terms, you always have this solution (all variables equal to zero), which is called the \" trivial solution \".   "
+},
+{
+  "id": "sec13-HomogeneousEquations-4",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#sec13-HomogeneousEquations-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "homogeneous systems "
+},
+{
+  "id": "sec13-HomogeneousEquations-5",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#sec13-HomogeneousEquations-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "homogeneous system of equations "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-3",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "basis basic "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-4",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-4",
+  "type": "Example",
+  "number": "1.3.1",
+  "title": "",
+  "body": " Pretend that we had a (homogeneous) system of 4 linear equations in 5 variables and we put the augmented matrix into row echelon form and got: The leading variables are , , and , so our free variables are and . That is, we should be able to solve for the other three variables in terms of and .  Let's convert it to a system of linear equations: We know that and we can back substitute into the second equation to get as well.  Back substituting into the first equation, we get Now we can write an arbitrary point in the solution set as Now we can split this up into two vectors, one with only 's and one with only 's: This means that every solution is a linear combination of the \"basic\" solutions and .  "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-6",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-6",
+  "type": "Example",
+  "number": "1.3.2",
+  "title": "",
+  "body": " Recall that we did our earlier example we got the solution which we broke up into the sum of two points like this: Then we factor out the and to get   Now, we can rewrite all of this using column vectors! An arbitrary solution (in parametric form) would look like Notice that any vector of this form is a solution to the homogeneous system of linear equations. The and can be any number!  In particular, this means that both and are solutions! That is one reason why they are called the basic solutions (it explains the \"solution\" part). We will learn more about wht they are called \"basic\" in the future!  "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-8",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear combination "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-9",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-9",
+  "type": "Example",
+  "number": "1.3.3",
+  "title": "",
+  "body": "    is a linear combination of and since      is also a linear combination of and since     "
+},
+{
+  "id": "subsec-HomogeneousSystem-BasisVectors-11",
+  "level": "2",
+  "url": "sec13-HomogeneousEquations.html#subsec-HomogeneousSystem-BasisVectors-11",
+  "type": "Checkpoint",
+  "number": "1.3.4",
+  "title": "",
+  "body": " Solve the following homogeneous system of linear equations and write an arbitrary solution as a linear combination of basic solutions (written as column vectors):    Let's start by writing the augmented matrix for the system: We will solve the system using the Gaussian elimination algorithm.  Step 1: Swap Row 1 and Row 2 so that we get a leading without using any fractions:   Step 2: Add times Row 1 to Row 2 (and replace Row 2), add times Row 1 to Row 3 (and replace Row 3), and add times Row 1 to Row 4 (and replace Row 4) to get:   Step 3: Multiply Row 2, Row 3, and Row 4 by (observe the last three rows are exactly the same!) to get:   Step 4: Add times Row 2 to Row 3 (and replace Row 3) and add times Row 2 to Row 4 (and replace Row 4) to get:   We can see from the leading s that and are the leading variables and and are the free variables. We can also see this from converting back to a system of linear equations: We can solve for in terms of , , and to get: We can also solve for in terms of and to get: Then we can back substitute this expression for into the first equation to get: Now let's write our general solution as a column vector! Every solution looks like    If you want to turn the augmented matrix into reduced row echelon form...  To get the augmented matrix into reduced row echelon form, we will just need to do one more step after Step 4.  Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get:   Converting it back to the system of linear equations, we get: Similarly, we see that and are the free variables, and hence we will represent and in terms of and :   Then we can write our general solution as a column vector! Every solution looks like     "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
