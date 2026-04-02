@@ -6,5 +6,6 @@
   <!-- include sections -->
   <xi:include href="sec11-SolutionsElementaryOperations.ptx" />
   <xi:include href="sec12-GaussianElimination.ptx" />
+  <xi:include href="sec13-HomogeneousEquations.ptx" />
 
 </chapter>
