@@ -343,6 +343,321 @@ var ptx_lunr_docs = [
   "body": " Solve the following homogeneous system of linear equations and write an arbitrary solution as a linear combination of basic solutions (written as column vectors):    Let's start by writing the augmented matrix for the system: We will solve the system using the Gaussian elimination algorithm.  Step 1: Swap Row 1 and Row 2 so that we get a leading without using any fractions:   Step 2: Add times Row 1 to Row 2 (and replace Row 2), add times Row 1 to Row 3 (and replace Row 3), and add times Row 1 to Row 4 (and replace Row 4) to get:   Step 3: Multiply Row 2, Row 3, and Row 4 by (observe the last three rows are exactly the same!) to get:   Step 4: Add times Row 2 to Row 3 (and replace Row 3) and add times Row 2 to Row 4 (and replace Row 4) to get:   We can see from the leading s that and are the leading variables and and are the free variables. We can also see this from converting back to a system of linear equations: We can solve for in terms of , , and to get: We can also solve for in terms of and to get: Then we can back substitute this expression for into the first equation to get: Now let's write our general solution as a column vector! Every solution looks like    If you want to turn the augmented matrix into reduced row echelon form...  To get the augmented matrix into reduced row echelon form, we will just need to do one more step after Step 4.  Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get:   Converting it back to the system of linear equations, we get: Similarly, we see that and are the free variables, and hence we will represent and in terms of and :   Then we can write our general solution as a column vector! Every solution looks like     "
 },
 {
+  "id": "sec21-BasicMatrixOperations",
+  "level": "1",
+  "url": "sec21-BasicMatrixOperations.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Matrix Addition, Scalar Multiplication, and Transposition",
+  "body": " Matrix Addition, Scalar Multiplication, and Transposition   Now we start doing Matrix Algebra! You may recall that on the first day I identified Matrix Algebra as one of the THREE different (but VERY interrelated!) ways we study linear algebra. First we learn about scalar multiplication, matrix addition, and the transpose of a matrix.  Most importantly we learn a bunch of rules about how scalar multiplication, matrix addition, and transposes work. These rules should feel very familiar! They are basically the same rules you learned in arithmetic (only applied to matrices).    After this section, students will be able to:     determine the size of a matrix and identify specific entries using subscript notation;    perform the operations of matrix addition, scalar multiplication, and transposition;        We have dealt with many matrices in the last chapter. We also learned a bit about what a vector was.   What is the difference between a vector and a matrix?   Try writing a definition of a vector and a definition of a matrix. Can you see any similarities or differences between the two definitions?    For this class, every vector is a matrix. But the only matrices that we will call vectors are the ones that have either only one row or only one column.   Disclaimer: This answer works for this class. But in more advanced version of linear algebra, this question is actually more complicated (and doesn't exactly make sense).     What exactly is a matrix?  We have dealt with matrices in the last section. Let's formally define what a matrix is since this chapter is all about matrices!  A matrix is a rectangular array of entries (typically numbers). The size of a matrix is determined by the number of rows and columns it has, and it is usually given in the form of , where is the number of rows and is the number of columns.  For example, the following matrix has 2 rows and 3 columns, so its size is .   What are the sizes of each of the following matrices?        Basic Matrix Operations  We will learn three operations on matrices: matrix addition, scalar multiplication, and transposition. Let's introduce all of these operations using examples!  Suppose we have the matrices and .  To add two matrices together, we add all corresponding entries (those would be the things inside the brackets) and the sum is the corresponding entry in the answer.   To multiply a scalar by a matrix , we multiply the scalar by every entry of the matrix and that product is the corresponding entry in the answer.   The transpose of a matrix , denoted , is obtained by flipping it across the main diagonal. That is, every row of the original matrix becomes the corresponding column of the transpose and every column of the original matrix becomes the corresponding row of the transpose.   And we can combine all of these operations in lots of ways!   Let's say we want to compute . Then we have     Let and . Compute the following (if impossible, explain why):                              1.   2. Observe that we can just subtract the corresponding entries of from the corresponding entries of to get the answer. Once we have addition and scalar multiplication, we can define subtraction as adding the negatives.  3. Observe that is a matrix but is a matrix. We cannot add these two matrices together because not every entry of has a corresponding entry in and vice versa.  4.   5.     We can make some observations about these operations:   We can ONLY add two matrices when they are the exact same size . This makes sense because we do it by adding corresponding entries, so if they are different sizes, we won't have those for all of the entries!    If is an matrix, then is an matrix. This makes sense because every row of becomes a column of which also forces every column of to become a row of .     is called a square matrix if it has the same number of rows as columns. Notice that the only way can be the same size as is if is a square matrix.    When we transpose a matrix twice, we get back to the original matrix (you can \"see\" this if you imagine flipping it over the main diagonal twice).  Terminology: the main diagonal of a matrix is the one going down from left to right.       Subscript Notation for Matrices  We can identify the location of any entry of a matrix by saying which row and column it lives in. For example, in our matrix The entry in the second row and third column is . We can say this in symbol as: The entry is .  We can also use subscript notation to denote the entries of a matrix. We indicate the row first and then the column using subscripts. For example, the in matrix can be denoted as .  A generic matrix would be denoted by   And any matrix can be denoted in shorthand by . If your matrix is named you would use to denote the entry in the th row and the th column.   Note: We always identify the row first and then the column when describing an entry of a matrix.  Now we can describe the operations we learned using the subscript notation!  Suppose and , and let be a scalar (you can just think of a scalar as a number since in this this class they always will be). Then since we add two matrices by adding corresponding entries.  Similarly, since we multiply a scalar by a matrix by multiplying it by every entry of a matrix, and since we transpose a matrix by turning every row into a column (and every column into a row).    Rules for Matrix Addition and Scalar Multiplication  Let , , and be matrices ( and fixed), and let and be real numbers (scalars). Then the following properties hold:   Matrix Addition is commutative . That is,     Matrix Addition is associative . That is,     There exists a zero matrix  such that where is the matrix in which every entry is .    For every matrix , there exists a matrix such that where is called the additive inverse of and is obtained by multiplying every entry of by .    Scalar Multiplication distributes over Matrix Addition. That is,     Scalar Multiplication distributes over Scalar Addition. That is,     Scalar Multiplication by a Product of Two Scalars is the Same as Scalar Multiplication by One Scalar Followed by Scalar Multiplication by the Other Scalar. That is,     Scalar Multiplication by leaves a matrix unchanged. That is,      The author of the textbook proves some of these and leaves others as an exercise for the reader. Let's prove them all but only in the case for matrices. These proofs can easily be generalized using and variables for subscripts to make the matrices completely general .   Proof of these Rules for Matrices  Let , , and be arbitrary matrices. And ket and be arbitrary real numbers (scalars).  1. (Communitivity):   2. (Associativity):   3. (Zero Matrix):   4. (Additive Inverse): Then apply commutativity to get (Or just do a similar proof. Either way works!)  5. (Distributive Part 1):   6. (Distributive Part 2):   7. (Multiplication by Product of Scalars):   8. (Scalar Multiplication by 1):   Now try convincing yourself that these properties hold for matrices of any size by generalizing the above proofs!     Rules for Transposes  Let and be matrices. (Note that this notation doesn't mean the matrices aren't square. It just means we aren't assuming that they are). Then the following properties hold:    will be an matrix.  If you turn every row into a column then the number of columns of the new matrix is the same as the number of rows in the original (similar with columns and rows). You can also see this by imagining flipping the matrix across its main diagonal.       If you turn every row into a column and then do that again, you put the matrix right back where you started. It is even more clear if you imagine reflecting the matrix across its main diagonal twice.       It doesn't matter whether you (1) multiply every entry by and then flip across the main diagonal OR (2) flip across the main diagonal and then multiply every entry by . In either case you turn into .       It doesn't matter whether you (1) add all the corresponding entries and then flip across the main diagonal OR (2) flip each matrix across the main diagonal and then add all the corresponding entries. In either case the entry is .     Last but not least, we call a matrix symmetric if it equals its own transpose. That is, is symmetric if . They are called symmetric because if you flip the matrix over the main diagonal it doesn't change it!  One immediate consequence of this property is that if is symmetric, then must be a square matrix (or else, the two matrices won't even be the same size, let alone equal).  For example, the matrix is symmetric because    "
+},
+{
+  "id": "sec21-BasicMatrixOperations-2-3",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#sec21-BasicMatrixOperations-2-3",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     determine the size of a matrix and identify specific entries using subscript notation;    perform the operations of matrix addition, scalar multiplication, and transposition;    "
+},
+{
+  "id": "sec21-BasicMatrixOperations-3",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#sec21-BasicMatrixOperations-3",
+  "type": "Investigation",
+  "number": "2.1.1",
+  "title": "",
+  "body": "  We have dealt with many matrices in the last chapter. We also learned a bit about what a vector was.   What is the difference between a vector and a matrix?   Try writing a definition of a vector and a definition of a matrix. Can you see any similarities or differences between the two definitions?    For this class, every vector is a matrix. But the only matrices that we will call vectors are the ones that have either only one row or only one column.   Disclaimer: This answer works for this class. But in more advanced version of linear algebra, this question is actually more complicated (and doesn't exactly make sense).   "
+},
+{
+  "id": "subsec-MatrixIntro-3",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-MatrixIntro-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix size "
+},
+{
+  "id": "subsec-MatrixIntro-5",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-MatrixIntro-5",
+  "type": "Checkpoint",
+  "number": "2.1.1",
+  "title": "",
+  "body": " What are the sizes of each of the following matrices?     "
+},
+{
+  "id": "subsec-BasicMatrixOperations-8",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-BasicMatrixOperations-8",
+  "type": "Example",
+  "number": "2.1.2",
+  "title": "",
+  "body": " Let's say we want to compute . Then we have   "
+},
+{
+  "id": "subsec-BasicMatrixOperations-9",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-BasicMatrixOperations-9",
+  "type": "Checkpoint",
+  "number": "2.1.3",
+  "title": "",
+  "body": " Let and . Compute the following (if impossible, explain why):                              1.   2. Observe that we can just subtract the corresponding entries of from the corresponding entries of to get the answer. Once we have addition and scalar multiplication, we can define subtraction as adding the negatives.  3. Observe that is a matrix but is a matrix. We cannot add these two matrices together because not every entry of has a corresponding entry in and vice versa.  4.   5.    "
+},
+{
+  "id": "subsec-BasicMatrixOperations-10",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-BasicMatrixOperations-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "square matrix main diagonal "
+},
+{
+  "id": "subsec-Rules-MatrixAdditionScalarMultiplication-2",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-Rules-MatrixAdditionScalarMultiplication-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "commutative associative zero matrix additive inverse "
+},
+{
+  "id": "subsec-Rules-MatrixAdditionScalarMultiplication-4",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-Rules-MatrixAdditionScalarMultiplication-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "Proof of these Rules for <span class=\"process-math\">\\(2 \\times 3\\)<\/span> Matrices.",
+  "body": " Proof of these Rules for Matrices  Let , , and be arbitrary matrices. And ket and be arbitrary real numbers (scalars).  1. (Communitivity):   2. (Associativity):   3. (Zero Matrix):   4. (Additive Inverse): Then apply commutativity to get (Or just do a similar proof. Either way works!)  5. (Distributive Part 1):   6. (Distributive Part 2):   7. (Multiplication by Product of Scalars):   8. (Scalar Multiplication by 1):   Now try convincing yourself that these properties hold for matrices of any size by generalizing the above proofs!  "
+},
+{
+  "id": "subsec-Rules-TransposeMatrices-3",
+  "level": "2",
+  "url": "sec21-BasicMatrixOperations.html#subsec-Rules-TransposeMatrices-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "symmetric "
+},
+{
+  "id": "sec22-MatrixVectorMultiplication",
+  "level": "1",
+  "url": "sec22-MatrixVectorMultiplication.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Matrix-Vector Multiplication",
+  "body": " Matrix-Vector Multiplication   Now we get to the cool part! We are going to learn how to multiply a matrix by a vector. This is SUPER IMPORTANT for three reasons:   This corresponds to evaluating a linear transformation at a point which leads to tons of cool geometry stuff. Much more about this in the future!    It is the foundation for multiplying matrices (which is probably the most important thing in Matrix Algebra and corresponds to composing linear transformations).    It gives us new ways to think about systems of equations!   Takeaway: make sure you are an expert at multiplying a vector by a matrix!    After this section, students will be able to:     represent a system of linear equations in four equivalent forms: a system of equations, an augmented matrix, a matrix equation, and a vector equation.    multiply a matrix by a vector using both the dot product method and the linear combination method.    determine the existence of solutions for a system of linear equations by comparing the rank of the coefficient matrix and the rank of the augmented matrix.    see the connection between matrix-vector multiplication and linear transformations.    identify and apply the properties of two special matrices: the identity matrix and the zero matrix, in the context of multiplying a matrix by a vector.       Quick Notes about Vector Notation  We already know that we can represent a point in the plane as an ordered pair like . And we also know that two points in the plane, and , are equal if (and only if) both coordinates are exactly the same. In other words, if and only if and .  This generalizes immediately to the set of ordered -tuples of real numbers : And if and only if , , , .  You may recall, when dealing with or we will sometimes use the conventions from calculus (and precalculus) abd use , , and to represent the 2 (or 3) coordinates and use subscripts to distinguish different points. However, in this class, it will be more common to do the opposite. We will use the more general convention of using different letters for different points and using the subscripts to denote the different coordinates. So in this class, we will mostly be writing things like and NOT .  You may also notice that when we write a point in in this way, the point looks kind of like a row matrix: But most often we will represent points in as column matrices:   One last observation: is closed under the operations of scalar multiplication and matrix (vector) addition. In other words, if you multiply a vector in by a scalar the answer is also in . And if you add two vectors in the answer is in .    What exactly is an Augmented Matrix?  Consider the augmented matrix You may have heard Richard saying that an augmented matrix is a \"fake\" matrix but is really just a shorthand notation to represent a system of linear equations. It turns out that an augmented matrix actually hides three matrices, two of which are vectors (aka. column matrices). Hence, an augmented matrix is really three matrices smashed together to represent a system of linear equations in a convenient way.  The left side of an augmented matrix is the coefficient matrix . For our (general) example above, the coefficient matrix is   The right side of an augmented matrix is the constant matrix or constant (column) vector . For our example, the constant vector is   To figure out what the third matrix\/vector is, let's convert the augmented matrix to a system of linear equations! For our example, we get First, notice that this system of equations can be seen as one equation involving two matrices\/vectors! You may have noticed that the solution is the one part of our system that we haven't talked about as a matrix\/vector yet. Well let's fix that now!  The vector on the left-hand side is the one that we get when we multiply the coefficient matrix by the solution vector  when represented as a column vector: In other words our system of equations can be represented by the matrix equation : Or using the names of the matrices:     Multiplying a Matrix by a Vector  Now let's take a deeper look at the product and try to figure out how to multiply a matrix by a vector. For our example, we had So what is happening?  First notice that we are multiplying a matrix by a matrix and getting a matrix. Also, notice that the first (top) entry of the answer is achieved by multiplying each entry in the first row of the matrix by the corresponding entry of the column vector and adding the results. First thing in the row times first thing in the column plus second thing in the row times second thing in the column and so on...   The first entry is    Then the second entry in the answer is achieved in the same way but using the second row of the matrix :   The second entry is    Then the third entry in the answeris achieved in the same way but using the third row of the matrix :   The third entry is    And finally the fourth entry in the answer is achieved in the same way but using the fourth row of the matrix :   The fourth entry is    When we run out of rows of , we are done!   Let's try this out with the following product of a matrix and a vector:   First, we take the first row of the matrix and multiply each entry by the corresponding entry in the column vector and add the results: Next, we take the second row of the matrix and do the same thing: Finally, we take the third row of the matrix and do the same thing: So the answer is     Multiply! If it is impossible, say why!               a.   b. This is impossible! There are three things in each row of the matrix but four things in the vector. There is nothing to multiply by the !      Existence and Uniqueness Questions  Recall a consistent system of linear equations has at least one solution and an inconsistent system of linear equations has no solutions. We have looked at the existence question in the past in two different ways:   In , when converting an augmented matrix to a system of linear equations and there is one equation that is always false (like ), then the system is inconsistent .    In , when an augmented matrix has a pivot position in the rightmost column (aka the constant column), then the system is inconsistent .   We will look at the same question again but in a new perspective. Back in , we define the rank of a matrix to be the number of pivot positions (aka the leading s) in the matrix. Now that we have two different matrices: the augmented matrix and the coefficient matrix, how do their ranks relate to the existence question?  Consider the following system of equations: The augmented matrix is... If we put this matrix into row echelon form, we get Notice that the rank of this augmented matrix (if we pretend it is a real matrix) is because there are two leading s. But if we look only at the coefficient matrix (the part to the left of the vertical lines) we see that the rank is because there is only one leading .   Those ranks are different! Maybe that means something?   Let's write this nice (row echelon) version of the system as a matrix equation! The coefficient matrix is and the constant vector is . This is a two-variable system, so the solution matrix looks like . So as a matrix equation, our system is   Okay... so now let's think about what will happen when we multiply our vector by the coefficient matrix . When we get to the second row (to find the second entry in the answer), we will multiply both and by zero. That means we will get not like we are supposed to get! So this system has no solution! In other words, it is inconsistent !   Notice that this happened because the rank of the augmented matrix was BIGGER than the rank of the coefficient matrix!   That can only happen if there is a leading in the last column of the augmented matrix (the constant vector). And that will always result in no solution because it will always give you when you convert back to a system of equations (see how things are connected back to the two perspectives of the existence questions).  Your textbook makes this a nice little theorem with no proof (yes the textbook literally says \"with no proof\"). With the above example in mind, you may be able to see why the theorem is true.    For a system of linear equations with corresponding matrix equation , the augmented matrix will be .  Suppose the rank of the coefficient matrix is . Then   The rank of the augmented matrix is either equal to or .  This is because the augmented matrix just has one extra column which gives a spot for at most one more leading in that column (which can only happen if there is a row of the coefficient matrix that is all zeros after putting it in row echelon form).    The system is consistent if an only if the rank of is .  In this situation, any time a row of the coefficient matrix gets zeroed out, there is also a zero in the constant column of that row. So in this situation we never have a equation after we put the augmented matrix in row echelon form.  What I didn't prove was that in this nice situation we always get at least one solution. You should be able to convince yourself that you always will be able to start at the bottom and back-substitute and either get one solution (if there are no free variables) or infinitely many (if there are some free variables).    The system is inconsistent if and only if the rank of is .  This happens exactly when there is a row that is all zeros except for a in the constant spot (the rightmost column). That corresponds to a situation. So there are no solutions.  As noted in the previous item, I did not prove that this is the ONLY way to get no solution, but if you imagine the substitution process (after putting the system into row echelon form) you can see that this is the only thing that can prevent you from getting a solution!    Fun logic fact: Item 3 is actually redundant and is already covered by item 1 and 2! That is, if item 1 and 2 are true, then item 3 must be true as well!      Vector Equations  So far we have three different ways to represent a system of linear equations: (1) as a system of equations, (2) as an augmented matrix, and (3) as a matrix equation. There is actually a fourth way to represent a system of linear equations: as a vector equation .  Let's again consider the system of linear equations Remember that we can think of our original system of equations as representing an equation involving two vectors: Now let's do the same technique we used to write a solution as a linear combination of basic vectors. Specifically, let's first break up the vector on the left-hand side into three vectors. One with in it, one with in it, and one with in it: Now let's factor out the scalars , , and to get: Substituting this last version into our original equation, we get the vector equation : Notice that this vector equation tells us that we get a solution to a system of linear equations precisely when the constant vector is a linear combination of the columns of the coefficient matrix . See how the column vectors on the left-hand side are just the columns of the coefficient matrix?!?! See how the solution vector is just the set of scalars (coefficients) used to write this linear combination of the column vectors?!?! This observation will be important to keep in mind!   Consider the following system of linear equations: Write this system as a (1) Augmented Matrix, (2) a Matrix Equation, and (3) a Vector Equation.   The augmented matrix is   The matrix equation is   The vector equation is     The Vector Equation gives us yet another way to multiply a vector by a matrix! Let's compare the Matrix Equation and the Vector Equation for a system of linear equations: The Matrix Equation is The Vector Equation is This means that So that means that the left-hand side of the Vector Equation actually gives us a second way to multiply a vector by a matrix. You just compute the linear combination of the columns using the vector to get your scalars.   Let's multiply the following matrix and vector in this new way:   We treat the columns of the matrix as vectors and compute the linear combination of those vectors using the entries of the column vector as our scalars. This is the same answer as before!     Intro to Linear Transformations  It turns out that every matrix actually defines a function. Specifically, a matrix defines a function from to .   Any point in can be represented by a column vector. For example, the point can be represented by .  Let . If we take that point and multiply it by the matrix , we get   This is a function! We started with the input and we \"plugged\" that point into our function by multiplying it (as a column vector) by . This gave us the output .  Let's call this function . It is defined by the rule   We can take any matrix and use that rule and will get a function! The inputs need to have the same number of coordinates as the matrix has columns. And the outputs will have the same number of coordinates as the matrix has rows.   The function given by a matrix, using the rule , is a special kind of function called a linear transformation . We will learn more about linear transformations at the end of the term. But since we just learned how to multiply a matrix by a vector and that defines a linear transformation, let's spend a bit of time thinking about the geometry of such transformations.   Suppose that . The function given by will be a function from to . So it maps points on the plane to points on the plane.  Let's figure out what this transformation does geometrically by doing the following:   Draw a rectangle centered at and label the four vertices. This is your \"before\" picture.    Plug in each of the four vertices using the rule (write the points as column vectors and multiply!)    Plot the four outputs and connect the dots.    Describe what happened to your rectangle.      I will start with a rectangle with vertices , , , and   First, let's connect the dots to draw our rectangle. This is our \"before\" picture.   Plugging in each of the vertices to our transformation, we get Let's graph the outputs and connect the dots. This is our \"after\" picture.   So what does the transformation do? It is a flip (across the line ) and a stretch (by a factor of )!  It actually turns out that the functions defined this way (multiplying vectors by a matrix) always do some combination of the following to the plane: Stretch, Reflect (Flip), Rotate.      Intro to the Dot Product  The first method of multiplying matrices that we learned was actually based on the dot product which is an operation performed on two vectors (of the same size) and the produces a scalar . Sometimes it is actually called a scalar product to emphasize the fact that the output is a scalar.  So how does it work? Let's look at the formula for multiplying a vector by a matrix. For the case of a general matrix, we saw that we could multiply by a column vector. Notice that this result actually comes from performing the same process four different times (once for each row of the matrix).  What we were actually doing was taking the dot product of each row with the column vector. So our multiplication computation consisted of four dot products each of which gave us one of the entries in our answer.   Dot Product   Let and be two vectors in . The dot product of and , denoted by , is the scalar given by the formula      Let's compute the dot product of the vectors and .    Scroll up a bit and you will see the dot product formula show up in each entry where we multiplied the general matrix by a vector. To get the th entry of the answer, we can take the dot product of the th row of the matrix and the vector.  We will talk more about this soon when we learn how to multiply two matrices together.    Two Special Matrices  Recall there are two special numbers in arithmetic: and , in the sense that (1) times any number is and (2) times any number is that same number. There are also two special matrices in matrix arithmetic that play the same role as and do in regular arithmetic.  In the last section, we defined the zero matrix to be the matrix with all entries equal to . If is the zero matrix then for any vector , we have where is the zero vector in .  That is because each time you compute a dot product to get an entry of the answer, you are taking a dot product with a row vector where all entries are zero. So you are always just adding up a bunch of zeros. So you will always get zero for every entry in the product.  The matrix equivalent of is called the identity matrix . That is, when we multiply the identity matrix by a vector, we get the same vector back.  For every positive integer , there is a special matrix called the identity matrix of size . The identity matrix has a in every entry of the main diagonal and a in every other spot.  For example, the identity matrix of size is and the identity matrix of size is When the size is obvious from context, we don't need the little subscript in the name for the identity matrix. We just call it .  But why does the identity matrix look like that? Imagine we multiply by an arbitrary vector . We get    "
+},
+{
+  "id": "sec22-MatrixVectorMultiplication-2-2",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#sec22-MatrixVectorMultiplication-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     represent a system of linear equations in four equivalent forms: a system of equations, an augmented matrix, a matrix equation, and a vector equation.    multiply a matrix by a vector using both the dot product method and the linear combination method.    determine the existence of solutions for a system of linear equations by comparing the rank of the coefficient matrix and the rank of the augmented matrix.    see the connection between matrix-vector multiplication and linear transformations.    identify and apply the properties of two special matrices: the identity matrix and the zero matrix, in the context of multiplying a matrix by a vector.    "
+},
+{
+  "id": "subsec-Basics-Vector-6",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-Basics-Vector-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "closed "
+},
+{
+  "id": "subsec-DecodeAugmentedMatrix-3",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DecodeAugmentedMatrix-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "coefficient matrix "
+},
+{
+  "id": "subsec-DecodeAugmentedMatrix-4",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DecodeAugmentedMatrix-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "constant matrix constant (column) vector "
+},
+{
+  "id": "subsec-DecodeAugmentedMatrix-6",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DecodeAugmentedMatrix-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix equation "
+},
+{
+  "id": "subsec-MultiplyingMatrixVector-4",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-MultiplyingMatrixVector-4",
+  "type": "Example",
+  "number": "2.2.1",
+  "title": "",
+  "body": " Let's try this out with the following product of a matrix and a vector:   First, we take the first row of the matrix and multiply each entry by the corresponding entry in the column vector and add the results: Next, we take the second row of the matrix and do the same thing: Finally, we take the third row of the matrix and do the same thing: So the answer is   "
+},
+{
+  "id": "subsec-MultiplyingMatrixVector-5",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-MultiplyingMatrixVector-5",
+  "type": "Checkpoint",
+  "number": "2.2.2",
+  "title": "",
+  "body": " Multiply! If it is impossible, say why!               a.   b. This is impossible! There are three things in each row of the matrix but four things in the vector. There is nothing to multiply by the !   "
+},
+{
+  "id": "subsec-ExistenceUniqueness-Rank-2",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-ExistenceUniqueness-Rank-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "consistent inconsistent rank "
+},
+{
+  "id": "thm-Existence_Rank",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#thm-Existence_Rank",
+  "type": "Theorem",
+  "number": "2.2.3",
+  "title": "",
+  "body": "  For a system of linear equations with corresponding matrix equation , the augmented matrix will be .  Suppose the rank of the coefficient matrix is . Then   The rank of the augmented matrix is either equal to or .  This is because the augmented matrix just has one extra column which gives a spot for at most one more leading in that column (which can only happen if there is a row of the coefficient matrix that is all zeros after putting it in row echelon form).    The system is consistent if an only if the rank of is .  In this situation, any time a row of the coefficient matrix gets zeroed out, there is also a zero in the constant column of that row. So in this situation we never have a equation after we put the augmented matrix in row echelon form.  What I didn't prove was that in this nice situation we always get at least one solution. You should be able to convince yourself that you always will be able to start at the bottom and back-substitute and either get one solution (if there are no free variables) or infinitely many (if there are some free variables).    The system is inconsistent if and only if the rank of is .  This happens exactly when there is a row that is all zeros except for a in the constant spot (the rightmost column). That corresponds to a situation. So there are no solutions.  As noted in the previous item, I did not prove that this is the ONLY way to get no solution, but if you imagine the substitution process (after putting the system into row echelon form) you can see that this is the only thing that can prevent you from getting a solution!    Fun logic fact: Item 3 is actually redundant and is already covered by item 1 and 2! That is, if item 1 and 2 are true, then item 3 must be true as well!   "
+},
+{
+  "id": "subsec-VectorEquations-2",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-VectorEquations-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector equation "
+},
+{
+  "id": "subsec-VectorEquations-3",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-VectorEquations-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector equation "
+},
+{
+  "id": "subsec-VectorEquations-4",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-VectorEquations-4",
+  "type": "Checkpoint",
+  "number": "2.2.4",
+  "title": "",
+  "body": " Consider the following system of linear equations: Write this system as a (1) Augmented Matrix, (2) a Matrix Equation, and (3) a Vector Equation.   The augmented matrix is   The matrix equation is   The vector equation is    "
+},
+{
+  "id": "subsec-VectorEquations-6",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-VectorEquations-6",
+  "type": "Example",
+  "number": "2.2.5",
+  "title": "",
+  "body": " Let's multiply the following matrix and vector in this new way:   We treat the columns of the matrix as vectors and compute the linear combination of those vectors using the entries of the column vector as our scalars. This is the same answer as before!  "
+},
+{
+  "id": "subsec-LinearTransformations-Intro-3",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-LinearTransformations-Intro-3",
+  "type": "Example",
+  "number": "2.2.6",
+  "title": "",
+  "body": " Any point in can be represented by a column vector. For example, the point can be represented by .  Let . If we take that point and multiply it by the matrix , we get   This is a function! We started with the input and we \"plugged\" that point into our function by multiplying it (as a column vector) by . This gave us the output .  Let's call this function . It is defined by the rule   We can take any matrix and use that rule and will get a function! The inputs need to have the same number of coordinates as the matrix has columns. And the outputs will have the same number of coordinates as the matrix has rows.  "
+},
+{
+  "id": "subsec-LinearTransformations-Intro-4",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-LinearTransformations-Intro-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear transformation "
+},
+{
+  "id": "subsec-LinearTransformations-Intro-5",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-LinearTransformations-Intro-5",
+  "type": "Example",
+  "number": "2.2.7",
+  "title": "",
+  "body": " Suppose that . The function given by will be a function from to . So it maps points on the plane to points on the plane.  Let's figure out what this transformation does geometrically by doing the following:   Draw a rectangle centered at and label the four vertices. This is your \"before\" picture.    Plug in each of the four vertices using the rule (write the points as column vectors and multiply!)    Plot the four outputs and connect the dots.    Describe what happened to your rectangle.      I will start with a rectangle with vertices , , , and   First, let's connect the dots to draw our rectangle. This is our \"before\" picture.   Plugging in each of the vertices to our transformation, we get Let's graph the outputs and connect the dots. This is our \"after\" picture.   So what does the transformation do? It is a flip (across the line ) and a stretch (by a factor of )!  It actually turns out that the functions defined this way (multiplying vectors by a matrix) always do some combination of the following to the plane: Stretch, Reflect (Flip), Rotate.   "
+},
+{
+  "id": "subsec-DotProduct-Intro-2",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DotProduct-Intro-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "dot product scalar product "
+},
+{
+  "id": "subsec-DotProduct-Intro-4",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DotProduct-Intro-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "dot product "
+},
+{
+  "id": "def-DotProduct-Intro",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#def-DotProduct-Intro",
+  "type": "Definition",
+  "number": "2.2.8",
+  "title": "Dot Product.",
+  "body": " Dot Product   Let and be two vectors in . The dot product of and , denoted by , is the scalar given by the formula    "
+},
+{
+  "id": "subsec-DotProduct-Intro-6",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-DotProduct-Intro-6",
+  "type": "Example",
+  "number": "2.2.9",
+  "title": "",
+  "body": " Let's compute the dot product of the vectors and .   "
+},
+{
+  "id": "subsec-ZeroMatrix-IdentityMatrix-3",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-ZeroMatrix-IdentityMatrix-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "zero matrix "
+},
+{
+  "id": "subsec-ZeroMatrix-IdentityMatrix-5",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-ZeroMatrix-IdentityMatrix-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "identity matrix "
+},
+{
+  "id": "subsec-ZeroMatrix-IdentityMatrix-6",
+  "level": "2",
+  "url": "sec22-MatrixVectorMultiplication.html#subsec-ZeroMatrix-IdentityMatrix-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "identity matrix "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
