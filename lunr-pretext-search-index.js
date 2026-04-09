@@ -658,6 +658,60 @@ var ptx_lunr_docs = [
   "body": "identity matrix "
 },
 {
+  "id": "sec23-MatrixMultiplication",
+  "level": "1",
+  "url": "sec23-MatrixMultiplication.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "Matrix Multiplication",
+  "body": " Matrix Multiplication   In our previous work, we established how to multiply a matrix by a single column vector. In this section, we will extend this concept to multiply a matrix by another matrix. As you will see, multiplying two matrices is essentially just performing matrix-vector multiplication multiple times.    After this section, students will be able to:     compute the product of two matrices;    determine whether two matrices can be multiplied based on their sizes and state the size of the answer matrix;    understand the rules for matrix multiplication;    recognize and demonstrate that matrix multiplication is generally not commutative.      Recall when you multiply a column vector by a matrix, you just compute the dot product of that vector by each row vector of the matrix. Then you get a nice column vector.  If you want to multiply a matrix by another matrix, you just do that for every column of the matrix on the right and you get all of the columns in your answer matrix. And that is how you multiply matrices!   Let's multiply the following two matrices   Oberve that the matrix on the right consists of two columns. We know how to multiply the column (aka a column vector) by the matrix. Let's do that! and Then the first column vector we get is the first column in the answer matrix and the second column vector we get is the second column in the answer matrix. That is,    Writing out the general formula for matrix multiplication using all the little subscripts would be horrible. But there is a clever way to write matrices that makes it a bit easier.  Suppose you want to multiply a matrix by the matrix . Instead of writing down all the entries of using double subscripts, we can write the matrix as a collection of columns using single subscripts. So the matrix looks like this: Then where each column of the answer is a product of with the corresponding column vector of . And each of those products are computed by taking the dot product of each row of with that column vector.  Summary: the entry of the matrix is computed by taking the dot product of the th row of with the -th column of (rows times columns).   Multiply! If it is impossible, say why!               1.   2. This is impossible. You can't multiply a matrix by a matrix. None of the dot products work!  For example, if you want to find the entry in the answer matrix, then you would find the dot product of the first row of the matrix to the left and the first column of the matrix to the right. But... there are three entries in the first row vector and four entries in the column vector... The sizes don't work out... (there is nothing we can multiply by the )...    To make sure the dot products work out for matrix multiplication, we want to make sure the number of columns in the first matrix matches up with the number of rows in the second matrix. That is, to multiply two matrices and with the size of being , the size of must be . The answer matrix is of the size of .  New operation means more rules! Here is a theorem that collects some rules about matrix multiplication.   Matrix Multiplication Rules   Suppose , , and are matrices that are the right size for the products to be defined. And suppose is the identity matrix that is the right size as well. The following properties hold:    Identity Property : and      Associativity :     (Left) Distributive Property :     (Right) Distributive Property :      Regrouping with Scalar Multiplication ; For any scalar ,      Transpose of a Product :        The first five rules should not be surprising. Spend some time to convince yourself why they are true!   Proof Ideas and Sketches Using Smaller Matrices     The first equation follows from multiplying the identify matrix by a column vector. You get that same column vector as the answer. Since that would happen for every column of , you will get as your answer.  The second equation is true because when you multiply by the th column of , the single in the th row of that column will reproduce the th column of the matrix.    This one gets messy when the matrices start getting bigger, so let's verify it in the case. The proof in general works the same just with a lot more subscripts to juggle! and Comparing the results, we can see that the matrix multiplication is associative because multiplication of numbers is!    This one isn't quite as messy as the previous one, but still warrants limiting to case:     The verification of this one works just like the previous one with the obvious changes. Again it comes down to the fact that we have the distributive property in basic arithmetic.    I encourage you to verify this for the case. This one is much less messy than the ones we have done!      You may find the last rule a bit surprising. Why isn't equal to ?  This surprise should tell you that matrix multiplication is not commutative!  Let's verify this one for the case! If you computed and compare it to this you would find you would NOT get this result! But if we commute all of the products inside this matrix... This is what you would get for !   Observe that commutativity is not included in the theorem. That is because matrix multiplication is NOT commutative, which means in general it is NOT true that . Sometimes it happens that way but often it does not!  A quick counter-example can show that matrix multiplication is non-commutative. Let and . Observe that but Hence ...  "
+},
+{
+  "id": "sec23-MatrixMultiplication-2-2",
+  "level": "2",
+  "url": "sec23-MatrixMultiplication.html#sec23-MatrixMultiplication-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     compute the product of two matrices;    determine whether two matrices can be multiplied based on their sizes and state the size of the answer matrix;    understand the rules for matrix multiplication;    recognize and demonstrate that matrix multiplication is generally not commutative.    "
+},
+{
+  "id": "sec23-MatrixMultiplication-5",
+  "level": "2",
+  "url": "sec23-MatrixMultiplication.html#sec23-MatrixMultiplication-5",
+  "type": "Example",
+  "number": "2.3.1",
+  "title": "",
+  "body": " Let's multiply the following two matrices   Oberve that the matrix on the right consists of two columns. We know how to multiply the column (aka a column vector) by the matrix. Let's do that! and Then the first column vector we get is the first column in the answer matrix and the second column vector we get is the second column in the answer matrix. That is,   "
+},
+{
+  "id": "sec23-MatrixMultiplication-9",
+  "level": "2",
+  "url": "sec23-MatrixMultiplication.html#sec23-MatrixMultiplication-9",
+  "type": "Checkpoint",
+  "number": "2.3.2",
+  "title": "",
+  "body": " Multiply! If it is impossible, say why!               1.   2. This is impossible. You can't multiply a matrix by a matrix. None of the dot products work!  For example, if you want to find the entry in the answer matrix, then you would find the dot product of the first row of the matrix to the left and the first column of the matrix to the right. But... there are three entries in the first row vector and four entries in the column vector... The sizes don't work out... (there is nothing we can multiply by the )...   "
+},
+{
+  "id": "thm-RulesMatrixMultiplication",
+  "level": "2",
+  "url": "sec23-MatrixMultiplication.html#thm-RulesMatrixMultiplication",
+  "type": "Theorem",
+  "number": "2.3.3",
+  "title": "Matrix Multiplication Rules.",
+  "body": " Matrix Multiplication Rules   Suppose , , and are matrices that are the right size for the products to be defined. And suppose is the identity matrix that is the right size as well. The following properties hold:    Identity Property : and      Associativity :     (Left) Distributive Property :     (Right) Distributive Property :      Regrouping with Scalar Multiplication ; For any scalar ,      Transpose of a Product :       "
+},
+{
+  "id": "sec23-MatrixMultiplication-14",
+  "level": "2",
+  "url": "sec23-MatrixMultiplication.html#sec23-MatrixMultiplication-14",
+  "type": "Proof",
+  "number": "2.3.1",
+  "title": "Proof Ideas and Sketches Using Smaller Matrices.",
+  "body": " Proof Ideas and Sketches Using Smaller Matrices     The first equation follows from multiplying the identify matrix by a column vector. You get that same column vector as the answer. Since that would happen for every column of , you will get as your answer.  The second equation is true because when you multiply by the th column of , the single in the th row of that column will reproduce the th column of the matrix.    This one gets messy when the matrices start getting bigger, so let's verify it in the case. The proof in general works the same just with a lot more subscripts to juggle! and Comparing the results, we can see that the matrix multiplication is associative because multiplication of numbers is!    This one isn't quite as messy as the previous one, but still warrants limiting to case:     The verification of this one works just like the previous one with the obvious changes. Again it comes down to the fact that we have the distributive property in basic arithmetic.    I encourage you to verify this for the case. This one is much less messy than the ones we have done!     "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
