@@ -83,7 +83,7 @@
     </p>
 
     <p>
-      You may recall, when dealing with <m>\R^2</m> or <m>\R^3</m> we will sometimes use the conventions from calculus (and precalculus) abd use <m>x</m>, <m>y</m>, and <m>z</m> to represent the 2 (or 3) coordinates and use subscripts to distinguish different points. 
+      You may recall, when dealing with <m>\R^2</m> or <m>\R^3</m> we will sometimes use the conventions from calculus (and precalculus) and use <m>x</m>, <m>y</m>, and <m>z</m> to represent the 2 (or 3) coordinates and use subscripts to distinguish different points. 
       However, in this class, it will be more common to do the opposite. 
       We will use the more general convention of using different letters for different points and using the subscripts to denote the different coordinates. 
       So in this class, we will mostly be writing things like <m>(a_1, a_2, a_3)</m> and NOT <m>(x_1, y_1, z_1)</m>. 
