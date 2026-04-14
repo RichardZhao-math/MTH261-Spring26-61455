@@ -928,6 +928,222 @@ var ptx_lunr_docs = [
   "body": " Invertible Matrix Theorem   The following conditions are equivalent for an matrix:    is invertible.    The homogeneous system has only the trivial solution .     can be carried to the identity matrix by elementary row operations.    The system has at least one solution for every choice of column .    There exists an matrix such that .     .      "
 },
 {
+  "id": "sec24-MatrixInverse",
+  "level": "1",
+  "url": "sec24-MatrixInverse.html",
+  "type": "Section",
+  "number": "2.5",
+  "title": "Matrix Inverses",
+  "body": " Matrix Inverses   In our journey through linear algebra, we have explored how to multiply matrices and how to represent systems of equations as the matrix equation . A natural mathematical question arises: can we \"undo\" matrix multiplication? In the realm of real numbers, we solve algebraic equations like by multiplying by the reciprocal (or inverse) of . In this section, we investigate whether a similar structural concept exists for matrices.    After this section, students will be able to:     determine if a matrix is invertible;    find the inverse of a invertible matrix using a formula;    find the inverse of an invertible matrix using the Gaussian Elimination algorithm;    solve systems of linear equations using matrix inverses.       Let . Find a matrix such that where is the identity matrix.   There are two possible strategies:   Strategy #1: Guess and check! This strategy is doable for a matrix but usually quite tedious. The matrix is made special so that it isn't too bad at all.   Strategy #2: Remember how matrix multiplication works: When we multiply by , each column of the answer is found by multiplying the corresponding column of by .  So we know that if is the first column of , then we will need to be since that is the first column of the identity matrix. If we call the entries of that column and , then we can solve a system of equations to figure out what and are!  Then we can do a similar process to figure out what the second column of is!    Using Strategy #1...  You probably discovered that the only way to get the in the top left of the answer is to put a in the bottom left of . Then you can figure out that you need a in the top left of to get the in the bottom left of the answer.  Now you need a in the top right of the answer. because of the in , your answer for this spot will be times whatever you put in the bottom right of . So that has to be a .  Finally that in the bottom right of means that you need a in your top right spot in order to get the you need in the bottom right of the identity matrix. So the matrix     Using Strategy #2...  If we call our first column of  , then we know that we need We can solve this using the substitution method easily since the top equation tells us and substituting this into the second equation gives us So the first column of will have to be .  Now if we call our second column of  , then we know that we need This one is even quicker to solve because the top equation tells us and substituting this into the second equation gives us . So the second column of will have to be .  Therefore, the matrix .  And we can quickly verify that :    Now that you found , take a minute and compute .    is also !    This matrix is a special buddy of . This is called the inverse of !   Inverse of a Matrix   Inverse of a Matrix   If is a square matrix, a matrix is called an inverse of if and only if . A matrix that has an inverse is called an invertible matrix .      An exmaple:  is invertible and since...    A non-example:  is NOT invertible because no matter what matrix you try you will get a row of zeros:      A matrix can only have one inverse.     Suppose and are both inverses of . Then This means .  Multiplying both sides of equation (on the left) by , we get Using the associative property, we get Since we also know that , then .  So by the identity property, .   In the case, there is a quick way to find out if a matrix is invertible and there is a nice formula for the inverse. We just have to define two terms:   Determinant of Matrices   Let be a matrix. The determinant of the matrix is defined by      Adjugate of Matrices   Let be a matrix. The adjugate of the matrix is The adjugate of can be obtained by (1) swapping the elements in the main diagonal, and (2) changing the sign of the elements not on the main diagonal.    The matrix is invertible if and only if . And is    Let . Notice that Since , we know that exists.  We can also find . We know that . Then   If you want to verify that is indeed the inverse of , try multiplying them together and you should get back .   Remember how we worked so hard to solve systems of linear equations in week 1? And remember that every system of linear equations can be written as a Matrix Equation in week 2? Well, if the coefficient matrix is invertible, then we can solve this equation using just like back in Algebra 1!  Let's assume that is invertible, then . Say we have a Matrix Equation . We certainly can multiply the same thing (say ) on two sides of the equation. We get So the solution to this equation must be .  If you want to verify that this is indeed a solution, then we can plug in into the left side of our equation. We see that So this really is a solution to the equation! Let's make it a theorem!    If is an invertible matrix, then the Matrix Equation has exactly one solution. The solution is .     Consider the following system of linear equations: The Matrix Equation version of this system is , where   Notice that So is invertible! We can find the solution using the little theorem we just came up with!  Since , then we get By our theorem, the solution to the system is     Solve the following system of linear equation by   writing the system as a Matrix Equation;    finding the inverse of the coefficient matrix;    using the inverse to solve the system.      1. The matrix equation is   2. The determinant is and the adjugate matrix is , so the inverse is   3. The solution is     There is another way to compute inverse matrices efficiently, which is using the Gaussian Elimination algorithm we learned back in .  Suppose we want to find the inverse of a matrix . That is, we are looking for a matrix such that Since we multiply these matrices by multiplying the by each of the column vectors and , the first matrix-vector product needs to give us the first column of and the second matrix-vector product needs to give us the second column of . That means that finding the inverse boils down to solving two systems of equations given by the matrix equations: Observe that these two systems of linear equations have the same coefficient matrix. So if we used augmented matrices, we would end up doing the same steps to put the matrices into reduced row echelon form.  The technique based on this idea is to put these two equations into ONE giant augmented matrix: But it gets even better! Let's do an example...   Let's say we want to find the inverse of the matrix . We will first make our big augmented matrix: Now we will put this thing into reduced row echelon form!  Step 1: Swap Row 1 and Row 2, we get We have our first leading and it already has a zero beneath it.  Step 2: Multiply Row 2 by , we get Now the matrix is in row echelon form. Let's get it into reduced row echelon form by getting a zero above the second leading .  Step 3: Multiply times Row 2 to Row 1 (and replace Row 1), we get Notice that the part on the left is the identity matrix. And, notice that the part on the right is the inverse!   That is basically the technique:   Step 1: Make a big augmented matrix with on the left side and on the right side.    Step 2: Put the augmented matrix into reduced row echelon form.   If the matrix is invertible, then the reduced row-echelon form will have on the left side and on the right side.   Use the Gaussian Elimination algorithm to find the inverse of the matrix    The big augmented matrix is   First let's get zeros beneath our first leading :   Now we need to get our second leading by multiplying Row 2 by :   Now we need a zero beneath our second leading . We can multiply Row 2 by and adding it to Row 3:   Now to get our last leading , we need to multiply Row 3 by :   Then we need to get zeros above this third leading . So, let's add times Row 3 to Row 2 and -3 times Row 3 to Row 1:   So the inverse is       Important Theorems and Facts about Inverses   Cancellation Law for Matrices   Suppose and are matrices and is an invertible matrix. Then the following holds:   If , then .    If , then .        Part 1: Suppose . Then Therefore,   The proof of Part 2 would be similar.     Suppose is invertible. Then the inverse of is the transpose of . That is,      Suppose is invertible. Then But and . Substituting these into the above equation, we get So the inverse of is the transpose of .     If and are invertible matrices and is defined, then     This is also called \"shoes and socks\" because you take off your shoes and socks in the reverse order in which you put them on. That is what this theorem says about matrix inverses.       There are also a collection of a bunch of facts about inverses (including some of the ones we have just mentioned).  Suppose the following matrices are all square and the same size.    is invertible and .    If is invertible, so is and .    If and are invertible, so is , and .    If are all invertible, so is their product , and .    If is invertible, then so is , and .    If is invertible and is a number, then is invertible and .    If is invertible, so is its transpose , and .     It is super important to be able to tell whether a matrix is invertible. One of the most important theorems in linear algebra i the Invertible Matrix Theorem , which identifies several conditions that are equivalent to a matrix being invertible.   Invertible Matrix Theorem   The following conditions are equivalent for an matrix:    is invertible.    The homogeneous system has only the trivial solution .     can be carried to the identity matrix by elementary row operations.    The system has at least one solution for every choice of column .    There exists an matrix such that .     .       If you Google the Invertible Matrix Theorem, there are a lot more equivalent conditions than what we have listed here. Some of them are just rephrasing the conditions using other terminology and some of them requires a bit more linear algebra concepts that we are building towards. We will certainly circle back to this theorem and add more conditions when we learn more!   "
+},
+{
+  "id": "sec24-MatrixInverse-2-2",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#sec24-MatrixInverse-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     determine if a matrix is invertible;    find the inverse of a invertible matrix using a formula;    find the inverse of an invertible matrix using the Gaussian Elimination algorithm;    solve systems of linear equations using matrix inverses.    "
+},
+{
+  "id": "sec24-MatrixInverse-3",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#sec24-MatrixInverse-3",
+  "type": "Investigation",
+  "number": "2.5.1",
+  "title": "",
+  "body": " Let . Find a matrix such that where is the identity matrix.   There are two possible strategies:   Strategy #1: Guess and check! This strategy is doable for a matrix but usually quite tedious. The matrix is made special so that it isn't too bad at all.   Strategy #2: Remember how matrix multiplication works: When we multiply by , each column of the answer is found by multiplying the corresponding column of by .  So we know that if is the first column of , then we will need to be since that is the first column of the identity matrix. If we call the entries of that column and , then we can solve a system of equations to figure out what and are!  Then we can do a similar process to figure out what the second column of is!    Using Strategy #1...  You probably discovered that the only way to get the in the top left of the answer is to put a in the bottom left of . Then you can figure out that you need a in the top left of to get the in the bottom left of the answer.  Now you need a in the top right of the answer. because of the in , your answer for this spot will be times whatever you put in the bottom right of . So that has to be a .  Finally that in the bottom right of means that you need a in your top right spot in order to get the you need in the bottom right of the identity matrix. So the matrix     Using Strategy #2...  If we call our first column of  , then we know that we need We can solve this using the substitution method easily since the top equation tells us and substituting this into the second equation gives us So the first column of will have to be .  Now if we call our second column of  , then we know that we need This one is even quicker to solve because the top equation tells us and substituting this into the second equation gives us . So the second column of will have to be .  Therefore, the matrix .  And we can quickly verify that :    Now that you found , take a minute and compute .    is also !   "
+},
+{
+  "id": "sec24-MatrixInverse-4",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#sec24-MatrixInverse-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "inverse "
+},
+{
+  "id": "def-inverse-matrix",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#def-inverse-matrix",
+  "type": "Definition",
+  "number": "2.5.1",
+  "title": "Inverse of a Matrix.",
+  "body": " Inverse of a Matrix   If is a square matrix, a matrix is called an inverse of if and only if . A matrix that has an inverse is called an invertible matrix .   "
+},
+{
+  "id": "subsec-InverseMatrices-3",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-3",
+  "type": "Example",
+  "number": "2.5.2",
+  "title": "",
+  "body": "  An exmaple:  is invertible and since...    A non-example:  is NOT invertible because no matter what matrix you try you will get a row of zeros:   "
+},
+{
+  "id": "thm-Uniqueness_Inverses",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-Uniqueness_Inverses",
+  "type": "Theorem",
+  "number": "2.5.3",
+  "title": "",
+  "body": "  A matrix can only have one inverse.   "
+},
+{
+  "id": "subsec-InverseMatrices-5",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose and are both inverses of . Then This means .  Multiplying both sides of equation (on the left) by , we get Using the associative property, we get Since we also know that , then .  So by the identity property, .  "
+},
+{
+  "id": "def-Determinant-2x2Matrices",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#def-Determinant-2x2Matrices",
+  "type": "Definition",
+  "number": "2.5.4",
+  "title": "Determinant of <span class=\"process-math\">\\(2\\times 2\\)<\/span> Matrices.",
+  "body": " Determinant of Matrices   Let be a matrix. The determinant of the matrix is defined by    "
+},
+{
+  "id": "def-Adjugate-2x2Matrices",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#def-Adjugate-2x2Matrices",
+  "type": "Definition",
+  "number": "2.5.5",
+  "title": "Adjugate of <span class=\"process-math\">\\(2\\times 2\\)<\/span> Matrices.",
+  "body": " Adjugate of Matrices   Let be a matrix. The adjugate of the matrix is The adjugate of can be obtained by (1) swapping the elements in the main diagonal, and (2) changing the sign of the elements not on the main diagonal.   "
+},
+{
+  "id": "subsec-InverseMatrices-10",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-10",
+  "type": "Example",
+  "number": "2.5.6",
+  "title": "",
+  "body": " Let . Notice that Since , we know that exists.  We can also find . We know that . Then   If you want to verify that is indeed the inverse of , try multiplying them together and you should get back .  "
+},
+{
+  "id": "thm-UniqueSolution-InvertibleMatrix",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-UniqueSolution-InvertibleMatrix",
+  "type": "Theorem",
+  "number": "2.5.7",
+  "title": "",
+  "body": "  If is an invertible matrix, then the Matrix Equation has exactly one solution. The solution is .   "
+},
+{
+  "id": "subsec-InverseMatrices-15",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-15",
+  "type": "Example",
+  "number": "2.5.8",
+  "title": "",
+  "body": " Consider the following system of linear equations: The Matrix Equation version of this system is , where   Notice that So is invertible! We can find the solution using the little theorem we just came up with!  Since , then we get By our theorem, the solution to the system is   "
+},
+{
+  "id": "subsec-InverseMatrices-16",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-16",
+  "type": "Checkpoint",
+  "number": "2.5.9",
+  "title": "",
+  "body": " Solve the following system of linear equation by   writing the system as a Matrix Equation;    finding the inverse of the coefficient matrix;    using the inverse to solve the system.      1. The matrix equation is   2. The determinant is and the adjugate matrix is , so the inverse is   3. The solution is    "
+},
+{
+  "id": "subsec-InverseMatrices-20",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-20",
+  "type": "Example",
+  "number": "2.5.10",
+  "title": "",
+  "body": " Let's say we want to find the inverse of the matrix . We will first make our big augmented matrix: Now we will put this thing into reduced row echelon form!  Step 1: Swap Row 1 and Row 2, we get We have our first leading and it already has a zero beneath it.  Step 2: Multiply Row 2 by , we get Now the matrix is in row echelon form. Let's get it into reduced row echelon form by getting a zero above the second leading .  Step 3: Multiply times Row 2 to Row 1 (and replace Row 1), we get Notice that the part on the left is the identity matrix. And, notice that the part on the right is the inverse!  "
+},
+{
+  "id": "subsec-InverseMatrices-22",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-InverseMatrices-22",
+  "type": "Checkpoint",
+  "number": "2.5.11",
+  "title": "",
+  "body": " Use the Gaussian Elimination algorithm to find the inverse of the matrix    The big augmented matrix is   First let's get zeros beneath our first leading :   Now we need to get our second leading by multiplying Row 2 by :   Now we need a zero beneath our second leading . We can multiply Row 2 by and adding it to Row 3:   Now to get our last leading , we need to multiply Row 3 by :   Then we need to get zeros above this third leading . So, let's add times Row 3 to Row 2 and -3 times Row 3 to Row 1:   So the inverse is    "
+},
+{
+  "id": "thm-CancellationLaw-Matrices",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-CancellationLaw-Matrices",
+  "type": "Theorem",
+  "number": "2.5.12",
+  "title": "Cancellation Law for Matrices.",
+  "body": " Cancellation Law for Matrices   Suppose and are matrices and is an invertible matrix. Then the following holds:   If , then .    If , then .      "
+},
+{
+  "id": "subsec-ImportantTheorems-Inverses-3",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-ImportantTheorems-Inverses-3",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Part 1: Suppose . Then Therefore,   The proof of Part 2 would be similar.  "
+},
+{
+  "id": "thm-Transpose-Inverse",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-Transpose-Inverse",
+  "type": "Theorem",
+  "number": "2.5.13",
+  "title": "",
+  "body": "  Suppose is invertible. Then the inverse of is the transpose of . That is,    "
+},
+{
+  "id": "subsec-ImportantTheorems-Inverses-5",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-ImportantTheorems-Inverses-5",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " Suppose is invertible. Then But and . Substituting these into the above equation, we get So the inverse of is the transpose of .  "
+},
+{
+  "id": "thm-Product-Inverse",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-Product-Inverse",
+  "type": "Theorem",
+  "number": "2.5.14",
+  "title": "",
+  "body": "  If and are invertible matrices and is defined, then    "
+},
+{
+  "id": "subsec-ImportantTheorems-Inverses-8",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-ImportantTheorems-Inverses-8",
+  "type": "Proof",
+  "number": "3",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "subsec-ImportantTheorems-Inverses-11",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#subsec-ImportantTheorems-Inverses-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Invertible Matrix Theorem "
+},
+{
+  "id": "thm-InvertibleMatrixTheorem",
+  "level": "2",
+  "url": "sec24-MatrixInverse.html#thm-InvertibleMatrixTheorem",
+  "type": "Theorem",
+  "number": "2.5.15",
+  "title": "Invertible Matrix Theorem.",
+  "body": " Invertible Matrix Theorem   The following conditions are equivalent for an matrix:    is invertible.    The homogeneous system has only the trivial solution .     can be carried to the identity matrix by elementary row operations.    The system has at least one solution for every choice of column .    There exists an matrix such that .     .      "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
