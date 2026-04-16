@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="secA1-MidtermReview" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Midterm Review</title>
+
+    <introduction>
+        <p>
+            The midterm exam will cover material from Week 1 Day 1 of the class through Week 3 Day 2. 
+            That is, it covers material in the following sections: 
+            <ul marker="">
+                <li>
+                    <p>
+                        <xref ref="sec11-SolutionsElementaryOperations"/> Solutions and Elementary Operations
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec12-GaussianElimination"/> Gaussian Elimination
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec13-HomogeneousEquations"/> Homogeneous Equations
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec21-BasicMatrixOperations"/> Basic Matrix Operations
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec22-MatrixVectorMultiplication"/> Matrix-Vector Multiplication
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec23-MatrixMultiplication"/> Matrix Multiplication
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec24-MatrixInverse"/> Matrix Inverses
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec25-ElementaryMatrices"/> Elementary Matrices
+                    </p>
+                </li>
+            </ul>
+            On this page, you will find review problems for the midterm exam. 
+            Make sure you spend some time working through these problems and understanding how things work! 
+        </p>
+    </introduction>
+
+    <worksheet xml:id="ws-MidtermReview-SystemEquations">
+        <title>Systems of Linear Equations</title>
+        
+        <exercise>
+            <p>
+                Solve the following system of equations: 
+                <md>
+                    \begin{cases}
+                        x_1 + 3x_2 - 5x_3 + x_4 = 4 \\
+                        2x_1 + 5x_2 - 2x_3 + 4x_4 = 6 \\
+                    \end{cases}
+                </md>
+                If the system is consistent, write the solution set as a column vector 
+                If the system is inconsistent, explain how you know it.
+            </p>
+
+            <answer>
+                <p>
+                    The solutions are of the form 
+                    <m>
+                        \begin{bmatrix} -2 - 19s - 7t \\ 2 + 8s + 2t \\ s \\ t \end{bmatrix}
+                    </m>
+                    where <m>s</m> and <m>t</m> are arbitrary constants.
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Solve the following system of linear equations: 
+                <md>
+                    <mrow>x_2 + 4x_3 \amp = -4</mrow>
+                    <mrow>x_1 + 3x_2 + 3x_3 \amp = -2</mrow>
+                    <mrow>3x_1 + 7x_2 + 5x_3 \amp = 6</mrow>
+                </md>
+                If the system is consistent, write the solution set as a column vector 
+                If the system is inconsistent, explain how you know it.
+            </p>
+        </exercise>
+
+        <exercise>
+            <p>
+                Solve the following system of linear equations:
+                <md>
+                    <mrow>x_1 - 3x_3 \amp = 8</mrow>
+                    <mrow>2x_1 + 2x_2 + 9x_3 \amp = 7</mrow>
+                    <mrow>x_2 + 5x_3 \amp = -2</mrow>
+                </md>
+                If the system is consistent, write the solution set as a column vector
+                If the system is inconsistent, explain how you know it.
+            </p>
+        </exercise>
+
+        <exercise>
+            <p>
+                Solve the following system of equations: 
+                <md>
+                    \begin{cases}
+                        2x_1 + 4x_2 + 6x_3 = 0 \\
+                        4x_1 + 5x_2 + 6x_3 = 0 \\
+                        3x_1 + x_2 - 2x_3 = 0
+                    \end{cases}
+                </md>
+                If the system is consistent, write the solution set as a linear combination of basic vectors. 
+                If the system is inconsistent, explain how you know it. 
+            </p>
+
+            <answer>
+                <p>
+                    This one has only the trivial solution <m>\begin{bmatrix} 0 \\ 0 \\ 0\end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Solve the following system of equations: 
+                <md>
+                    \begin{cases}
+                        x_1 + 2x_2 - x_3 = 0 \\
+                        3x_1 - 3x_2 + 2x_3 = 0 \\
+                        -x_1 - 11x_2 + 6x_3 = 0
+                    \end{cases}
+                </md>
+                If the system is consistent, write the solution set as a linear combination of basic vectors. 
+                If the system is inconsistent, explain how you know it.
+            </p>
+
+            <answer>
+                <p>
+                    The solutions are of the form <m>t\begin{bmatrix} -\frac{1}{9} \\ \frac{5}{9} \\ 1 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+        
+        <exercise>
+            <p>
+                Solve the following system of equations: 
+                <md>
+                    \begin{cases}
+                        3x + 3y + 2w = 0 \\
+                        y - z = 0 \\
+                        3x + 5y - 2z + 2w = 0
+                    \end{cases}
+                </md>
+                If the system is consistent, write the solution set as a linear combination of basic vectors. 
+                If the system is inconsistent, explain how you know it. 
+            </p>
+
+            <answer>
+                <p>
+                    The solutions are of the form <m>z\begin{bmatrix} -1 \\ 1 \\ 1 \\ 0\end{bmatrix} + w\begin{bmatrix}-\frac{2}{3} \\ 0 \\ 0 \\ 1 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercisegroup>
+            <introduction>
+                <p>
+                Given the following matrix equivalent to some coefficient matrix <m>A</m>, describe all solutions of <m>A\v{x}= \v{0}</m> in parametric vector form. 
+                </p>
+            </introduction>
+            <exercise number="1.5.7">
+                <md>
+                    \begin{bmatrix} 
+                    1 \amp 3 \amp -3 \amp 7 \\ 
+                    0 \amp 1 \amp -4 \amp 5 
+                    \end{bmatrix}
+                </md>
+            </exercise>
+
+            <exercise number="1.5.9">
+                <md>
+                    \begin{bmatrix} 
+                    3 \amp -9 \amp 6 \\ 
+                    -1 \amp 3 \amp -2 
+                    \end{bmatrix}
+                </md>
+            </exercise>
+
+            <exercise number="1.5.11">
+                <md>
+                    \begin{bmatrix} 
+                    1 \amp -4 \amp -2 \amp 0 \amp 3 \amp -5 \\ 
+                    0 \amp 0 \amp 1 \amp 0 \amp 0 \amp -1 \\ 
+                    0 \amp 0 \amp 0 \amp 0 \amp 1 \amp -4 \\ 
+                    0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 
+                    \end{bmatrix}
+                </md>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-RowEchelonForm">
+        <title>(Reduced) Row Echelon Form</title>
+
+        <exercise number="1.2.3">
+            <p>
+            Row reduce the following matrix to reduced row echelon form. 
+            Circle the pivot positions (aka the leading <m>1</m>s) in the final matrix and in the original matrix, and list the pivot columns (aka columns that contain a leading <m>1</m>). 
+            <md>
+                \begin{bmatrix}
+                1 \amp 2 \amp 3 \amp 4 \\
+                4 \amp 5 \amp 6 \amp 7 \\
+                6 \amp 7 \amp 8 \amp 9
+                \end{bmatrix}
+            </md>
+            </p>
+    </exercise>
+
+    <exercisegroup>
+            <introduction>
+                <p>
+                In the following exercises, find the solutions of the systems whose augmented matrices are given. 
+                </p>
+            </introduction>
+
+            <exercise>
+                <md>
+                \begin{bmatrix}
+                0 \amp 1 \amp -6 \amp \mid \amp 5 \\
+                1 \amp -2 \amp 7 \amp \mid \amp -4
+                \end{bmatrix}
+                </md>
+            </exercise>
+
+            <exercise>
+                <md>
+                \begin{bmatrix}
+                3 \amp -4 \amp 2 \amp \mid \amp 0 \\
+                -9 \amp 12 \amp -6 \amp \mid \amp 0 \\
+                -6 \amp 8 \amp -4 \amp \mid \amp 0
+                \end{bmatrix}
+                </md>
+            </exercise>
+
+            <exercise>
+                <md>
+                \begin{bmatrix}
+                1 \amp -3 \amp 0 \amp -1 \amp 0 \amp \mid \amp -2 \\
+                0 \amp 1 \amp 0 \amp 0 \amp -4 \amp \mid \amp 1 \\
+                0 \amp 0 \amp 0 \amp 1 \amp 9 \amp \mid \amp -4 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \mid \amp 0
+                \end{bmatrix}
+                </md>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-BasicMatrixOperations">
+        <title>Basic Matrix Operations</title>
+        
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 1 \amp -1 \\ 2 \amp 0 \\ 1 \amp 3 \end{bmatrix}</m>. 
+                Compute <m>\lp A^T A\rp^2</m>
+            </p>
+
+            <answer>
+                <p>
+                    <m>\lp A^T A\rp^2 = \begin{bmatrix} 40 \amp 32 \\ 32 \amp 104 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 2 \amp 1 \\ 0 \amp -1\end{bmatrix}</m>, <m>B = \begin{bmatrix} 3 \amp -1 \amp 2 \\ 0 \amp 1 \amp 4 \end{bmatrix}</m>, <m>C = \begin{bmatrix} 3 \amp -1 \\ 2 \amp 0 \end{bmatrix}</m>, <m>D = \begin{bmatrix} 1 \amp 3 \\ -1 \amp 0 \\ 1 \amp 4 \end{bmatrix}</m>, and <m>E = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \end{bmatrix}</m>. 
+                Compute the following if possible, and if not possible, explain why. 
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                            <m>3A - 2B</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>5C</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>3E^T</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>B + D</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>4A^T - 3C</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(A + C)^T</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>2B- 3E</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>A - D</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(B - 2E)^T</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-MatrixMultiplication">
+        <title>Multiplying Matrices with Vectors/Matrices</title>
+
+        <exercise>
+            Compute the following matrix-vector products: 
+            <ol marker="a. ">
+                <li>
+                    <p>
+                        <m>\begin{bmatrix} -4 \amp 2 \\ 1 \amp 6 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \\ 1\\ 7 \end{bmatrix}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{bmatrix} 6 \amp 5 \\ -4 \amp -3 \\ 7 \amp 6 \end{bmatrix} \begin{bmatrix} 1 \\ -3 \end{bmatrix}</m>
+                    </p>
+                </li>
+            </ol>
+        </exercise>
+        
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 3 \amp 2 \amp 1 \\ 5 \amp -8 \amp 1 \\ 1 \amp 2 \amp 3\end{bmatrix}</m>, <m>B = \begin{bmatrix} -1 \amp 2 \amp 1 \\ 5 \amp 0 \amp 1 \\ 1 \amp 2 \amp 1\end{bmatrix}</m>, and <m>\v{v} = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}</m>. Compute <m>Av</m> and <m>Bv</m>.
+                Compute 
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                            <m>AB</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>BA</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>A\v{v}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>B\v{v}</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <ol marker="a. ">
+                        <li>
+                            <p>
+                                <m>AB = \begin{bmatrix} 8 \amp 8 \amp 6 \\ -44 \amp 12 \amp -2 \\ 12 \amp 8 \amp 6 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>BA = \begin{bmatrix} 8 \amp -16 \amp 4 \\ 16 \amp 12 \amp 8 \\ 14 \amp -12 \amp 6 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A\v{v} = \begin{bmatrix} 7 \\ 21 \\ 9 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>B\v{v} = \begin{bmatrix} -1 \\ 13 \\ 3 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 1 \amp 2 \amp 3 \\ -1 \amp 0 \amp 0 \end{bmatrix}</m>, <m>B = \begin{bmatrix} 1 \amp -2 \\ \frac{1}{2} \amp 3 \end{bmatrix}</m>, and <m>C = \begin{bmatrix} -1 \amp 0 \\ 2 \amp 5 \\ 0 \amp 3 \end{bmatrix}</m>. 
+                Compute the following if possible, and if not possible, explain why.
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                            <m>A^2</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>AB</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>AC</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-Inverses">
+        <title>Inverses of Matrices</title>
+        
+        <exercise>
+            <p>
+                Find the inverse of the following matrix: 
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                            <m>A = \begin{bmatrix} 5 \amp -2 \\ -9 \amp 4 \end{bmatrix}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>B = \begin{bmatrix} 1 \amp -7 \\ 0 \amp 1 \end{bmatrix}</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <ol marker="a.">
+                        <li>
+                            <p>
+                                <m>A^{-1} = \begin{bmatrix} 2 \amp 1 \\ \frac{9}{2} \amp \frac{5}{2} \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>B^{-1} = \begin{bmatrix} 1 \amp 7 \\ 0 \amp 1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 5 \amp 12 \end{bmatrix}</m> and <m>\v{b} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}</m>. 
+                Solve the equation <m>A\v{x} = \v{b}</m> using <m>A^{-1}</m>. 
+            </p>
+        </exercise>
+
+        <exercise>
+            <p>
+                Find the inverse of of the matrix <m>\begin{bmatrix} 1 \amp 0 \amp -2 \\ -3 \amp 1 \amp 4 \\ 2 \amp -3 \amp 4 \end{bmatrix}</m>. 
+            </p>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-ElementaryMatrices">
+        <title>Elementary Matrices</title>
+
+        <exercise>
+            <p>
+                For each of the following elementary matrices, describe the corresponding elementary row operation and write the inverse. 
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp \frac{1}{2} \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <m>E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 5 \end{bmatrix}</m> 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </exercise>
+        
+        <exercise>
+            <p>
+                Consider the two matrices <m>A = \begin{bmatrix} 5 \amp -2 \amp 3 \\ -9 \amp 5 \amp 0 \end{bmatrix}</m> and <m>B = \begin{bmatrix} -13 \amp 8 \amp 3 \\ -9 \amp 5 \amp 0 \end{bmatrix}</m>. 
+                Find an elementary matrix <m>E</m> such that <m>B = EA</m>.
+            </p>
+
+            <answer>
+                <p>
+                    <m>E = \begin{bmatrix} 1 \amp 2 \\ 0 \amp 1 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Write the following matrix AND its inverse as a product of elementary matrices.
+                <md>
+                    \begin{bmatrix} 5 \amp -2 \\ -9 \amp 5 \end{bmatrix}
+                </md>
+            </p>
+
+            <answer>
+                <p>
+                    <md>
+                        A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ -9 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{7}{5} \end{bmatrix} \begin{bmatrix} 1 \amp -\frac{2}{5} \\ 0 \amp 1 \end{bmatrix}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+</section>

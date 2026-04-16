@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="appendixA-ExamReviews" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exam Reviews Page</title>
+
+  <introduction>
+    <p>
+        This page include exam stuff, like exam information that you need to know and review materials for the exams. 
+    </p>
+
+    <p>
+        Midterm Exam will be in class on Thursdays
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="secA1-MidtermReview.ptx" />
+
+</appendix>
