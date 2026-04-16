@@ -303,8 +303,8 @@
       </ul>
       So
       <md>
-        <mrow>A \amp= E_4^{-1}E_3^{-1}E_2^{-1}E_1^{-1} </mrow>
-        <mrow> \amp= \begin{bmatrix} 1 \amp \frac{2}{3} \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{34}{-3} \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ 5 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \amp 0 \\ 0 \amp 1 \end{bmatrix} </mrow>
+        <mrow>A \amp= E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1} </mrow>
+        <mrow> \amp= \begin{bmatrix} 3 \amp 0 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ 5 \amp 1 \end{bmatrix}  \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{34}{-3} \end{bmatrix} \begin{bmatrix} 1 \amp \frac{2}{3} \\ 0 \amp 1 \end{bmatrix}  </mrow>
       </md>
     </p>
   </example>
