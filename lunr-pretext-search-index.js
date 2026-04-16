@@ -1018,6 +1018,231 @@ var ptx_lunr_docs = [
   "body": " Write the following matrix AND its inverse as a product of elementary matrices.    Step 1: Swap Row 1 and Row 2 to get This corresponds to the elementary matrix   Step 2: Add times Row 1 to Row 3 (and replace Row 3) to get This corresponds to the elementary matrix   Step 3: Multiply Row 2 by to get This corresponds to the elementary matrix   Step 4: Multiply Row 3 by to get This corresponds to the elementary matrix   Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get This corresponds to the elementary matrix   Step 6: Add times Row 3 to Row 1 (and replace Row 1) to get This corresponds to the elementary matrix   Step 7: Add times Row 3 to Row 2 (and replace Row 2) to get This corresponds to the elementary matrix   This tells us that If we multiply those out we see that   And taking the inverse of both sides of the giant product (and using the \"shoes and socks\" rule), we see that So let's find the inverses of each of these matrices by performing the inverse operation on the identity matrix:    swaps Row 1 and Row 2 and that operation is its own inverse (do it twice and you get right back where you started), so .     adds Row 1 to Row 3, and the inverse of that is adding times Row 1 to Row 2, so .     multiplies Row 2 by , and the inverse of that is multiplying Row 2 by , so .     multiplies Row 3 by , and that operation is its own inverse, so .     adds times Row 2 to Row 1, and the inverse of that is adding times Row 2 to Row 1, so .     adds times Row 3 to Row 1, and the inverse of that is adding times Row 3 to Row 1, so .     adds times Row 3 to Row 2, and the inverse of that is adding times Row 3 to Row 2, so .   This means...    "
 },
 {
+  "id": "secA1-MidtermReview",
+  "level": "1",
+  "url": "secA1-MidtermReview.html",
+  "type": "Section",
+  "number": "A.1",
+  "title": "Midterm Review",
+  "body": " Midterm Review   The midterm exam will cover material from Week 1 Day 1 of the class through Week 3 Day 2. That is, it covers material in the following sections:    Solutions and Elementary Operations     Gaussian Elimination     Homogeneous Equations     Basic Matrix Operations     Matrix-Vector Multiplication     Matrix Multiplication     Matrix Inverses     Elementary Matrices   On this page, you will find review problems for the midterm exam. Make sure you spend some time working through these problems and understanding how things work!    Systems of Linear Equations   Solve the following system of equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.   The solutions are of the form where and are arbitrary constants.     Solve the following system of linear equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.    Solve the following system of linear equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.    Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   This one has only the trivial solution      Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   The solutions are of the form      Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   The solutions are of the form       Given the following matrix equivalent to some coefficient matrix , describe all solutions of in parametric vector form.               (Reduced) Row Echelon Form   Row reduce the following matrix to reduced row echelon form. Circle the pivot positions (aka the leading s) in the final matrix and in the original matrix, and list the pivot columns (aka columns that contain a leading ).      In the following exercises, find the solutions of the systems whose augmented matrices are given.               Basic Matrix Operations   Let . Compute          Let , , , , and . Compute the following if possible, and if not possible, explain why.                                                    Multiplying Matrices with Vectors\/Matrices  Compute the following matrix-vector products:               Let , , and . Compute and . Compute                                                    Let , , and . Compute the following if possible, and if not possible, explain why.                      Inverses of Matrices   Find the inverse of the following matrix:                                Let and . Solve the equation using .    Find the inverse of of the matrix .     Elementary Matrices   For each of the following elementary matrices, describe the corresponding elementary row operation and write the inverse.                                    Consider the two matrices and . Find an elementary matrix such that .         Write the following matrix AND its inverse as a product of elementary matrices.          "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Solve the following system of equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.   The solutions are of the form where and are arbitrary constants.   "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Solve the following system of linear equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.  "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Solve the following system of linear equations: If the system is consistent, write the solution set as a column vector If the system is inconsistent, explain how you know it.  "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-5",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-5",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": " Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   This one has only the trivial solution    "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-6",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-6",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": " Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   The solutions are of the form    "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-7",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-7",
+  "type": "Worksheet Exercise",
+  "number": "6",
+  "title": "",
+  "body": " Solve the following system of equations: If the system is consistent, write the solution set as a linear combination of basic vectors. If the system is inconsistent, explain how you know it.   The solutions are of the form    "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-8-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-8-2",
+  "type": "Worksheet Exercise",
+  "number": "1.5.7",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-8-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-8-3",
+  "type": "Worksheet Exercise",
+  "number": "1.5.9",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-SystemEquations-8-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-SystemEquations-8-4",
+  "type": "Worksheet Exercise",
+  "number": "1.5.11",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-RowEchelonForm-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-RowEchelonForm-2",
+  "type": "Worksheet Exercise",
+  "number": "1.2.3",
+  "title": "",
+  "body": " Row reduce the following matrix to reduced row echelon form. Circle the pivot positions (aka the leading s) in the final matrix and in the original matrix, and list the pivot columns (aka columns that contain a leading ).   "
+},
+{
+  "id": "ws-MidtermReview-RowEchelonForm-3-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-RowEchelonForm-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-RowEchelonForm-3-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-RowEchelonForm-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-RowEchelonForm-3-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-RowEchelonForm-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-MidtermReview-BasicMatrixOperations-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-BasicMatrixOperations-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let . Compute        "
+},
+{
+  "id": "ws-MidtermReview-BasicMatrixOperations-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-BasicMatrixOperations-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let , , , , and . Compute the following if possible, and if not possible, explain why.                                                 "
+},
+{
+  "id": "ws-MidtermReview-MatrixMultiplication-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-MatrixMultiplication-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "Compute the following matrix-vector products:             "
+},
+{
+  "id": "ws-MidtermReview-MatrixMultiplication-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-MatrixMultiplication-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let , , and . Compute and . Compute                                                  "
+},
+{
+  "id": "ws-MidtermReview-MatrixMultiplication-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-MatrixMultiplication-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Let , , and . Compute the following if possible, and if not possible, explain why.                   "
+},
+{
+  "id": "ws-MidtermReview-Inverses-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-Inverses-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Find the inverse of the following matrix:                              "
+},
+{
+  "id": "ws-MidtermReview-Inverses-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-Inverses-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let and . Solve the equation using .  "
+},
+{
+  "id": "ws-MidtermReview-Inverses-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-Inverses-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Find the inverse of of the matrix .  "
+},
+{
+  "id": "ws-MidtermReview-ElementaryMatrices-2",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-ElementaryMatrices-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " For each of the following elementary matrices, describe the corresponding elementary row operation and write the inverse.                                  "
+},
+{
+  "id": "ws-MidtermReview-ElementaryMatrices-3",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-ElementaryMatrices-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Consider the two matrices and . Find an elementary matrix such that .       "
+},
+{
+  "id": "ws-MidtermReview-ElementaryMatrices-4",
+  "level": "2",
+  "url": "secA1-MidtermReview.html#ws-MidtermReview-ElementaryMatrices-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Write the following matrix AND its inverse as a product of elementary matrices.        "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
