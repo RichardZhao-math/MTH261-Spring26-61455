@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="secA1-MidtermReview" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Midterm Review</title>
+<section xml:id="secA1-Midterm1Review" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Midterm #1 Review</title>
 
     <introduction>
         <p>
@@ -50,7 +50,14 @@
                 </li>
             </ul>
             On this page, you will find review problems for the midterm exam. 
+            The final answers are included for each problem.
             Make sure you spend some time working through these problems and understanding how things work! 
+        </p>
+
+        <p>
+            <alert>A quick reminder:</alert> The class session before the midterm exam #1 on Tuesday, April 21, will be a review session. 
+            Usually this will be a work day for you to work through some problems together to prepare for the exam. 
+            This is also a great opportunity for you to ask questions about anything that is not clear to you! 
         </p>
     </introduction>
 
@@ -92,6 +99,12 @@
                 If the system is consistent, write the solution set as a column vector 
                 If the system is inconsistent, explain how you know it.
             </p>
+
+            <answer>
+                <p>
+                    The solution is <m>\begin{bmatrix} 19 \\ -8 \\ 1 \end{bmatrix}</m>
+                </p>
+            </answer>
         </exercise>
 
         <exercise>
@@ -105,6 +118,12 @@
                 If the system is consistent, write the solution set as a column vector
                 If the system is inconsistent, explain how you know it.
             </p>
+
+            <answer>
+                <p>
+                    The solution is <m>\begin{bmatrix} 5 \\ 3 \\ -1 \end{bmatrix}</m>
+                </p>
+            </answer>
         </exercise>
 
         <exercise>
@@ -144,7 +163,7 @@
 
             <answer>
                 <p>
-                    The solutions are of the form <m>t\begin{bmatrix} -\frac{1}{9} \\ \frac{5}{9} \\ 1 \end{bmatrix}</m>
+                    The solutions are of the form <m>t\begin{bmatrix} -\frac{1}{9} \\ \frac{5}{9} \\ 1 \end{bmatrix}</m>, where <m>t</m> is an arbitrary constant.
                 </p>
             </answer>
         </exercise>
@@ -165,7 +184,7 @@
 
             <answer>
                 <p>
-                    The solutions are of the form <m>z\begin{bmatrix} -1 \\ 1 \\ 1 \\ 0\end{bmatrix} + w\begin{bmatrix}-\frac{2}{3} \\ 0 \\ 0 \\ 1 \end{bmatrix}</m>
+                    The solutions are of the form <m>z\begin{bmatrix} -1 \\ 1 \\ 1 \\ 0\end{bmatrix} + w\begin{bmatrix}-\frac{2}{3} \\ 0 \\ 0 \\ 1 \end{bmatrix}</m>, where <m>z</m> and <m>w</m> are arbitrary constants.
                 </p>
             </answer>
         </exercise>
@@ -176,25 +195,39 @@
                 Given the following matrix equivalent to some coefficient matrix <m>A</m>, describe all solutions of <m>A\v{x}= \v{0}</m> in parametric vector form. 
                 </p>
             </introduction>
-            <exercise number="1.5.7">
+            <exercise>
                 <md>
                     \begin{bmatrix} 
                     1 \amp 3 \amp -3 \amp 7 \\ 
                     0 \amp 1 \amp -4 \amp 5 
                     \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution set in parametric vector form is 
+                        <m>\mathbf{x} = s \begin{bmatrix} -9 \\ 4 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 8 \\ -5 \\ 0 \\ 1 \end{bmatrix}</m>, where <m>s</m> and <m>t</m> are arbitrary constants.
+                    </p>
+                </answer>
             </exercise>
 
-            <exercise number="1.5.9">
+            <exercise>
                 <md>
                     \begin{bmatrix} 
                     3 \amp -9 \amp 6 \\ 
                     -1 \amp 3 \amp -2 
                     \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution set in parametric vector form is 
+                        <m>\mathbf{x} = s \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix} + t \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}</m>, where <m>s</m> and <m>t</m> are arbitrary constants.
+                    </p>
+                </answer>
             </exercise>
 
-            <exercise number="1.5.11">
+            <exercise>
                 <md>
                     \begin{bmatrix} 
                     1 \amp -4 \amp -2 \amp 0 \amp 3 \amp -5 \\ 
@@ -203,6 +236,13 @@
                     0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 
                     \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution set in parametric vector form is 
+                        <m>\mathbf{x} = s \begin{bmatrix} 4 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} + u \begin{bmatrix} -5 \\ 0 \\ 1 \\ 0 \\ 4 \\ 1 \end{bmatrix}</m>, where <m>s</m>, <m>t</m>, and <m>u</m> are arbitrary constants.
+                    </p>
+                </answer>
             </exercise>
         </exercisegroup>
     </worksheet>
@@ -210,21 +250,36 @@
     <worksheet xml:id="ws-MidtermReview-RowEchelonForm">
         <title>(Reduced) Row Echelon Form</title>
 
-        <exercise number="1.2.3">
+        <exercise>
             <p>
-            Row reduce the following matrix to reduced row echelon form. 
-            Circle the pivot positions (aka the leading <m>1</m>s) in the final matrix and in the original matrix, and list the pivot columns (aka columns that contain a leading <m>1</m>). 
-            <md>
-                \begin{bmatrix}
-                1 \amp 2 \amp 3 \amp 4 \\
-                4 \amp 5 \amp 6 \amp 7 \\
-                6 \amp 7 \amp 8 \amp 9
-                \end{bmatrix}
-            </md>
+                Row reduce the following matrix to reduced row echelon form. 
+                Circle the pivot positions (aka the leading <m>1</m>s) in the final matrix and in the original matrix, and list the pivot columns (aka columns that contain a leading <m>1</m>). 
+                <md>
+                    \begin{bmatrix}
+                    1 \amp 2 \amp 3 \amp 4 \\
+                    4 \amp 5 \amp 6 \amp 7 \\
+                    6 \amp 7 \amp 8 \amp 9
+                    \end{bmatrix}
+                </md>
             </p>
-    </exercise>
 
-    <exercisegroup>
+            <answer>
+                <p>
+                    The reduced row echelon form is 
+                    <m>
+                        \begin{bmatrix}
+                        1 \amp 0 \amp -1 \amp -2 \\
+                        0 \amp 1 \amp 2 \amp 3 \\
+                        0 \amp 0 \amp 0 \amp 0
+                        \end{bmatrix}
+                    </m>.
+                    The pivot positions are at <m>(1,1)</m> and <m>(2,2)</m> entries. 
+                    The pivot columns are Column 1 and Column 2.
+                </p>
+            </answer>
+        </exercise>
+
+        <exercisegroup>
             <introduction>
                 <p>
                 In the following exercises, find the solutions of the systems whose augmented matrices are given. 
@@ -234,31 +289,52 @@
             <exercise>
                 <md>
                 \begin{bmatrix}
-                0 \amp 1 \amp -6 \amp \mid \amp 5 \\
-                1 \amp -2 \amp 7 \amp \mid \amp -4
+                    0 \amp 1 \amp -6 \amp \mid \amp 5 \\
+                    1 \amp -2 \amp 7 \amp \mid \amp -4
                 \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution in parametric form is 
+                        <m>\mathbf{x} = \begin{bmatrix} 6 \\ 5 \\ 0 \end{bmatrix} + t \begin{bmatrix} 5 \\ 6 \\ 1 \end{bmatrix}</m>, where <m>t</m> is an arbitrary constant.
+                    </p>
+                </answer>
             </exercise>
 
             <exercise>
                 <md>
                 \begin{bmatrix}
-                3 \amp -4 \amp 2 \amp \mid \amp 0 \\
-                -9 \amp 12 \amp -6 \amp \mid \amp 0 \\
-                -6 \amp 8 \amp -4 \amp \mid \amp 0
+                    3 \amp -4 \amp 2 \amp \mid \amp 0 \\
+                    -9 \amp 12 \amp -6 \amp \mid \amp 0 \\
+                    -6 \amp 8 \amp -4 \amp \mid \amp 0
                 \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution in parametric form is 
+                        <m>\mathbf{x} = s \begin{bmatrix} \frac{4}{3} \\ 1 \\ 0 \end{bmatrix} + t \begin{bmatrix} -\frac{2}{3} \\ 0 \\ 1 \end{bmatrix}</m>, where <m>s</m> and <m>t</m> are arbitrary constants.
+                    </p>
+                </answer>
             </exercise>
 
             <exercise>
                 <md>
-                \begin{bmatrix}
-                1 \amp -3 \amp 0 \amp -1 \amp 0 \amp \mid \amp -2 \\
-                0 \amp 1 \amp 0 \amp 0 \amp -4 \amp \mid \amp 1 \\
-                0 \amp 0 \amp 0 \amp 1 \amp 9 \amp \mid \amp -4 \\
-                0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \mid \amp 0
+                    \begin{bmatrix}
+                    1 \amp -3 \amp 0 \amp -1 \amp 0 \amp \mid \amp -2 \\
+                    0 \amp 1 \amp 0 \amp 0 \amp -4 \amp \mid \amp 1 \\
+                    0 \amp 0 \amp 0 \amp 1 \amp 9 \amp \mid \amp -4 \\
+                    0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \mid \amp 0
                 \end{bmatrix}
                 </md>
+
+                <answer>
+                    <p>
+                        The solution in parametric vector form is 
+                        <m>\mathbf{x} = \begin{bmatrix} -3 \\ 1 \\ 0 \\ -4 \\ 0 \end{bmatrix} + s \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 3 \\ 4 \\ 0 \\ -9 \\ 1 \end{bmatrix}</m>, where <m>s</m> and <m>t</m> are arbitrary constants.
+                    </p>
+                </answer>
             </exercise>
         </exercisegroup>
     </worksheet>
@@ -331,6 +407,58 @@
                     </li>
                 </ol>
             </p>
+
+            <answer>
+                <p>
+                    <ol marker="a. ">
+                        <li>
+                            <p>
+                                Impossible. <m>A</m> is <m>2 \times 2</m> and <m>B</m> is <m>2 \times 3</m>; addition/subtraction requires identical dimensions.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} 15 \amp -5 \\ 10 \amp 0 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} 3 \amp 0 \\ 0 \amp 3 \\ 3 \amp 0 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Impossible. <m>B</m> is <m>2 \times 3</m> and <m>D</m> is <m>3 \times 2</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} -1 \amp 3 \\ -2 \amp -4 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} 5 \amp 2 \\ 0 \amp -1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} 3 \amp -2 \amp 1 \\ 0 \amp -1 \amp 8 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Impossible. <m>A</m> is <m>2 \times 2</m> and <m>D</m> is <m>3 \times 2</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} 1 \amp 0 \\ -1 \amp -1 \\ 0 \amp 4 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
         </exercise>
     </worksheet>
 
@@ -338,19 +466,38 @@
         <title>Multiplying Matrices with Vectors/Matrices</title>
 
         <exercise>
-            Compute the following matrix-vector products: 
-            <ol marker="a. ">
-                <li>
-                    <p>
-                        <m>\begin{bmatrix} -4 \amp 2 \\ 1 \amp 6 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \\ 1\\ 7 \end{bmatrix}</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\begin{bmatrix} 6 \amp 5 \\ -4 \amp -3 \\ 7 \amp 6 \end{bmatrix} \begin{bmatrix} 1 \\ -3 \end{bmatrix}</m>
-                    </p>
-                </li>
-            </ol>
+            <p>
+                Compute the following matrix-vector products: 
+                <ol marker="a. ">
+                    <li>
+                        <p>
+                            <m>\begin{bmatrix} -4 \amp 2 \\ 1 \amp 6 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 3 \\ 1\\ 7 \end{bmatrix}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\begin{bmatrix} 6 \amp 5 \\ -4 \amp -3 \\ 7 \amp 6 \end{bmatrix} \begin{bmatrix} 1 \\ -3 \end{bmatrix}</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <ol marker="a. ">
+                        <li>
+                            <p>
+                                Impossible. The number of columns in the matrix (2) does not match the number of entries in the vector (3).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{bmatrix} -9 \\ 5 \\ -11 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
         </exercise>
         
         <exercise>
@@ -431,6 +578,28 @@
                     </li>
                 </ol>
             </p>
+
+            <answer>
+                <p>
+                    <ol marker="a. ">
+                        <li>
+                            <p>
+                                Impossible. <m>A</m> is not a square matrix (<m>2 \times 3</m>), so it cannot be multiplied by itself.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Impossible. The number of columns in <m>A</m> (3) does not match the number of rows in <m>B</m> (2).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>AC = \begin{bmatrix} 3 \amp 19 \\ 1 \amp 0 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
         </exercise>
     </worksheet>
 
@@ -477,12 +646,31 @@
                 Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 5 \amp 12 \end{bmatrix}</m> and <m>\v{b} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}</m>. 
                 Solve the equation <m>A\v{x} = \v{b}</m> using <m>A^{-1}</m>. 
             </p>
+
+            <answer>
+                <p>
+                    <m>\v{x} = \begin{bmatrix} -9 \\ 4 \end{bmatrix}</m>.
+                </p>
+            </answer>
         </exercise>
 
         <exercise>
             <p>
                 Find the inverse of of the matrix <m>\begin{bmatrix} 1 \amp 0 \amp -2 \\ -3 \amp 1 \amp 4 \\ 2 \amp -3 \amp 4 \end{bmatrix}</m>. 
             </p>
+
+            <answer>
+                <p>
+                    The inverse is 
+                    <m>
+                        \begin{bmatrix} 
+                        8 \amp 3 \amp 1 \\ 
+                        10 \amp 4 \amp 1 \\ 
+                        \frac{7}{2} \amp \frac{3}{2} \amp \frac{1}{2} 
+                        \end{bmatrix}
+                    </m>
+                </p>
+            </answer>
         </exercise>
     </worksheet>
 
@@ -525,6 +713,61 @@
                     </li>
                 </ol>
             </p>
+
+            <answer>
+                <p>
+                    <ol marker="a. ">
+                        <li>
+                            <p>
+                                Operation: Add <m>3</m> times Row 3 to Row 1 (and replace Row 1). 
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 1 \amp 0 \amp -3 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Operation: Swap Row 1 and Row 3.  
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \end{bmatrix}</m> (The matrix is its own inverse).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Operation: Multiply Row 2 by <m>\frac{1}{2}</m>. 
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Operation: Add <m>-2</m> times Row 1 to Row 2 (and replace Row 2). 
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Operation: Swap Row 1 and Row 2. 
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 0 \amp 1 \amp 0 \\ 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Operation: Multiply Row 3 by <m>5</m>. 
+                            </p>
+                            <p>
+                                Inverse: <m>E^{-1} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp \frac{1}{5} \end{bmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
         </exercise>
         
         <exercise>
@@ -553,6 +796,14 @@
                     <md>
                         A = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ -9 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{7}{5} \end{bmatrix} \begin{bmatrix} 1 \amp -\frac{2}{5} \\ 0 \amp 1 \end{bmatrix}
                     </md>
+                    and
+                    <md>
+                        A^{-1} = \begin{bmatrix} 1 \amp \frac{2}{5} \\ 0 \amp 1 \end{bmatrix} 
+                        \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{5}{7} \end{bmatrix} 
+                        \begin{bmatrix} 1 \amp 0 \\ 9 \amp 1 \end{bmatrix} 
+                        \begin{bmatrix} \frac{1}{5} \amp 0 \\ 0 \amp 1 \end{bmatrix}
+                    </md>
+                    
                 </p>
             </answer>
         </exercise>
