@@ -1018,6 +1018,159 @@ var ptx_lunr_docs = [
   "body": " Write the following matrix AND its inverse as a product of elementary matrices.    Step 1: Swap Row 1 and Row 2 to get This corresponds to the elementary matrix   Step 2: Add times Row 1 to Row 3 (and replace Row 3) to get This corresponds to the elementary matrix   Step 3: Multiply Row 2 by to get This corresponds to the elementary matrix   Step 4: Multiply Row 3 by to get This corresponds to the elementary matrix   Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get This corresponds to the elementary matrix   Step 6: Add times Row 3 to Row 1 (and replace Row 1) to get This corresponds to the elementary matrix   Step 7: Add times Row 3 to Row 2 (and replace Row 2) to get This corresponds to the elementary matrix   This tells us that If we multiply those out we see that   And taking the inverse of both sides of the giant product (and using the \"shoes and socks\" rule), we see that So let's find the inverses of each of these matrices by performing the inverse operation on the identity matrix:    swaps Row 1 and Row 2 and that operation is its own inverse (do it twice and you get right back where you started), so .     adds Row 1 to Row 3, and the inverse of that is adding times Row 1 to Row 2, so .     multiplies Row 2 by , and the inverse of that is multiplying Row 2 by , so .     multiplies Row 3 by , and that operation is its own inverse, so .     adds times Row 2 to Row 1, and the inverse of that is adding times Row 2 to Row 1, so .     adds times Row 3 to Row 1, and the inverse of that is adding times Row 3 to Row 1, so .     adds times Row 3 to Row 2, and the inverse of that is adding times Row 3 to Row 2, so .   This means...    "
 },
 {
+  "id": "sec26-LinearTransformations",
+  "level": "1",
+  "url": "sec26-LinearTransformations.html",
+  "type": "Section",
+  "number": "2.6",
+  "title": "Linear Transformations",
+  "body": " Linear Transformations   Up to this point, we have primarily viewed matrices as grids of numbers used to solve systems of equations. Now, it is time to shift our perspective! We can also think of matrices as functions that transform input vectors into new output vectors (through multiplication!).  In this section, we will formalize this idea by exploring linear transformations !    After this section, students will be able to:     determine whether a given function is a linear transformation.    evaluate a linear transformation at a specific vector.    construct the standard matrix of a linear transformation.    derive the standard matrices for geometric transformations, such as rotations and reflections in .    determine the standard matrix of a linear transformation given its action on an arbitrary set of non-basis vectors.        If is a function with the following two properties:   For any scalar and any vector ,     For any two vectors ,    then is a linear transformation .    The two properties in the definition make sense since we can think of a linear transformation as a matrix-vector product. Recall in , every matrix defines a linear transformation in a way that By the Matrix Multiplication rules, we know that            Hence, we have the two properties in the definition of linear transformations.   Note: Sometimes these two properties are combined to form one rule that looks like this: This basically tells us that we can figure out the output for a linear combination of vectors by taking the same linear combination of the outputs of those vectors.   A non-example  The function given by is NOT a linear transformation.   Proof: Notice that If this were a linear transformation, then property (ii) would mean that But in fact, Oopsie!    An example  The function given by IS indeed a linear transformation!   Proof: We will verify the two properties in the definition of linear transformations.   Suppose is a scalar and is a vector in . Then     Suppose and are two vectors in . Then    Since both properties hold, we can conclude that IS indeed a linear transformation!   Note: In this example, observe that the coefficients do not contribute to the proof at all (so the proof would work exactly the same even if we had different coefficients). Using the same proof, we can show that the function given by is a linear transformation for any choice of scalars .   The two properties of linear transformations make it possible to \"plug in\" a vector even if we don't know the rule. That is, we can evaluate linear transformations using linear combinations .   Suppose is a linear transformation (but we don't know the rule) and we do know that Let's say we want to evaluate .   How do we do that?   Notice that So property (i) and (ii) of linear transformations tell us that    But Richard... How can you find the linear combination?  There are two ways to find the linear combination: (1) using guess and check, and\/or (2) by setting up a system of equations.  Let's do a quick example using the formal setting-up-a-system-of-equations method!  Can be written as a linear combination of and ?  Let's assume we can! Then there exist scalars such that This is essentially a vector equation since the \"variables\" here are the scalars and . We can rewrite the vector equation as a system of linear equations: Basically, we are asking ourselves if this system of linear equations has a solution.  We are all experts in solving systems of linear equations now! The augmented matrix is We can do our Gaussian Elimination magic to get: Converting back to a system of linear equations, we have   We can quickly check our work! We did it!    This is a very important kind of problem! Not only does it show up on exams commonly, it will also be the key to finding the matrix for a linear transformation which is one of the most important things in linear algebra!   Suppose is a linear transformation and we know that Find .   Notice that  Remember that if you can't figure out the linear combination by guessing and checking, you can find it by setting up a system of linear equations!   So we know that     Notice that any vector in can be written as a linear combination of and .   Quick proof of this claim  Let be an arbitrary vector in . Then Proved!    is called the standard basis of .  For , the standard basis consists of the vectors where the -th entry of is a and all of the rest are zeros. Clearly these are all -dimensional vectors. That means the is actually a different vector depending on which you are working with.  For example, in is , but in is . They are NOT the same vectors!  Combining this fact with the two properties that every linear transformation satisfies, we can see that every linear combination defined on (this works for as well, but let's start small!) is actually determined by what it does to the standard basis vectors and .   Quick proof of this claim  Let be a vector in . Then there exist scalars such that Then for any linear transformation defined on , we have So the output of at is completely determined by the output of at and .   We can use this fact to figure out how to find the matrix for a linear transformation (and in doing so, we really prove that such a matrix will always exist for any linear transformation)!   Suppose that is a linear transformation such that What is the matrix such that for all ?  Consider any vector in . We know that Notice that the output is what we would get if we multiplied the matrix by the vector ! So We found the matrix that goes with this linear transformation!   Notice that in the above example, the columns of our matrix were the outputs of the standard basis vectors . That tells us exactly how to find a matrix for any linear transformation!  Suppose is a linear transformation. To find the matrix such that is given by the rule , we...   Figure out     Write the matrix that has columns :     Pat yourself on the back      Let be a linear transformation given by Let's find the matrix such that for all .  Step 1: In this case, and . So   Step 2:   Let's check to see if really works! Woo!    Find the matrix that corresponds to the linear transformation given by    Observe that Then we know that So our matrix is     It turns out that rotations and reflections are also linear transformations!   Let's find a matrix for a rotation in ! We need to figure out what such a rotation does to the vectors and .  Let's suppose that the vector is the result of rotating counterclockwise by the angle . This vector can be represented as an arrow starting at the origin and ending at the point . We can draw a triangle to figure out the exact coordinates of the vector .   The -coordinate will be and the -coordinate will be . So the rotation takes to .  If we also draw the vector and rotate it (counterclockwise) by an angle of , we get a picture like this:   This time, the -coordinate will be and the -coordinate will be . So the rotation takes to .   Note: These pictures make it easy to see this is true when is between and , To see that this is true regardless of how big is, you can either look at cases in all of the four quadrants or you can use trig identities.  This means that you can find any rotation matrix by plugging into    Now let's find a matrix for the reflection across the line ! We need fo figure out what happens to and when we reflect them across the line .  From analytic geometry, we know that the slope of any line perpendicular to will have slope . We want to find the line through that has slope . That is because we need to find the intersection of that line with to get the midpoint of the segment between and the point we get after reflecting .   That perpendicular line is given by , which simplifies to .  Now let's find the point of intersection! Substituting into this equation, we get This means that . Then substituting again, we get . So the midpoint between and the result of reflecting across the line is .  The midpoint formula tells us that the midpoint of a segment between points and is . So where is the point we are looking for. This gives us the equations Solving these equations, we get So the reflection takes to .  A similar method can be used to find out that the reflection takes the point to the point .  Converting these to column vectors, the matrix for reflecting across the line is given by Pulling out the common factor, we can rewrite this as   We can figure out the matrix that does other transformations using the similar trick by figuring out what the transformation does to the standard basis vectors!   Let's write a matrix that stretches by a factor of and stretches by a factor of .  This can be thought of as scalar multiplication of the first vector by and scalar multiplication of the second vector by . So the resulting vector after stretching will be and the resulting vector after stretching will be . Hence, our matrix is    Observe that the matrix basically is the rule for the linear transformation. However, most of the time when we are asked to find the matrix for a linear transformation, we won't be given the rule for the transformation. Instead, we will be given other information. For example, we used geometric descriptions to find the matrices for rotations and reflections earlier. We have also seen that if we know what the transformation does to the standard basis vectors, it is straightforward to create the matrix for the transformation.  We may also be given information about what the linear transformation does to some vectors that are NOT the standard basis vectors. In that case, we would have to use that information to figure out what the transformation does to the standard basis vectors in order to find the matrix . Doing that will require figuring out how to write the standard basis vectors as linear combinations of the given vectors.   Suppose we have a linear transformation such that What is the matrix for this linear transformation?  To find this matrix, we need to figure out and T\\lp \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\rp. So we need to solve the following vector equations:  Sometimes you can guess and check to figure out the linear combinations. This one is NOT at all easy to do that way. So we will need to use some linear algebra to solve these equations!   These correspond to the matrix equations: We can easily solve both of these by finding the inverse of   The determinant is and the adjugate is . So the inverse is   Now we can solve the first equation to get and we can solve the second equation to get So we now know that   We can use this information to figure out what does to and : and So our matrix is    We are basically done once we figure out what the linear transformation does to our standard basis vectors! But it sometimes takes work to figure that out.     Suppose you have a linear transformation such that Find the matrix for this linear transformation!   Doing some fun linear algebra, we can figure out that So we know that and So the matrix for this transformation is     "
+},
+{
+  "id": "sec26-LinearTransformations-2-2",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear transformations "
+},
+{
+  "id": "sec26-LinearTransformations-2-3",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-2-3",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     determine whether a given function is a linear transformation.    evaluate a linear transformation at a specific vector.    construct the standard matrix of a linear transformation.    derive the standard matrices for geometric transformations, such as rotations and reflections in .    determine the standard matrix of a linear transformation given its action on an arbitrary set of non-basis vectors.    "
+},
+{
+  "id": "def-LinearTransformation-Operator",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#def-LinearTransformation-Operator",
+  "type": "Definition",
+  "number": "2.6.1",
+  "title": "",
+  "body": "  If is a function with the following two properties:   For any scalar and any vector ,     For any two vectors ,    then is a linear transformation .   "
+},
+{
+  "id": "sec26-LinearTransformations-6",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-6",
+  "type": "Example",
+  "number": "2.6.2",
+  "title": "A non-example.",
+  "body": " A non-example  The function given by is NOT a linear transformation.   Proof: Notice that If this were a linear transformation, then property (ii) would mean that But in fact, Oopsie!  "
+},
+{
+  "id": "sec26-LinearTransformations-7",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-7",
+  "type": "Example",
+  "number": "2.6.3",
+  "title": "An example.",
+  "body": " An example  The function given by IS indeed a linear transformation!   Proof: We will verify the two properties in the definition of linear transformations.   Suppose is a scalar and is a vector in . Then     Suppose and are two vectors in . Then    Since both properties hold, we can conclude that IS indeed a linear transformation!   Note: In this example, observe that the coefficients do not contribute to the proof at all (so the proof would work exactly the same even if we had different coefficients). Using the same proof, we can show that the function given by is a linear transformation for any choice of scalars .  "
+},
+{
+  "id": "sec26-LinearTransformations-9",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-9",
+  "type": "Example",
+  "number": "2.6.4",
+  "title": "",
+  "body": " Suppose is a linear transformation (but we don't know the rule) and we do know that Let's say we want to evaluate .   How do we do that?   Notice that So property (i) and (ii) of linear transformations tell us that    But Richard... How can you find the linear combination?  There are two ways to find the linear combination: (1) using guess and check, and\/or (2) by setting up a system of equations.  Let's do a quick example using the formal setting-up-a-system-of-equations method!  Can be written as a linear combination of and ?  Let's assume we can! Then there exist scalars such that This is essentially a vector equation since the \"variables\" here are the scalars and . We can rewrite the vector equation as a system of linear equations: Basically, we are asking ourselves if this system of linear equations has a solution.  We are all experts in solving systems of linear equations now! The augmented matrix is We can do our Gaussian Elimination magic to get: Converting back to a system of linear equations, we have   We can quickly check our work! We did it!   "
+},
+{
+  "id": "sec26-LinearTransformations-11",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-11",
+  "type": "Checkpoint",
+  "number": "2.6.6",
+  "title": "",
+  "body": " Suppose is a linear transformation and we know that Find .   Notice that  Remember that if you can't figure out the linear combination by guessing and checking, you can find it by setting up a system of linear equations!   So we know that    "
+},
+{
+  "id": "sec26-LinearTransformations-13",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-13",
+  "type": "Proof",
+  "number": "2.6.1",
+  "title": "Quick proof of this claim.",
+  "body": " Quick proof of this claim  Let be an arbitrary vector in . Then Proved!  "
+},
+{
+  "id": "sec26-LinearTransformations-14",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-14",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "standard basis "
+},
+{
+  "id": "sec26-LinearTransformations-18",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-18",
+  "type": "Proof",
+  "number": "2.6.2",
+  "title": "Quick proof of this claim.",
+  "body": " Quick proof of this claim  Let be a vector in . Then there exist scalars such that Then for any linear transformation defined on , we have So the output of at is completely determined by the output of at and .  "
+},
+{
+  "id": "sec26-LinearTransformations-20",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-20",
+  "type": "Example",
+  "number": "2.6.7",
+  "title": "",
+  "body": " Suppose that is a linear transformation such that What is the matrix such that for all ?  Consider any vector in . We know that Notice that the output is what we would get if we multiplied the matrix by the vector ! So We found the matrix that goes with this linear transformation!  "
+},
+{
+  "id": "sec26-LinearTransformations-23",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-23",
+  "type": "Example",
+  "number": "2.6.8",
+  "title": "",
+  "body": " Let be a linear transformation given by Let's find the matrix such that for all .  Step 1: In this case, and . So   Step 2:   Let's check to see if really works! Woo!  "
+},
+{
+  "id": "sec26-LinearTransformations-24",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-24",
+  "type": "Checkpoint",
+  "number": "2.6.9",
+  "title": "",
+  "body": " Find the matrix that corresponds to the linear transformation given by    Observe that Then we know that So our matrix is    "
+},
+{
+  "id": "sec26-LinearTransformations-44",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-44",
+  "type": "Example",
+  "number": "2.6.10",
+  "title": "",
+  "body": " Let's write a matrix that stretches by a factor of and stretches by a factor of .  This can be thought of as scalar multiplication of the first vector by and scalar multiplication of the second vector by . So the resulting vector after stretching will be and the resulting vector after stretching will be . Hence, our matrix is   "
+},
+{
+  "id": "sec26-LinearTransformations-47",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-47",
+  "type": "Example",
+  "number": "2.6.11",
+  "title": "",
+  "body": " Suppose we have a linear transformation such that What is the matrix for this linear transformation?  To find this matrix, we need to figure out and T\\lp \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} \\rp. So we need to solve the following vector equations:  Sometimes you can guess and check to figure out the linear combinations. This one is NOT at all easy to do that way. So we will need to use some linear algebra to solve these equations!   These correspond to the matrix equations: We can easily solve both of these by finding the inverse of   The determinant is and the adjugate is . So the inverse is   Now we can solve the first equation to get and we can solve the second equation to get So we now know that   We can use this information to figure out what does to and : and So our matrix is    We are basically done once we figure out what the linear transformation does to our standard basis vectors! But it sometimes takes work to figure that out.   "
+},
+{
+  "id": "sec26-LinearTransformations-48",
+  "level": "2",
+  "url": "sec26-LinearTransformations.html#sec26-LinearTransformations-48",
+  "type": "Checkpoint",
+  "number": "2.6.12",
+  "title": "",
+  "body": " Suppose you have a linear transformation such that Find the matrix for this linear transformation!   Doing some fun linear algebra, we can figure out that So we know that and So the matrix for this transformation is    "
+},
+{
   "id": "secA1-Midterm1Review",
   "level": "1",
   "url": "secA1-Midterm1Review.html",
