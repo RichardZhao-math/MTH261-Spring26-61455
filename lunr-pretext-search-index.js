@@ -1171,6 +1171,132 @@ var ptx_lunr_docs = [
   "body": " Suppose you have a linear transformation such that Find the matrix for this linear transformation!   Doing some fun linear algebra, we can figure out that So we know that and So the matrix for this transformation is    "
 },
 {
+  "id": "sec31-CofactorExpansion",
+  "level": "1",
+  "url": "sec31-CofactorExpansion.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "The Cofactor Expansion",
+  "body": " The Cofactor Expansion   You may recall we learned a special formula back in that computes the determinant of a matrix. But what does it mean?  Determinant is really a special linear operator with special properties that we won't be able to make sense of fully in this class. Instead, we will focus on how to compute the determinant in this section.    After this section, students will be able to:     Compute the determinant of an matrix in various methods.    Determine the cofactors, including the signs.      The cofactor expansion is a method to compute the determinant of a matrix.  But what's the determinant of a matrix? We won't be able to answer this question now since we haven't gotten into vector geometry yet. Right now, you can think of the determinant of a matrix a special number associated with the matrix that tells us many things about the matrix (e.g., its invertibility).  Notation-wise, the determinant of the matrix is denoted by . When we are working with a specific matrix, we replace the brackets with absolute values and then it stands for the determinant (which is a number) rather than a matrix.  For example, the determinant of the matrix is denoted by   If you are super interested in knowing what the determinant represents, check out the following video:   The Determinant    In this section, we will focus on how to compute the determinant than what the number tells us.   Let's find the determinant of the matrix using the method of cofactor expansion!  The way to do so is to pick one row or column to expand on. We can pick any of them:  Let's pick Row 1: So the determinant of this matrix is .  Alternatively, we can pick Column 2 to expand on: See the determinant is the same!   So how does it work?   Pick a row or a column.    For each entry, multiply it by the determinant of the matrix you get by eliminating the row and the column that the entry is in .    If the row number plus the column number is odd, multiply the little determinant by .    Add up all the products.   Here is a strategy to help us pick a row or a column to expand on: If possible, pick the row\/column that has the most zeros in it, since we don't have to compute any of the little determinants of those (as they will be multiplied by zero!).   Use the cofactor expansion method to compute the determinant of the matrix in the following two ways:   Expand on Row 2.    Expand on Column 3.      The answer!    The main idea of the cofactor expansion is that it allows us to build up the determinant of a matrix using the determinants of smaller matrices . So once we know how to compute the determinant of matrices, we can use that to figure out the determinant of a matrix. And then we could use that to figure out how to compute the determinant of a matrix (and etc...)  The products we add up ( or times the little determinant) during the cofactor expansion procedures are called the cofactors .   Formal Definition of Cofactors   Given an matrix , let be the matrix obtained by deleting the th row and the th column of . Then the cofactor is     The is the part of the formula that does the multiplication by or :   If the sum of the row number and the column number is odd, we get the ;    If the sum of the row number and the column number is even, we get the .   So to get a cofactor, we will find out little determinant and then either change its sign or leave it alone.  We can anticipate when we need to change the sign when computing a cofactor by imagining a checkerboard pattern of or overlaying the matrix. For example, for a matrix, we would have the pattern We canmake the right pattern for any matrix by making this checkerboard pattern starting with a in the -entry.  Then the determinant of a matrix can be calculated by multiplying each entry of a row (or column) of the matrix by its cofactor and then summing the results.   Let's compute the determinant of a matrix   We will need to pick a row\/column to begin. Observe that Column 2 has the most zeros in it, so let's pick that one! So we need to compute these two determinants: by picking Row 3 to expand on, and by picking Row 1 to expand on.  So    If you are asked to compute the matrix of a large matrix, you are REALLY hoping it has a row or column with a bunch of zeros otherwise you will be computing a bunch of determinants each of which requires you to compute a bunch of other determinants.   Compute the determinant of    The answer!    You may get the sense that the cofactor method can require a lot of calculation and it is MUCH easier when there are a lot of zeros in the matrix. Recall elementary row operations can create zeros in a matrix. A natural question to ask is whether it is possible to use elementary row operations to make a determinant easier to calculate without changing the result.  The answer is yes! And the following theorem tells us how:   Row Operations and Determinants   Let be an matrix. Then   If the matrix has a row or column of zeros its determinant is zero.    If two rows of a matrix are swapped, the sign of the determinant is changed.    If a row (or column) of a matrix is multiplied by a constant, the resulting matrix will have a determinant that is a product of the original determinant and that same constant.    If two rows (or columns) of a matrix are identical, then the determinant of the matrix is zero.    If a multiple of one row of a matrix is added to another row, the determinant of the matrix is unchanged!       So what is this new method for computing determinants?  First, we know that if a matrix has a whole row (or column) of zeros or if it has two identical rows (or columns) the determinant is zero. Second, we know that if we can maximize the number of zeros we get in a row, we can minimize the number of cofactors we actually have to compute.  Actually there is one more even awesome-er fact that we can use to make determinant calculations fairly easy using row operations. We will do an example first and that will show us what that awesome-er fact is.   Let's compute   Step 1: We can add times Row 1 to Row 2 (and replace Row 2). This will not change the determinant.   Step 2: We can add times Row 1 to Row 3 (and replace Row 3). And this again will not change the determinant.   Step 3: We can add Row 2 to Row 4 (and replace Row 4), and the determinant is still unchanged.   Step 4: We can add times Row 3 to Row 4 without changing the determinant!   Notice that we now have all zeros below the main diagonal. At this point, Richard instantly knows that the determinant is going to be . How does he know that?  Watch what happens when we expand along the last row to compute the determinant: Now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal. So... And now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal (well there is only one spot there, but still!). Continuing then, we get...   So it turned out that the answer was just the product of the entries on the diagonal !   If you think about how cofactor expansion works, the determinant of a matrix that has all zeros below the main diagonal should always be the product of the entries on the main diagonal! That means our new method (using row operations) is   Use row operations to put the matrix in a form where it all of the entries below the main diagonal are zeros (this is called upper triangular form).   P.S.: NEVER use the operation where you just multiply a row by a constant and keep track of how many times you swap rows.    Multiply all the entries on the diagonal.   If the number of row swaps you did is even, then this is the answer;    If the number of row swaps you did is odd, multiply it by to get the determinant.        A matrix that only has zeros below the main diagonal is called an upper triangle matrix, and a matrix that only has zeros above the main diagonal is called a lower triangular matrix. We can compute the determinant of these matrices by multiplying all of the entries on the diagonal together .   What is the determinant of the identity matrix (of any size)?   We will continue our investigation of determinants more about the properties and applications of determinants in the next section!  "
+},
+{
+  "id": "sec31-CofactorExpansion-2-3",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-2-3",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     Compute the determinant of an matrix in various methods.    Determine the cofactors, including the signs.    "
+},
+{
+  "id": "sec31-CofactorExpansion-3",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "cofactor expansion "
+},
+{
+  "id": "sec31-CofactorExpansion-4",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "determinant "
+},
+{
+  "id": "sec31-CofactorExpansion-8",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-8",
+  "type": "Figure",
+  "number": "3.1.1",
+  "title": "",
+  "body": " The Determinant   "
+},
+{
+  "id": "sec31-CofactorExpansion-10",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-10",
+  "type": "Example",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Let's find the determinant of the matrix using the method of cofactor expansion!  The way to do so is to pick one row or column to expand on. We can pick any of them:  Let's pick Row 1: So the determinant of this matrix is .  Alternatively, we can pick Column 2 to expand on: See the determinant is the same!  "
+},
+{
+  "id": "sec31-CofactorExpansion-12",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-12",
+  "type": "Checkpoint",
+  "number": "3.1.3",
+  "title": "",
+  "body": " Use the cofactor expansion method to compute the determinant of the matrix in the following two ways:   Expand on Row 2.    Expand on Column 3.      The answer!   "
+},
+{
+  "id": "def-Cofactor",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#def-Cofactor",
+  "type": "Definition",
+  "number": "3.1.4",
+  "title": "Formal Definition of Cofactors.",
+  "body": " Formal Definition of Cofactors   Given an matrix , let be the matrix obtained by deleting the th row and the th column of . Then the cofactor is    "
+},
+{
+  "id": "sec31-CofactorExpansion-19",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-19",
+  "type": "Example",
+  "number": "3.1.5",
+  "title": "",
+  "body": " Let's compute the determinant of a matrix   We will need to pick a row\/column to begin. Observe that Column 2 has the most zeros in it, so let's pick that one! So we need to compute these two determinants: by picking Row 3 to expand on, and by picking Row 1 to expand on.  So   "
+},
+{
+  "id": "sec31-CofactorExpansion-21",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-21",
+  "type": "Checkpoint",
+  "number": "3.1.6",
+  "title": "",
+  "body": " Compute the determinant of    The answer!   "
+},
+{
+  "id": "thm-RowOperations-Determinants",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#thm-RowOperations-Determinants",
+  "type": "Theorem",
+  "number": "3.1.7",
+  "title": "Row Operations and Determinants.",
+  "body": " Row Operations and Determinants   Let be an matrix. Then   If the matrix has a row or column of zeros its determinant is zero.    If two rows of a matrix are swapped, the sign of the determinant is changed.    If a row (or column) of a matrix is multiplied by a constant, the resulting matrix will have a determinant that is a product of the original determinant and that same constant.    If two rows (or columns) of a matrix are identical, then the determinant of the matrix is zero.    If a multiple of one row of a matrix is added to another row, the determinant of the matrix is unchanged!      "
+},
+{
+  "id": "sec31-CofactorExpansion-28",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-28",
+  "type": "Example",
+  "number": "3.1.8",
+  "title": "",
+  "body": " Let's compute   Step 1: We can add times Row 1 to Row 2 (and replace Row 2). This will not change the determinant.   Step 2: We can add times Row 1 to Row 3 (and replace Row 3). And this again will not change the determinant.   Step 3: We can add Row 2 to Row 4 (and replace Row 4), and the determinant is still unchanged.   Step 4: We can add times Row 3 to Row 4 without changing the determinant!   Notice that we now have all zeros below the main diagonal. At this point, Richard instantly knows that the determinant is going to be . How does he know that?  Watch what happens when we expand along the last row to compute the determinant: Now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal. So... And now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal (well there is only one spot there, but still!). Continuing then, we get...   So it turned out that the answer was just the product of the entries on the diagonal !  "
+},
+{
+  "id": "sec31-CofactorExpansion-30",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-30",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "upper triangle lower triangular "
+},
+{
+  "id": "sec31-CofactorExpansion-31",
+  "level": "2",
+  "url": "sec31-CofactorExpansion.html#sec31-CofactorExpansion-31",
+  "type": "Checkpoint",
+  "number": "3.1.9",
+  "title": "",
+  "body": " What is the determinant of the identity matrix (of any size)?  "
+},
+{
   "id": "secA1-Midterm1Review",
   "level": "1",
   "url": "secA1-Midterm1Review.html",
