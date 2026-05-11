@@ -1297,6 +1297,672 @@ var ptx_lunr_docs = [
   "body": " What is the determinant of the identity matrix (of any size)?  "
 },
 {
+  "id": "sec32-DeterminantsInverse",
+  "level": "1",
+  "url": "sec32-DeterminantsInverse.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Determinants and Matrix Inverses",
+  "body": " Determinants and Matrix Inverses   In this section, we will see how to compute the determinant of a matrix inverse, which also tells us about the invertibility of a matrix.    After this section, students will be able to:     Apply the multiplicative property of determinants    determine whether a matrix is invertible by computing its determinant      The most important theorem about determinants is this one:   Determinants and Products   Suppose and are matrices. Then That is, the determinant of the product is the product of the determinants.    And one consequence of this is the following Lemma:    Let be an matrix, then if and only if has no inverse (hence is not invertible).     We know that We can calculate the determinant of all three matrices and quickly verify that    If we know that is invertible, then we can use the above theorem to compute the determinant of the inverse of . Since , we have Hence,   The last theorem in this section is about the determinant of a transpose. Long story short, the determinant of a matrix is the same as the determinant of its transpose. That is,   "
+},
+{
+  "id": "sec32-DeterminantsInverse-2-2",
+  "level": "2",
+  "url": "sec32-DeterminantsInverse.html#sec32-DeterminantsInverse-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     Apply the multiplicative property of determinants    determine whether a matrix is invertible by computing its determinant    "
+},
+{
+  "id": "thm-DeterminantsProducts",
+  "level": "2",
+  "url": "sec32-DeterminantsInverse.html#thm-DeterminantsProducts",
+  "type": "Theorem",
+  "number": "3.2.1",
+  "title": "Determinants and Products.",
+  "body": " Determinants and Products   Suppose and are matrices. Then That is, the determinant of the product is the product of the determinants.   "
+},
+{
+  "id": "lem-DeterminantsInverses",
+  "level": "2",
+  "url": "sec32-DeterminantsInverse.html#lem-DeterminantsInverses",
+  "type": "Lemma",
+  "number": "3.2.2",
+  "title": "",
+  "body": "  Let be an matrix, then if and only if has no inverse (hence is not invertible).   "
+},
+{
+  "id": "sec32-DeterminantsInverse-7",
+  "level": "2",
+  "url": "sec32-DeterminantsInverse.html#sec32-DeterminantsInverse-7",
+  "type": "Example",
+  "number": "3.2.3",
+  "title": "",
+  "body": " We know that We can calculate the determinant of all three matrices and quickly verify that   "
+},
+{
+  "id": "sec41-VectorsLines",
+  "level": "1",
+  "url": "sec41-VectorsLines.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Vectors and Lines",
+  "body": " Vectors and Lines   In this section, we will build the foundation of vector geometry. We will learn what vectors are, how to manipulate them both algebraically and geometrically, and ultimately how to use them to construct and analyze lines in three-dimensional space.    After this section, students will be able to:     define vectors in and , and determine their components given an initial point and a terminal point.    calculate the length of a vector.    perform vector addition, scalar multiplication, and vector subtraction geometrically.    construct the vector and parametric equations of a line in given either a point and a direction vector, or two points on the line.    determine whether two lines in are parallel, intersecting, or skew, and calculate the exact point of intersection if it exists.       Vectors in and  The notation means the set of all ordered n-tuples of real numbers. Symbolically speaking, Or, using our linear algebra notation, we can write this as   Imagine we want to study vector geometry , then we will focus on the cases of and , since they are the most intuitive to visualize. That is,   A vector , in the geometric sense, is an arrow that has a tail and a tip. Let's call the tail (initial point) and the tip (terminal point) . Then we can write the vector as , and we draw as an arrow pointing from to .   The vector in     Why is bolded but not or ?  This is a notation convention. There is a difference between a vector and a point (or scalar). To specify the difference, we usually bold the vector notation.  For example, if you see something like , then this indicates that is a vector. As a comparison, if you see something like , then this indicates that is a scalar (a number).  But why don't we bold the vector as , but instead put an arrow on top of it?  That is because the arrow notation specifies the tail and the tip of the vector! There is a difference between and ! They have the opposite tail and tip, so they point in opposite directions!  Another reason why sometimes we use the arrow notation is because it is super difficult to write in bold font! This is why Richard often writes on the board to indicate the vector , since he can't write in bold font easily...   In , each point is represented by an ordered pair of real numbers. Then we can define the components of a vector using the ordered pairs of the two points as follows.   Components of a Vector   The components of , where and , are the quantities The pair of components is denoted .     P.S.: If you are a linear algebra-ist and want to use the notation of the column vectors instead, be my guest! Just remember that Richard prefers the column vector notation over the sharp-y angle bracket notation (but he is teaching calculus, not linear algebra, so he will have to live with it).   Find the components of the following vectors with tail and tip . Then sketch the vectors.     and      and      and      and      We can find the components of each vector using the definition:                         The sketches of the vectors are shown below:       Observe that and are parallel . Moreover, is a translation of (i.e., we can obtain by sliding to the left and down). We call these two vectors equivalent vectors if one is a translation of the other.  In fact, two vectors are equivalent if and only if they have the same components. So instead of studying millions of the same vectors in different locations, we can just study one representative vector for each group of equivalent vectors.  But which location should we choose for the representative vector? To keep things easier, we usually choose the representative vector whose tail is at the origin . Then the tip of the vector is at the coordinate point , where are the components of the vector. This is called the position vector .   Sketch the position vectors of the vectors in the previous example.   The vectors in the previous example are The position vectors are sketched below.         The Attributes of Vectors  When defining a vector, it is important to note its length and the direction .  The length of a vector is the distance from the tail to the tip. This is denoted as .  Given a vector , we can determine its length using the Pythagorean Theorem, as demonstrated in the figure below.   The Length of the vectors and     By the Pythagorean Theorem, we have   The magnitude of a vector is really called the norm or the Euclidean norm of a vector in more advanced math courses. In general, norms must satisfy the following three properties:    , with if and only if .     for all scalars .     for any two vectors and , with equallity only if , , or if where . (This is the famous triangle inequality ).   This isn't a linear algebra or functional analysis class, so we won't go deeper into norms here. If you are interested, feel free to do more digging on your own (or ask Richard!).   Find the magnitude of the vectors in the previous examples.   The vectors in the previous examples are Then     Now let's discuss the direction of a vector. The direction of a vector tells us where the vector is pointing. We can indicate the direction of a vector by using the vector itself. As you imagine, the length of a vector has nothing to do with its direction, so we sometimes use a unit vector , which is a vector of length , to indicate the direction, when it is not necessary to specify length.    Vector Algebra (Geometry Version)  Recall we defined two basic operations for vectors: vector addition and scalar multiplication. They both work component-wise. Now let's investigate what these operations look like geometrically .   Vector addition tells us how to add two vectors together. Geometrically speaking, we can imagine a vector as the movement from the tail to the tip. Then adding two vectors means performing the movements one after another. That is, we will need to find the equivalent vector of the second vector whose tail is at the tip of the first vector , and the resulting vector is the vector from the tail of the first vector to the tip of the second vector. This is sometimes referred to as the Triangle Law .    Vector Addition using the Triangle Law   But sometimes we are given the position vectors and their tails are both at the origin (or at the same point). Alternatively, rather than finding the equivalent vector of the second vector, we can construct a parallelogram using the two vectors as adjacent sides, and the resulting vector is the diagonal of the parallelogram starting from the common tail of the two vectors. This is called the Parallelogram Law .    Vector Addition using the Parallelogram Law   Now let's look at scalar multiplication . The term scalar refers to a real number. That is, scalar multiplication tells us how to multiply a vector by a real number. The scalar will \"scale\" or \"resize\" the vector.  When the scalar is positive, the resulting vector points in the same direction, and the size of the vector is scaled by the scalar.    Vector Addition using the Parallelogram Law   When the scalar is negative, the resulting vector points in the opposite direction, and the size of the vector is scaled by the absolute value of the scalar.    Vector Multiplication by a Negative Scalar   But what if the scalar is zero? We can quickly see that the length of the resulting vector is zero, so the resulting vector is the zero vector , denoted by . We can imagine the zero vector has the tail and tip at the same point, which means it doesn't have a specific direction. Alternatively, we can say that the zero vector points in all directions.  Once we have vector addition and scalar multiplication defined, we can subtract two vectors. Recall subtraction is really the same thing as adding the opposite. That is, Graphically, we can find as follows:    Vector Subtraction     Lines in  Remember back when you first learned about lines in , you probably remember that we need both the slope and a point on the line to define a line.   The slope tells us the direction of the line. Yet knowing just the slope doesn't tell us a unique line... There can be thousands of parallel lines with the same slope!    A point on the line can pin down the location of the line. Yet knowing just a point on the line doesn't tell us the direction of the line... We can draw infinitely many lines through a single point!   This is also the case in ! In order to determine a line in , we need to know both the direction of the line and a point on the line.  Unlike stuff in , there is no \"slope\" in to represent the direction of a line, since \"slope\" is a concept that only works in two dimensions. Instead, we use a vector to represent the direction of the line.  We can find a point in just fine, since points in are represented by ordered triples.  Hence, a line in is determined by a point on the line and a direction vector .   Equation of a Line in   The line through in the direction of is described by where .  Alternatively, we can rewrite the equation in its parametric form : where the parameter takes on values .      The line in   Observe that the parametric form specify the -, -, and -coordinates of the points on the line as functions of the parameter . These three parametric equations is itself a linear function in the parameter !   Find an equation of the line that passes through the point in the direction of .   We are given . Therefore, an equation of the line is for .  Alternatively, we can write the equation in its parametric form: for .    Back in algebra 2, you may also have learned that two points can also determine a line in . This is also true in . The trick here is to determine the direction vector using the two points.   Find an equation of the line that passes through the points and .   To find an equation of a line, we need a point on the line and a direction vector. So there are really things we need to find out.  The easier part is to find a point on the line (we are given two points on the line!)  The slightly trickier part is to find a direction vector. Can we find a vector parallel to the line using the two points?    A directional vector is . Then we obtain We can use either point or as the point on the line. Using point , we have . Therefore, an equation of the line is for . The corresponding parametric form is for .    Recall back in , two lines are either parallel or they intersect at a single point (assuming the lines are not essentially the same line). In , if two lines are parallel, then the direction vectors should be parallel, and hence they are scalar multiples of each other. But how do we know if two lines intersect, and if so, how do we find the point of intersection?   Determine whether the lines and intersect, and if so, find the point of intersection.   Let's just assume that the two lines intersect. If two lines intersect, then they must intersect at a single point.  Now put on your algebra 2 hat and think about how to find the point of intersection of two lines in . (You would set the two equations equal to each other and solve for !)    The lines intersect if there exist parameter values and such that Equating corresponding components, we get This is a system of three equations with two variables! We can solve this system using the augmented matrix!  The agumented matrix of the system is Row reducing this matrix, we get From here we can read off the solution , .  To find the point of intersection we substitute into the equation for (or into ) to obtain The point of intersection is the terminal point of this vector, that is, .     Determine whether the lines and are parallel, intersect, or neither.   Observe that the direction vectors are and are not multiples of each other, so the lines are not parallel.  Then the two other possibilities are that the lines intersect or they are skew. We haven't discussed how to check if two lines are skew, but we can check if they intersect. So the question becomes: do the two lines intersect?    If the two lines intersect, then there exist parameter values and such that Equating corresponding components, we get The augmented matrix of this system is Row reducing this matrix we get Observe that a pivot position appears in the rightmost column, which implies that the system is inconsistent.  That is, there are no parameter values and such that the two lines intersect. But they are not parallel either, so what are they?  It turns out that these two lines are skew lines : they do not intersect and are not parallel. They are not coplanar. The figure below shows the sketch of these two lines.   Line (blue) and Line (red)         "
+},
+{
+  "id": "sec41-VectorsLines-2-2",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#sec41-VectorsLines-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     define vectors in and , and determine their components given an initial point and a terminal point.    calculate the length of a vector.    perform vector addition, scalar multiplication, and vector subtraction geometrically.    construct the vector and parametric equations of a line in given either a point and a direction vector, or two points on the line.    determine whether two lines in are parallel, intersecting, or skew, and calculate the exact point of intersection if it exists.    "
+},
+{
+  "id": "subsec-BasicVectorR2-4",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector "
+},
+{
+  "id": "subsec-BasicVectorR2-5",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-5",
+  "type": "Figure",
+  "number": "4.1.1",
+  "title": "",
+  "body": " The vector in   "
+},
+{
+  "id": "subsec-BasicVectorR2-6",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-6",
+  "type": "Note",
+  "number": "4.1.2",
+  "title": "Why is <span class=\"process-math\">\\(\\v{v}\\)<\/span> bolded but not <span class=\"process-math\">\\(P\\)<\/span> or <span class=\"process-math\">\\(Q\\text{?}\\)<\/span>",
+  "body": " Why is bolded but not or ?  This is a notation convention. There is a difference between a vector and a point (or scalar). To specify the difference, we usually bold the vector notation.  For example, if you see something like , then this indicates that is a vector. As a comparison, if you see something like , then this indicates that is a scalar (a number).  But why don't we bold the vector as , but instead put an arrow on top of it?  That is because the arrow notation specifies the tail and the tip of the vector! There is a difference between and ! They have the opposite tail and tip, so they point in opposite directions!  Another reason why sometimes we use the arrow notation is because it is super difficult to write in bold font! This is why Richard often writes on the board to indicate the vector , since he can't write in bold font easily...  "
+},
+{
+  "id": "subsec-BasicVectorR2-7",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "components "
+},
+{
+  "id": "def-ComponentsVectorR2",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#def-ComponentsVectorR2",
+  "type": "Definition",
+  "number": "4.1.3",
+  "title": "Components of a Vector.",
+  "body": " Components of a Vector   The components of , where and , are the quantities The pair of components is denoted .   "
+},
+{
+  "id": "subsec-BasicVectorR2-9",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "P.S.: "
+},
+{
+  "id": "subsec-BasicVectorR2-10",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-10",
+  "type": "Example",
+  "number": "4.1.4",
+  "title": "",
+  "body": " Find the components of the following vectors with tail and tip . Then sketch the vectors.     and      and      and      and      We can find the components of each vector using the definition:                         The sketches of the vectors are shown below:      "
+},
+{
+  "id": "subsec-BasicVectorR2-11",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equivalent vectors "
+},
+{
+  "id": "subsec-BasicVectorR2-12",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equivalent "
+},
+{
+  "id": "subsec-BasicVectorR2-13",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-13",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "position vector "
+},
+{
+  "id": "subsec-BasicVectorR2-14",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-BasicVectorR2-14",
+  "type": "Example",
+  "number": "4.1.6",
+  "title": "",
+  "body": " Sketch the position vectors of the vectors in the previous example.   The vectors in the previous example are The position vectors are sketched below.      "
+},
+{
+  "id": "subsec-AttributesVector-2",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "length direction "
+},
+{
+  "id": "subsec-AttributesVector-3",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "length "
+},
+{
+  "id": "subsec-AttributesVector-5",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-5",
+  "type": "Figure",
+  "number": "4.1.8",
+  "title": "",
+  "body": " The Length of the vectors and    "
+},
+{
+  "id": "subsec-AttributesVector-7",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "norm Euclidean norm triangle inequality "
+},
+{
+  "id": "subsec-AttributesVector-8",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-8",
+  "type": "Example",
+  "number": "4.1.9",
+  "title": "",
+  "body": " Find the magnitude of the vectors in the previous examples.   The vectors in the previous examples are Then    "
+},
+{
+  "id": "subsec-AttributesVector-9",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-AttributesVector-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "direction unit vector "
+},
+{
+  "id": "subsec-VectorAlgebra-3",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Vector addition Triangle Law "
+},
+{
+  "id": "subsec-VectorAlgebra-4",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-4",
+  "type": "Figure",
+  "number": "4.1.10",
+  "title": "",
+  "body": "  Vector Addition using the Triangle Law  "
+},
+{
+  "id": "subsec-VectorAlgebra-5",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Parallelogram Law "
+},
+{
+  "id": "subsec-VectorAlgebra-6",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-6",
+  "type": "Figure",
+  "number": "4.1.11",
+  "title": "",
+  "body": "  Vector Addition using the Parallelogram Law  "
+},
+{
+  "id": "subsec-VectorAlgebra-7",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "scalar multiplication "
+},
+{
+  "id": "subsec-VectorAlgebra-9",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-9",
+  "type": "Figure",
+  "number": "4.1.12",
+  "title": "",
+  "body": "  Vector Addition using the Parallelogram Law  "
+},
+{
+  "id": "subsec-VectorAlgebra-11",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-11",
+  "type": "Figure",
+  "number": "4.1.13",
+  "title": "",
+  "body": "  Vector Multiplication by a Negative Scalar  "
+},
+{
+  "id": "subsec-VectorAlgebra-12",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "zero vector "
+},
+{
+  "id": "subsec-VectorAlgebra-14",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-VectorAlgebra-14",
+  "type": "Figure",
+  "number": "4.1.14",
+  "title": "",
+  "body": "  Vector Subtraction  "
+},
+{
+  "id": "def-lines-3d",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#def-lines-3d",
+  "type": "Definition",
+  "number": "4.1.15",
+  "title": "Equation of a Line in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Equation of a Line in   The line through in the direction of is described by where .  Alternatively, we can rewrite the equation in its parametric form : where the parameter takes on values .   "
+},
+{
+  "id": "subsec-LinesR3-7",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-LinesR3-7",
+  "type": "Figure",
+  "number": "4.1.16",
+  "title": "",
+  "body": "  The line in  "
+},
+{
+  "id": "subsec-LinesR3-9",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-LinesR3-9",
+  "type": "Example",
+  "number": "4.1.17",
+  "title": "",
+  "body": " Find an equation of the line that passes through the point in the direction of .   We are given . Therefore, an equation of the line is for .  Alternatively, we can write the equation in its parametric form: for .   "
+},
+{
+  "id": "subsec-LinesR3-11",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-LinesR3-11",
+  "type": "Example",
+  "number": "4.1.18",
+  "title": "",
+  "body": " Find an equation of the line that passes through the points and .   To find an equation of a line, we need a point on the line and a direction vector. So there are really things we need to find out.  The easier part is to find a point on the line (we are given two points on the line!)  The slightly trickier part is to find a direction vector. Can we find a vector parallel to the line using the two points?    A directional vector is . Then we obtain We can use either point or as the point on the line. Using point , we have . Therefore, an equation of the line is for . The corresponding parametric form is for .   "
+},
+{
+  "id": "subsec-LinesR3-13",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-LinesR3-13",
+  "type": "Example",
+  "number": "4.1.19",
+  "title": "",
+  "body": " Determine whether the lines and intersect, and if so, find the point of intersection.   Let's just assume that the two lines intersect. If two lines intersect, then they must intersect at a single point.  Now put on your algebra 2 hat and think about how to find the point of intersection of two lines in . (You would set the two equations equal to each other and solve for !)    The lines intersect if there exist parameter values and such that Equating corresponding components, we get This is a system of three equations with two variables! We can solve this system using the augmented matrix!  The agumented matrix of the system is Row reducing this matrix, we get From here we can read off the solution , .  To find the point of intersection we substitute into the equation for (or into ) to obtain The point of intersection is the terminal point of this vector, that is, .   "
+},
+{
+  "id": "subsec-LinesR3-14",
+  "level": "2",
+  "url": "sec41-VectorsLines.html#subsec-LinesR3-14",
+  "type": "Example",
+  "number": "4.1.20",
+  "title": "",
+  "body": " Determine whether the lines and are parallel, intersect, or neither.   Observe that the direction vectors are and are not multiples of each other, so the lines are not parallel.  Then the two other possibilities are that the lines intersect or they are skew. We haven't discussed how to check if two lines are skew, but we can check if they intersect. So the question becomes: do the two lines intersect?    If the two lines intersect, then there exist parameter values and such that Equating corresponding components, we get The augmented matrix of this system is Row reducing this matrix we get Observe that a pivot position appears in the rightmost column, which implies that the system is inconsistent.  That is, there are no parameter values and such that the two lines intersect. But they are not parallel either, so what are they?  It turns out that these two lines are skew lines : they do not intersect and are not parallel. They are not coplanar. The figure below shows the sketch of these two lines.   Line (blue) and Line (red)       "
+},
+{
+  "id": "sec42-ProjectionsPlanes",
+  "level": "1",
+  "url": "sec42-ProjectionsPlanes.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Dot Product and the Angle Between Two Vectors",
+  "body": " Dot Product and the Angle Between Two Vectors   In this section, we will uncover how multiplying the components of vectors unlocks the ability to measure angles, cast orthogonal shadows, and build the equations of planes in three-dimensional space.     After this section, students will be able to:     compute the dot product of two vectors and apply its algebraic properties.    use the dot product to calculate the angle between two vectors.    compute the orthogonal projection of one vector onto another.    construct the scalar and vector equations of a plane in given a point and a normal vector, or given three points.    calculate the exact point of intersection between a line and a plane using parametric substitution.    determine whether two planes are parallel, and if they intersect, find the parametric equations for their line of intersection.      Dot Product  Recall we have briefly mentioned the dot product back in when we defined the matrix-vector multiplication. Let's formalize it now!   Dot Product   The dot product  of two vectors is the scalar defined by     Alternatively, we can also think of the dot product as the matrix product of the transpose of one vector and the other vector:   Observe that we can find the dot product of two vectors by multiplying their corresponding components and adding the results . This is true in (or in general) as well.   Compute the following dot products:                               Remember that the dot product of two vectors results in a scalar (a real number) and not another vector. The dot product has several useful properties that we summarize in the following theorem.   Properties of the Dot Product       , where is the zero vector.     Commutativity:       Pulling out scalars:       Distributive Law:       Relation with length:          Proof(ish) of the above theorem  The proofs of the properties are pretty straightforward using the definition of the dot product. Richard will prove some of them in and leave the rest as exercises for you to verify (especially if you are thinking about majoring in math). You may also want to see if you are convinced that Richard's proofs can be generalized to .     Let . Then     Let and . Then     The proof is left as an exercise for the reader.    The proof is left as an exercise for the reader.    Let . Then         Angle between Two Vectors  Given two vectors, they form an angle between them. But how do we know how big this angle is? The dot product can help us figure this out!  Let's say we have two vectors, and . We call the angle between them and we can construct the vector as shown below:    Vectors and with angle between them   This is essentially a triangle if we drop all the direction arrows. That is, this triangle has sides of lengths , , and .  A relation between the sides of the triangle and the angle is given by the Law of Cosines as follows: Using the relation with length property of the dot product and FOIL-ing, we obtain   We essentially found two ways to represent the quantity . Equating these two expressions together and canceling stuff, we obtain   Observe that we can now solve for the angle between the two vectors by isolating : That is, the dot product gives us a way to compute the angle between two vectors!   Dot Product and the Angle   Let be the angle between two non-zero vectors and . Then     Observe that the angle is being computed using the inverse cosine function. The range of the inverse cosine function is . That is, we consider the angle between two vectors to be the smaller angle formed between them.    By convention, the angle between two vectors is chosen so that .    Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is acute...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is approximately , which is indeed acute.     Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is obtuse...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is , which is indeed obtuse.     Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is a right angle...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is , which is indeed a right angle.    We can find a pattern from the above examples.   If the dot product is positive, then the angle between the vectors is acute.    If the dot product is negative, then the angle between the vectors is obtuse.    If the dot product is zero, then the angle between the vectors is a right angle.   This is true since we know that is positive for acute angles, negative for obtuse angles, and zero for right angles. In addition, when and when .    Relation between the dot product and the angle between two vectors   Observe that the dot product is zero when two vectors are orthogonal (or perpendicular) to each other. This is how we define orthogonality in general.   Orthogonal Vectors   Two vectors and are orthogonal if and only if . We denote this by .    Based on this definition, we see that the zero vector is orthogonal to every vector since the dot product with the zero vector is always zero.   But Richard... Isn't \"orthogonal\" just another fancy way of saying perpendicular?  Yes and no... They are for sure describing the same idea but with some subtle differences.   Perpendicularity\/Perpendicular is a geometric term that describes two things (like lines, planes, etc.) intersect at a right angle (90°). This idea only makes sense in a geometric context where we can visualize angles.   Orthogonality\/Orthogonal is an algebraic term that describes two vectors whose dot product is zero. This idea makes sense in any dimension and doesn't rely on visualizing angles. For example, the zero vector is orthogonal to every vector but it doesn't make sense to say that the zero vector is perpendicular to every vector since the zero vector doesn't have a length (we don't say a point is perpendicular to a line).  Surprise surprise, there is another term that describes the same idea in math: normality\/normal . Normality is often used to describe things that are orthogonal\/perpendicular to a surface\/plane\/line. For example, a normal vector to a plane is a vector that is orthogonal to every vector lying in that plane.    Determine whether the following vectors are orthogonal and, if not, whether the angle between them is acute or obtuse.    and      and      and       We can determine whether the vectors are orthogonal by computing their dot products.   Observe that . Therefore, the vectors are orthogonal.    Observe that . Since the dot product is positive, the angle between the vectors is acute.    Observe that . Since the dot product is negative, the angle between the vectors is obtuse.         Orthogonal Projection  Remember that the dot product should tell us something about how much one vector goes in the direction of another vector. You may get the idea that the sign of the dot product tells us whether the vectors point in similar directions (acute angle) or opposite directions (obtuse angle). But we can actually know more! The orthogonal projection of one vector onto another vector, which is obtained using the dot product, gives us a precise way to measure how much one vector goes in the direction of another vector.  Let's say we have two vectors and and we cast a shadow of on the light through . This shadow is called the orthogonal projection of onto and is denoted by .    The Projection of onto   But how do we find this projection vector? We can use the dot product to help us out!  Let's assume two vectors are pointing in the same(ish) direction, which means the angle between them is acute. The diagram is shown below and our goal is to find the length and the direction of the projection vector.    The Projection of onto with an acute angle between them   Let's tackle the length first. Using trigonometry (and yes there is a right triangle in there somewhere that allows us to use trig), we see that the length of the projection vector is   Next, we need to find the direction of the projection vector. Clearly, the projection vector points in the same direction as . Yet, we can't just simply multiply the length by . If we did that, the length of the projection vector would be off by a factor of . To fix this, we use the unit vector in the direction of , which is .  Therefore, the projection vector is    Projection of onto   Assume . The projection of onto is the vector This is sometimes denoted by . The scalar is called the scalar component of onto and is sometimes denoted by .     But Richard... What if the angle between the vectors is obtuse?  The previous result was derived assuming the angle between the vectors is acute. But what if the angle is obtuse, like in the diagram below? Does the formula for the projection vector still hold?    The Projection of onto with an obtuse angle between them   The answer is yes but the work is a bit different. Richard will encourage you to try proving the formula for the projection vector in this case as an exercise.   Richard's proof if you want to check your proof  The work is almost identical to the acute angle case with one bit of difference.  Let be an obtuse angle, which means . Using trigonometry, we can find the length of the projection vector as follows: While there is a negative sign in front of the length, this is a positive quantity since is negative for .  Next, we find the direction of the projection vector. Clearly, the projection vector points in the opposite direction as (look at the diagram!). Then the unit vector in the direction opposite to is .  Therefore, the projection vector is which is the same formula as before.    Observe that Richard didn't bother with the case when the angle between the vectors is a right angle. This is because the projection vector is simply the zero vector in this case since .   Find the projection of onto where and .   To help you visualize the projection, Richard coded up the following fancy diagram:   Projection of onto      The goal is to find the green projection vector in the diagram above.    The projection of onto is the following vector We compute the values in this expression: Hence,     Now that we know what the projection looks like, the next question to consider is: how different is the vector from its projection? A quick subtraction will give us the answer.    Vector (red), (blue), (green), and (orange)   Observe that this difference vector is orthogonal to . That is, the projection is always parallel to and the difference is always orthogonal to !    Planes in  To define a plane, we need a point and a normal vector to the plane. Visually, this normal vector \"sticks out\" of the plane at a right angle.   A point lies on and     Equation of a Plane   Plane through with normal vector : where .     But Richard... Why is the equation appears this way?  This equation may seem a bit mysterious at first glance, but it actually follows directly from the definition of the dot product (and orthogonality).  Let's say we have a point . Furthermore, let be an arbitrary point on the plane. Then we can define a vector .  Also, we have a normal vector . This vector is orthogonal to ANY vector that lies in the plane, including . Two vectors are orthogonal if and only if their dot product is zero. Therefore, we obtain Hey! This is the scalar form of the equation of a plane!  You can simplify this equation further! That is, the scalar form can be simplied to Observe that the right-hand side is just a number, so let's call it for simplicity. Hence, we obtain where   What about the vector form? We can observe quickly that is just the dot product . Hence, we can rewrite the equation as Hey! The vector form!    Find an equation of the plane with normal vector passing through the point .   We are given and .  We can write an equation using the vector form:   Alternatively, we can write an equation using the scalar form:     Sometimes we are given the equation and we need to work backwards to find the geometric properties. Specifically, we may want to find a normal vector and a point on the plane.  Finding a point is a bit boring... We just need to find a point that satisfies the equation. The easiest way to do so is to set the two other variables to zero (or other numbers) and solve for the third.  What about finding a normal vector? If you stare at the equation long enough, you may notice that the coefficients of , , and correspond to the components of the normal vector. That is, the normal vector is simply .  Surprisingly, this pattern also works for lines in . An equation of the line in is . You for sure know that the slope of this line is . But what you may not know there is that the vector is a normal vector to this line!   A line with normal vector     Consider the plane defined by . Identify the normal vector and find a point on the plane.   To find a normal vector, we read the coefficients directly. .  To find a point on the plane, we can set two of the variables to be constants and solve for the third. For example, we set and , and we can solve for . So, the point is on the plane.    Note that the equation of a plane in is a generalization of the equation of a line in . Back in , we can determine and equation of a line using two points . If we generalize this idea to , we can determine an equation of a plane using three points . It turns out that this plane is unique as long as the three points are not collinear (i.e., they do not all lie on the same line).   We want to find the equation of the plane passing through the three points , , and .  Recall that we need a point and a normal vector to determine an equation of a plane. Well we are given three points, so we can use one of them as our point.  What about a normal vector... Can we find a normal vector using the three points?  Yes we can! There is a vector operation that returns a vector orthogonal to two given vectors, called the cross product .   The Cross Product   Given two vectors and in , the cross product  is the vector defined by:     Wow this definition looks crazy! No one should memorize this long of a formula! It turns out that the cross product can be computed using the determinant .  Given the two vectors and , we can construct a matrix as follows: where the , , and are the standard basis vectors in .  To find the determinant of this matrix (which is the cross product), we will expand along the first column. That is, See this is just the same formula as the original definition!  Back to the actual example, we can find a normal vector to the plane by computing the cross product of two vectors that lie in the plane.  First, we can find two vectors lying on the plane. Since both and lie on the plane, their cross product will be orthogonal to the plane. This can be our normal vector!   Below is a visualization of what we just did. We plotted to create the plane (shown in blue). We constructed the vectors and (green) that lie on the plane. Finally, we crossed them to get the normal vector (red), which you can see stands orthogonal to the surface.   Visualizing the plane through P, Q, R      We can use any scalar multiple of this vector, so let's use for simplicity. Using point , the equation of the line is: This makes sense, as all three given points had a y-coordinate of 1!     Intersection of a Line and a Plane  We often want to know where a specific line punctures a plane. Unless the line is parallel to the plane (or lying inside it), they will intersect at exactly one point.  To find the intersection point of a line and a plane, we need to find the point that lies on both the line and the plane. But how do we solve THREE variables simulateneously?  A good news here is that the line in is defined parametrically using a single parameter ! Since the coordinate of the point needs to satisfy both the equation of the plane and the parametric equation of the line, we can use substitution to find the point of intersection.  That is, to find this point, we  write the parametric equations for , , and from the line.  plug these expressions into the equation of the plane.  solve for .  plug back into the line equation to get the point .     Find the point where the line intersects the plane .   First, let's break the line into its components: , , .  Now, plug these into the plane equation : Simplify the algebra: Now, lug back into our line components: The intersection point is .  Here is a visual confirmation of our algebra. The yellow dot is exactly where the red line punctures the blue plane.   Visualizing the intersection point          Parallel and Intersecting Planes  Two planes in can either be parallel or intersecting, providing they are not the same plane.  To determine whether two planes are parallel, we can compare their normal vectors. Recall two lines are parallel if their direction vectors are parallel (i.e., scalar multiples of each other). In the similar sense, two planes are parallel if their normal vectors are parallel (i.e., scalar multiples of each other).   Show that the two planes and are parallel.   The normal vector of the first plane is and the normal vector of the second plane is . Note that , so the normal vectors are parallel. Therefore, the two planes are parallel.  In the diagram below, you can see these \"floating\" surfaces. They have the same tilt, they are just shifted relative to each other.   Parallel Planes (Blue) and (Red)        What about the intersection of two planes? Imagine two non-parallel planes in is intersecting, then they will intersect along a line.   Find an equation of the line of intersection of the planes and .   To define the line of intersection, we need two things:  A direction vector for the line.  A point on the line.    Since the line lies on both planes, it must be perpendicular to both normal vectors. Does that ring a bell? (Think cross product!)   Intersection of (Blue) and (Red)         Step 1: Find the direction vector. The normal vectors are and . The direction of the intersection line, , is orthogonal to both normals:    Step 2: Find a point on the line. We need a point that satisfies both plane equations. We have 2 equations and 3 unknowns, so we can pick a value for one variable. Let's try (so we are really finding the intersection between this line and the -plane, and this point of intersection will be on this line for sure! ). The system becomes: The augmented matrix is We can row reduce this matrix to find the solution: So the -coordinate is 3 and the -coordinate is 1. Recall we set , so the point we found is .   Step 3: Write the equation. The vector equation of the line is:      "
+},
+{
+  "id": "sec42-ProjectionsPlanes-3",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#sec42-ProjectionsPlanes-3",
+  "type": "Objectives",
+  "number": "4.2",
+  "title": "",
+  "body": "  After this section, students will be able to:     compute the dot product of two vectors and apply its algebraic properties.    use the dot product to calculate the angle between two vectors.    compute the orthogonal projection of one vector onto another.    construct the scalar and vector equations of a plane in given a point and a normal vector, or given three points.    calculate the exact point of intersection between a line and a plane using parametric substitution.    determine whether two planes are parallel, and if they intersect, find the parametric equations for their line of intersection.    "
+},
+{
+  "id": "def-DotProduct",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#def-DotProduct",
+  "type": "Definition",
+  "number": "4.2.1",
+  "title": "Dot Product.",
+  "body": " Dot Product   The dot product  of two vectors is the scalar defined by    "
+},
+{
+  "id": "subsec-DotProduct-6",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-6",
+  "type": "Example",
+  "number": "4.2.2",
+  "title": "",
+  "body": " Compute the following dot products:                              "
+},
+{
+  "id": "thm-DotProductProperties",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#thm-DotProductProperties",
+  "type": "Theorem",
+  "number": "4.2.3",
+  "title": "Properties of the Dot Product.",
+  "body": " Properties of the Dot Product       , where is the zero vector.     Commutativity:       Pulling out scalars:       Distributive Law:       Relation with length:        "
+},
+{
+  "id": "subsec-DotProduct-9",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-9",
+  "type": "Proof",
+  "number": "1",
+  "title": "Proof(ish) of the above theorem.",
+  "body": " Proof(ish) of the above theorem  The proofs of the properties are pretty straightforward using the definition of the dot product. Richard will prove some of them in and leave the rest as exercises for you to verify (especially if you are thinking about majoring in math). You may also want to see if you are convinced that Richard's proofs can be generalized to .     Let . Then     Let and . Then     The proof is left as an exercise for the reader.    The proof is left as an exercise for the reader.    Let . Then      "
+},
+{
+  "id": "subsec-DotProduct-Angles-4",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-4",
+  "type": "Figure",
+  "number": "4.2.4",
+  "title": "",
+  "body": "  Vectors and with angle between them  "
+},
+{
+  "id": "thm-DotProductAngle",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#thm-DotProductAngle",
+  "type": "Theorem",
+  "number": "4.2.5",
+  "title": "Dot Product and the Angle.",
+  "body": " Dot Product and the Angle   Let be the angle between two non-zero vectors and . Then    "
+},
+{
+  "id": "subsec-DotProduct-Angles-11",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-11",
+  "type": "Figure",
+  "number": "4.2.6",
+  "title": "",
+  "body": "  By convention, the angle between two vectors is chosen so that .  "
+},
+{
+  "id": "subsec-DotProduct-Angles-12",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-12",
+  "type": "Example",
+  "number": "4.2.7",
+  "title": "",
+  "body": " Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is acute...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is approximately , which is indeed acute.   "
+},
+{
+  "id": "subsec-DotProduct-Angles-13",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-13",
+  "type": "Example",
+  "number": "4.2.9",
+  "title": "",
+  "body": " Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is obtuse...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is , which is indeed obtuse.   "
+},
+{
+  "id": "subsec-DotProduct-Angles-14",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-14",
+  "type": "Example",
+  "number": "4.2.11",
+  "title": "",
+  "body": " Find the angle between the vectors and    Richard coded a fancy diagram below to help you visualize how big the angle is. The goal here is to figure out the size of    Vectors and with angle      It looks like the angle between the vectors is a right angle...    We denote and . To use the formula for the cosine of the angle between two vectors we need to compute the following values: Hence, and so,   The angle is , which is indeed a right angle.   "
+},
+{
+  "id": "subsec-DotProduct-Angles-16",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-16",
+  "type": "Figure",
+  "number": "4.2.13",
+  "title": "",
+  "body": "  Relation between the dot product and the angle between two vectors  "
+},
+{
+  "id": "subsec-DotProduct-Angles-17",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-17",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthogonal "
+},
+{
+  "id": "def-OrthogonalVectors",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#def-OrthogonalVectors",
+  "type": "Definition",
+  "number": "4.2.14",
+  "title": "Orthogonal Vectors.",
+  "body": " Orthogonal Vectors   Two vectors and are orthogonal if and only if . We denote this by .   "
+},
+{
+  "id": "subsec-DotProduct-Angles-20",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-20",
+  "type": "Note",
+  "number": "4.2.15",
+  "title": "But Richard... Isn’t \"orthogonal\" just another fancy way of saying perpendicular?",
+  "body": " But Richard... Isn't \"orthogonal\" just another fancy way of saying perpendicular?  Yes and no... They are for sure describing the same idea but with some subtle differences.   Perpendicularity\/Perpendicular is a geometric term that describes two things (like lines, planes, etc.) intersect at a right angle (90°). This idea only makes sense in a geometric context where we can visualize angles.   Orthogonality\/Orthogonal is an algebraic term that describes two vectors whose dot product is zero. This idea makes sense in any dimension and doesn't rely on visualizing angles. For example, the zero vector is orthogonal to every vector but it doesn't make sense to say that the zero vector is perpendicular to every vector since the zero vector doesn't have a length (we don't say a point is perpendicular to a line).  Surprise surprise, there is another term that describes the same idea in math: normality\/normal . Normality is often used to describe things that are orthogonal\/perpendicular to a surface\/plane\/line. For example, a normal vector to a plane is a vector that is orthogonal to every vector lying in that plane.  "
+},
+{
+  "id": "subsec-DotProduct-Angles-21",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-DotProduct-Angles-21",
+  "type": "Example",
+  "number": "4.2.16",
+  "title": "",
+  "body": " Determine whether the following vectors are orthogonal and, if not, whether the angle between them is acute or obtuse.    and      and      and       We can determine whether the vectors are orthogonal by computing their dot products.   Observe that . Therefore, the vectors are orthogonal.    Observe that . Since the dot product is positive, the angle between the vectors is acute.    Observe that . Since the dot product is negative, the angle between the vectors is obtuse.      "
+},
+{
+  "id": "subsec-OrthogonalProjection-3",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthogonal projection "
+},
+{
+  "id": "subsec-OrthogonalProjection-4",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-4",
+  "type": "Figure",
+  "number": "4.2.17",
+  "title": "",
+  "body": "  The Projection of onto  "
+},
+{
+  "id": "subsec-OrthogonalProjection-7",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-7",
+  "type": "Figure",
+  "number": "4.2.18",
+  "title": "",
+  "body": "  The Projection of onto with an acute angle between them  "
+},
+{
+  "id": "def-OrthogonalProjection",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#def-OrthogonalProjection",
+  "type": "Definition",
+  "number": "4.2.19",
+  "title": "Projection of <span class=\"process-math\">\\(\\v{u}\\)<\/span> onto <span class=\"process-math\">\\(\\v{v}\\)<\/span>.",
+  "body": " Projection of onto   Assume . The projection of onto is the vector This is sometimes denoted by . The scalar is called the scalar component of onto and is sometimes denoted by .   "
+},
+{
+  "id": "subsec-OrthogonalProjection-12",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-12",
+  "type": "Note",
+  "number": "4.2.20",
+  "title": "But Richard... What if the angle between the vectors is obtuse?",
+  "body": " But Richard... What if the angle between the vectors is obtuse?  The previous result was derived assuming the angle between the vectors is acute. But what if the angle is obtuse, like in the diagram below? Does the formula for the projection vector still hold?    The Projection of onto with an obtuse angle between them   The answer is yes but the work is a bit different. Richard will encourage you to try proving the formula for the projection vector in this case as an exercise.   Richard's proof if you want to check your proof  The work is almost identical to the acute angle case with one bit of difference.  Let be an obtuse angle, which means . Using trigonometry, we can find the length of the projection vector as follows: While there is a negative sign in front of the length, this is a positive quantity since is negative for .  Next, we find the direction of the projection vector. Clearly, the projection vector points in the opposite direction as (look at the diagram!). Then the unit vector in the direction opposite to is .  Therefore, the projection vector is which is the same formula as before.   "
+},
+{
+  "id": "subsec-OrthogonalProjection-14",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-14",
+  "type": "Example",
+  "number": "4.2.22",
+  "title": "",
+  "body": " Find the projection of onto where and .   To help you visualize the projection, Richard coded up the following fancy diagram:   Projection of onto      The goal is to find the green projection vector in the diagram above.    The projection of onto is the following vector We compute the values in this expression: Hence,    "
+},
+{
+  "id": "subsec-OrthogonalProjection-16",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-OrthogonalProjection-16",
+  "type": "Figure",
+  "number": "4.2.24",
+  "title": "",
+  "body": "  Vector (red), (blue), (green), and (orange)  "
+},
+{
+  "id": "subsec-PlanesR3-2",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "normal vector "
+},
+{
+  "id": "subsec-PlanesR3-3",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-3",
+  "type": "Figure",
+  "number": "4.2.25",
+  "title": "",
+  "body": " A point lies on and   "
+},
+{
+  "id": "def-Plane3D",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#def-Plane3D",
+  "type": "Definition",
+  "number": "4.2.26",
+  "title": "Equation of a Plane.",
+  "body": " Equation of a Plane   Plane through with normal vector : where .   "
+},
+{
+  "id": "subsec-PlanesR3-5",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-5",
+  "type": "Note",
+  "number": "4.2.27",
+  "title": "But Richard... Why is the equation appears this way?",
+  "body": " But Richard... Why is the equation appears this way?  This equation may seem a bit mysterious at first glance, but it actually follows directly from the definition of the dot product (and orthogonality).  Let's say we have a point . Furthermore, let be an arbitrary point on the plane. Then we can define a vector .  Also, we have a normal vector . This vector is orthogonal to ANY vector that lies in the plane, including . Two vectors are orthogonal if and only if their dot product is zero. Therefore, we obtain Hey! This is the scalar form of the equation of a plane!  You can simplify this equation further! That is, the scalar form can be simplied to Observe that the right-hand side is just a number, so let's call it for simplicity. Hence, we obtain where   What about the vector form? We can observe quickly that is just the dot product . Hence, we can rewrite the equation as Hey! The vector form!  "
+},
+{
+  "id": "subsec-PlanesR3-6",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-6",
+  "type": "Example",
+  "number": "4.2.28",
+  "title": "",
+  "body": " Find an equation of the plane with normal vector passing through the point .   We are given and .  We can write an equation using the vector form:   Alternatively, we can write an equation using the scalar form:    "
+},
+{
+  "id": "subsec-PlanesR3-11",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-11",
+  "type": "Figure",
+  "number": "4.2.29",
+  "title": "",
+  "body": " A line with normal vector   "
+},
+{
+  "id": "subsec-PlanesR3-12",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-12",
+  "type": "Example",
+  "number": "4.2.30",
+  "title": "",
+  "body": " Consider the plane defined by . Identify the normal vector and find a point on the plane.   To find a normal vector, we read the coefficients directly. .  To find a point on the plane, we can set two of the variables to be constants and solve for the third. For example, we set and , and we can solve for . So, the point is on the plane.   "
+},
+{
+  "id": "subsec-PlanesR3-14",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-PlanesR3-14",
+  "type": "Example",
+  "number": "4.2.31",
+  "title": "",
+  "body": " We want to find the equation of the plane passing through the three points , , and .  Recall that we need a point and a normal vector to determine an equation of a plane. Well we are given three points, so we can use one of them as our point.  What about a normal vector... Can we find a normal vector using the three points?  Yes we can! There is a vector operation that returns a vector orthogonal to two given vectors, called the cross product .   The Cross Product   Given two vectors and in , the cross product  is the vector defined by:     Wow this definition looks crazy! No one should memorize this long of a formula! It turns out that the cross product can be computed using the determinant .  Given the two vectors and , we can construct a matrix as follows: where the , , and are the standard basis vectors in .  To find the determinant of this matrix (which is the cross product), we will expand along the first column. That is, See this is just the same formula as the original definition!  Back to the actual example, we can find a normal vector to the plane by computing the cross product of two vectors that lie in the plane.  First, we can find two vectors lying on the plane. Since both and lie on the plane, their cross product will be orthogonal to the plane. This can be our normal vector!   Below is a visualization of what we just did. We plotted to create the plane (shown in blue). We constructed the vectors and (green) that lie on the plane. Finally, we crossed them to get the normal vector (red), which you can see stands orthogonal to the surface.   Visualizing the plane through P, Q, R      We can use any scalar multiple of this vector, so let's use for simplicity. Using point , the equation of the line is: This makes sense, as all three given points had a y-coordinate of 1!  "
+},
+{
+  "id": "subsec-IntersectionLinePlane-6",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-IntersectionLinePlane-6",
+  "type": "Example",
+  "number": "4.2.34",
+  "title": "",
+  "body": " Find the point where the line intersects the plane .   First, let's break the line into its components: , , .  Now, plug these into the plane equation : Simplify the algebra: Now, lug back into our line components: The intersection point is .  Here is a visual confirmation of our algebra. The yellow dot is exactly where the red line punctures the blue plane.   Visualizing the intersection point       "
+},
+{
+  "id": "subsec-ParallelIntersecting-4",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-ParallelIntersecting-4",
+  "type": "Example",
+  "number": "4.2.36",
+  "title": "",
+  "body": " Show that the two planes and are parallel.   The normal vector of the first plane is and the normal vector of the second plane is . Note that , so the normal vectors are parallel. Therefore, the two planes are parallel.  In the diagram below, you can see these \"floating\" surfaces. They have the same tilt, they are just shifted relative to each other.   Parallel Planes (Blue) and (Red)       "
+},
+{
+  "id": "subsec-ParallelIntersecting-6",
+  "level": "2",
+  "url": "sec42-ProjectionsPlanes.html#subsec-ParallelIntersecting-6",
+  "type": "Example",
+  "number": "4.2.38",
+  "title": "",
+  "body": " Find an equation of the line of intersection of the planes and .   To define the line of intersection, we need two things:  A direction vector for the line.  A point on the line.    Since the line lies on both planes, it must be perpendicular to both normal vectors. Does that ring a bell? (Think cross product!)   Intersection of (Blue) and (Red)         Step 1: Find the direction vector. The normal vectors are and . The direction of the intersection line, , is orthogonal to both normals:    Step 2: Find a point on the line. We need a point that satisfies both plane equations. We have 2 equations and 3 unknowns, so we can pick a value for one variable. Let's try (so we are really finding the intersection between this line and the -plane, and this point of intersection will be on this line for sure! ). The system becomes: The augmented matrix is We can row reduce this matrix to find the solution: So the -coordinate is 3 and the -coordinate is 1. Recall we set , so the point we found is .   Step 3: Write the equation. The vector equation of the line is:    "
+},
+{
   "id": "secA1-Midterm1Review",
   "level": "1",
   "url": "secA1-Midterm1Review.html",
