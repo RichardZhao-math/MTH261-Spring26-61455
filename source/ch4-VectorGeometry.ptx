@@ -3,8 +3,9 @@
 <chapter xml:id="ch4-VectorGeometry" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Vector Geometry</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec41-VectorsLines.ptx" />
+  <xi:include href="sec42-ProjectionPlanes.ptx" />
 
 </chapter>
