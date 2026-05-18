@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="secA2-Midterm2Review" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Midterm #1 Review</title>
+
+    <introduction>
+        <p>
+            The midterm exam will cover material from Week 5 Day 1 of the class through Week 7 Day 2. 
+            That is, it covers material in the following sections: 
+            <ul marker="">
+                <li>
+                    <p>
+                        <xref ref="sec26-LinearTransformations"/> Linear Transformation
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec31-CofactorExpansion"/> Determinants
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec32-DeterminantsInverse"/> Properties of Determinants
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec41-VectorsLines"/> Vectors and Lines
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec42-ProjectionsPlanes"/> Projection and Planes
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec51-SubspaceSpanning"/> Subspaces
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec52-IndependenceDimension"/> Independence and Dimensions
+                    </p>
+                </li>
+            </ul>
+            On this page, you will find review problems for the midterm exam. 
+            The final answers are included for each problem.
+            Make sure you spend some time working through these problems and understanding how things work! 
+        </p>
+
+        <p>
+            <alert>A quick reminder:</alert> The class session before the midterm exam #2 on Tuesday, May 19, will be a review session. 
+            Usually this will be a work day for you to work through some problems together to prepare for the exam. 
+            This is also a great opportunity for you to ask questions about anything that is not clear to you! 
+        </p>
+    </introduction>
+
+    <worksheet xml:id="ws-MidtermReview-LinearTransformations">
+        <title>Linear Transformations</title>
+
+        <exercise>
+            <p>
+                Let <m>T: \R^3 \to \R^2</m> be a linear transformation such that
+                <md>
+                    T \lp \begin{bmatrix} 5 \\ -3 \\ 0 \end{bmatrix} \rp = \begin{bmatrix}2 \\ 1 \end{bmatrix}
+                    \, , \quad
+                    T \lp \begin{bmatrix} 2 \\ -1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix}0 \\ -2 \end{bmatrix}
+                    \, , \, \text{ and } \quad
+                    T \lp \begin{bmatrix} 3 \\ 3 \\ 1 \end{bmatrix} \rp = \begin{bmatrix}1 \\ 2 \end{bmatrix}
+                </md>
+                Find a matrix <m>A</m> such that <m>T</m> is defined by the formula <m>T(\v{x}) = A\v{x}</m>
+            </p>
+
+            <answer>
+                <p>
+                    <m>A = \begin{bmatrix} -2 \amp -4 \amp 19 \\ -7 \amp -12 \amp 59 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-Determinants">
+        <title>Determinants (and related stuff)</title>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 1 \amp 3 \amp -2 \\ 0 \amp 1 \amp 5 \\ 2 \amp 3 \amp 1 \end{bmatrix}</m>. 
+                Find <m>\det A</m> using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form. 
+            </p>
+
+            <answer>
+                <p>
+                    <m>\det A = 50</m>
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-MidtermReview-VectorGeometry">
+        <title>Vector Geometry</title>
+
+        <exercise>
+            <p>
+                Find an equation of the plane that contains the points <m>(1,2,3)</m>, <m>(-1,0,4)</m>, and <m>(1,1,1)</m>. 
+            </p>
+
+            <answer>
+                <p>
+                    <m>5x - 4y + 2z = 3</m>
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-Subspaces">
+        <title>Subspaces (and related stuff)</title>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 2 \amp 4 \amp 0 \amp -30 \amp 6 \\ 3 \amp 1 \amp 0 \amp 5 \amp -1 \\ 6 \amp 6 \amp 0 \amp -30 \amp 21 \\ 3 \amp 2 \amp 0 \amp -5 \amp 5 \end{bmatrix}</m>. 
+                Find a basis and the dimension of the null space and the column space of <m>A</m>. 
+            </p>
+
+            <answer>
+                <p>
+                    Basis for <m>\Col A = \left\{ \begin{bmatrix} 2 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 4 \\ 1 \\ 6 \\ 2 \end{bmatrix}, \begin{bmatrix} 6 \\ -1 \\ 21 \\ 5 \end{bmatrix} \right\}</m> and <m>\dim \Col A = 3</m>. 
+                </p>
+
+                <p>
+                    Basis for <m>\Nul A = \left\{ \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 10 \\ 0 \\ 1 \\ 0 \end{bmatrix} \right\}</m> and <m>\dim \Nul A = 2</m>. 
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+</section>
