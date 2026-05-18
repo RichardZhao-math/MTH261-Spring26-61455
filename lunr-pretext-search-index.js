@@ -1963,6 +1963,366 @@ var ptx_lunr_docs = [
   "body": " Find an equation of the line of intersection of the planes and .   To define the line of intersection, we need two things:  A direction vector for the line.  A point on the line.    Since the line lies on both planes, it must be perpendicular to both normal vectors. Does that ring a bell? (Think cross product!)   Intersection of (Blue) and (Red)         Step 1: Find the direction vector. The normal vectors are and . The direction of the intersection line, , is orthogonal to both normals:    Step 2: Find a point on the line. We need a point that satisfies both plane equations. We have 2 equations and 3 unknowns, so we can pick a value for one variable. Let's try (so we are really finding the intersection between this line and the -plane, and this point of intersection will be on this line for sure! ). The system becomes: The augmented matrix is We can row reduce this matrix to find the solution: So the -coordinate is 3 and the -coordinate is 1. Recall we set , so the point we found is .   Step 3: Write the equation. The vector equation of the line is:    "
 },
 {
+  "id": "sec51-SubspaceSpanning",
+  "level": "1",
+  "url": "sec51-SubspaceSpanning.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Subspaces and Spanning",
+  "body": " Subspaces and Spanning   Near the beginning of the course we learned how to write the solution to a homogeneous system of equations as a linear combination of\"basic vectors\". This was possible because the set of solutions to a homogenous system is a special kind of set of vectors called a subspace .  In this section, we will be focusing on learning about subspaces and related concepts!     After this section, students will be able to:     determine if a set of vectors is a subspace.    define the null space and the column space of a matrix.    define the concept of span and spanning sets.      What is a Subspace?  Subspace, is a subset of a vector space that is also a vector space (under the same operations). Yet we have not formally defined what a vector space is. So let's define what a subspace is without relying on the definition of a vector space!   Subspace of    A set of vectors in is called a subspace if it satisfies the following properties:    S1: The zero vector (note: the notation means \"is an element of\" or \"is in\").     S2: If , then .     S3: If , then for every real number .       Some authors will give a slightly different (but equivalent) definition that replaces S1 with \" is non-empty\". Regardless of what specific definition and author gives, it will always be the case that the subspace is non-empty and includes the zero vector.  Terminology: S2 and S3 are symbolic ways of saying must be closed under (vector) addition and closed under scalar multiplication . So we can define a subspace in words to be a non-empty subset of that is closed under vector addition and scalar multiplication.  If you really want to only use words you can replace with \"a vector space\".   The set consisting of only the zero vector of is always a subspace of .  We can verify that this set satisfies the three properties of a subspace:   Clearly this set satisfies S1 !    Since , this set satisfies S2 !    We learned previously that for any scalar , , so this set satisfies S3 !   This subspace is called the trivial subspace because the only thing in it is the one vector that must be in any vector space.    We have seen that the scalar equation of a plane looks like for some number where is a normal vector for the plane. If the plane goes through the origin , then we have to be able to plug in zero for all of the variables and get equality. That means if the plane goes through the origin. So we know that the equation of a plane through the origin looks like   Claim: This plane is a subspace of !  Let's verify the three properties listed in the definition to prove such a plane is a subspace!    S1: This one is given in the description! Or we can just plug in to check that . Checked!     S2: Suppose and are on the plane. Then Using the distributive property along with some commutativity, we can show that So is also on the plane.     S3: Suppose and suppose is on the plane. Then . Then this implies that Using the distributive, associative, and commutative properties for real numbers, we get which means is also on the plane.       Some non-examples of subspaces    The set of vectors is NOT a subspace of .  This subset fails every requirements:    S1:  is not included.     S2:  is not included in the set.     S3:  is not included in the set.       The set of solutions to the system is NEVER a subspace unless .  Proof: The zero vector is excluded because it can't be a solution to if .       Fundamental Subspaces  In matrix algebra, there are four fundamental subspaces associated to a matrix . We will be focusing on two of these subspaces in this section: the null space and the column space .   Null Space of a Matrix   Let be an matrix. The null space of , denoted , is the set of vectors such that . Symbolically speaking,     Claim: The null space of an matrix is a subspace of .      S1:  , so .     S2: Suppose . Then and . This implies that So .    Suppose and . Then , and so Therefore .      Column Space of a Matrix   Let be an matrix. The column space of , denoted , is the set of all linear combinations of the columns of .     But our textbook call it the image space...  Our textbook uses a slightly different terminology and calls the column space the \" image space \". But they are pretty much the same thing!  Here is the definition of the image space from our textbook:   Image Space   Let be an matrix. The image space of , denoted , is the set of all of the possible products of and a vector in . Symbolically speaking,     The word \"image\" actually comes from the linear transformation perspective. The image of is the set of outputs of the linear transformation given by . While \"image\" is the more common term in advanced mathematics, this set is also called the range of the linear transformation.   But why is it the same thing as the column space?   That is because the matrix-vector product can also be expressed as a linear combination of the columns of , where the coefficients come from entries of (see for more information).  Let's look at the case! Suppose we have a generic matrix and a generic vector . Any vector in the image space of will, by definition, be of the form .  Let . Then This means that the image of consists of all of the linear combinations of the columns of . That is why the image space and the column space are the same thing!   Claim: The column space of an matrix is a subspace of .      S1:  , so there exists a vector in that maps to . Therefore, .     S2: Suppose . By definition, there exist vectors such that and . This implies that Since , we have .     S3: Suppose and . By definition, there exists a vector such that . This implies that Since , we have .     But what about the other two fundamental subspaces? They are actually the null space and column space of the transpose of the matrix!   The row space of a matrix is the column space of the transpose of , denoted .    The left null space of a matrix is the null space of the transpose of , denoted .   As you can imagine, if we master the null space and column space of a matrix, then we can easily understand the row space and left null space by just looking at the transpose of the matrix! Hence, we will be focusing on the null space and column space in this section (and the next section).    Span and Spanning Sets  Since we are in the middle of talking about linear combinations, let's continue to talk about span and spanning sets !   Span and Spanning Sets   Let be a set of vectors in . The span of , denoted is the set of all linear combinations of the vectors in . Symbolically speaking,   Let . Then is called the spanning set (or generating set) of .     Fun Grammar Warning! \"Span\" is used both as a noun and a verb! The definition here defines the meaning of span as a noun. When it is used as a verb, it means something a bit different. For example, we can say \"the vectors and span \". As a verb, span means \"is\/are a spanning set for\".  This brings us to the big theorem of this section!    The span of a set of vectors is the smallest subspace containing those vectors.    We can look at this theorem in two parts:   The span of a set of vectors is a subspace.    Any subspace containing those vectors must also contain the span of those vectors.     To justify the first part, we can verify the three properties for the span:    S1: The zero vector is just so it is in the span.     S2: If and are both in the span, then there exist real numbers and such that Then So is also in the span.     S3: Suppose and is in the span. Then there exist real numbers such that So, Therefore, is also in the span.   Hence, the span is a subspace!  For the second part, notice that if you look at the definition of subspaces, the conditions are basically designed so that a subspace consists of all of the linear combination of some non-empty set of vectors. In fact we can formalize this observation: Any subspace containing the vectors must also contain all of the linear combinations of those vectors. So it must contain all of the vectors in . Hence, the span is the smallest subspace containing those vectors!  Sometimes we have nice geometric ways to describe subspaces (e.g. a plane containing the origin), but in general the best way (especially in higher dimensions!) is often to give a spanning set. This is nice because non-trivial subspaces of contain infinitely many things, but we only need finitely many vectors to describe a spanning set of a subspace of .   Recall that the null space and column space of a matrix are subspaces! So let's describe them using spanning sets!  Let's say we have a matrix . We want to find its null space and column space.  Let's start by finding the null space! Recall that the null space of is the set of solutions to the homogeneous equation . So let's solve the homogeneous equation first!  Using Gaussian elimination algorithm, the reduced row echelon form of the augmented matrix is Observe that and are free variables (by the lack of a pivot position in the second and fourth columns).  So the solution to the homogeneous equation looks like this, in parametric form: where   Observe that the solutions are some linear combinations of the two vectors and . Hence, the null space of is the span of those two vectors:    NOTE: recall we always write the solution to a homogeneous system in parametric form. Now you know why!  In the next section, we will learn that this spanning set of the null space is actually a basis !  Now let's find the column space of ! By definition, the column space of is the span of the columns of . So we can just write down the columns of and say that   In the next section, we will learn that this spanning set of the column space is NOT a basis , in the sense that some of the column vectors in the spanning set are \"redundant\".    "
+},
+{
+  "id": "sec51-SubspaceSpanning-2-1",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#sec51-SubspaceSpanning-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "subspace "
+},
+{
+  "id": "sec51-SubspaceSpanning-3",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#sec51-SubspaceSpanning-3",
+  "type": "Objectives",
+  "number": "5.1",
+  "title": "",
+  "body": "  After this section, students will be able to:     determine if a set of vectors is a subspace.    define the null space and the column space of a matrix.    define the concept of span and spanning sets.    "
+},
+{
+  "id": "def-Subspaces",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#def-Subspaces",
+  "type": "Definition",
+  "number": "5.1.1",
+  "title": "Subspace of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Subspace of    A set of vectors in is called a subspace if it satisfies the following properties:    S1: The zero vector (note: the notation means \"is an element of\" or \"is in\").     S2: If , then .     S3: If , then for every real number .      "
+},
+{
+  "id": "subsec-SubspaceIntro-7",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-SubspaceIntro-7",
+  "type": "Example",
+  "number": "5.1.2",
+  "title": "",
+  "body": " The set consisting of only the zero vector of is always a subspace of .  We can verify that this set satisfies the three properties of a subspace:   Clearly this set satisfies S1 !    Since , this set satisfies S2 !    We learned previously that for any scalar , , so this set satisfies S3 !   This subspace is called the trivial subspace because the only thing in it is the one vector that must be in any vector space.  "
+},
+{
+  "id": "subsec-SubspaceIntro-8",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-SubspaceIntro-8",
+  "type": "Example",
+  "number": "5.1.3",
+  "title": "",
+  "body": " We have seen that the scalar equation of a plane looks like for some number where is a normal vector for the plane. If the plane goes through the origin , then we have to be able to plug in zero for all of the variables and get equality. That means if the plane goes through the origin. So we know that the equation of a plane through the origin looks like   Claim: This plane is a subspace of !  Let's verify the three properties listed in the definition to prove such a plane is a subspace!    S1: This one is given in the description! Or we can just plug in to check that . Checked!     S2: Suppose and are on the plane. Then Using the distributive property along with some commutativity, we can show that So is also on the plane.     S3: Suppose and suppose is on the plane. Then . Then this implies that Using the distributive, associative, and commutative properties for real numbers, we get which means is also on the plane.     "
+},
+{
+  "id": "subsec-SubspaceIntro-9",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-SubspaceIntro-9",
+  "type": "Example",
+  "number": "5.1.4",
+  "title": "Some non-examples of subspaces.",
+  "body": " Some non-examples of subspaces    The set of vectors is NOT a subspace of .  This subset fails every requirements:    S1:  is not included.     S2:  is not included in the set.     S3:  is not included in the set.       The set of solutions to the system is NEVER a subspace unless .  Proof: The zero vector is excluded because it can't be a solution to if .    "
+},
+{
+  "id": "subsec-FundamentalSubspaces-2",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-FundamentalSubspaces-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "null space column space "
+},
+{
+  "id": "def-NullSpace",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#def-NullSpace",
+  "type": "Definition",
+  "number": "5.1.5",
+  "title": "Null Space of a Matrix.",
+  "body": " Null Space of a Matrix   Let be an matrix. The null space of , denoted , is the set of vectors such that . Symbolically speaking,    "
+},
+{
+  "id": "subsec-FundamentalSubspaces-5",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-FundamentalSubspaces-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": "    S1:  , so .     S2: Suppose . Then and . This implies that So .    Suppose and . Then , and so Therefore .    "
+},
+{
+  "id": "def-ColumnSpace",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#def-ColumnSpace",
+  "type": "Definition",
+  "number": "5.1.6",
+  "title": "Column Space of a Matrix.",
+  "body": " Column Space of a Matrix   Let be an matrix. The column space of , denoted , is the set of all linear combinations of the columns of .   "
+},
+{
+  "id": "subsec-FundamentalSubspaces-7",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-FundamentalSubspaces-7",
+  "type": "Note",
+  "number": "5.1.7",
+  "title": "But our textbook call it the image space....",
+  "body": " But our textbook call it the image space...  Our textbook uses a slightly different terminology and calls the column space the \" image space \". But they are pretty much the same thing!  Here is the definition of the image space from our textbook:   Image Space   Let be an matrix. The image space of , denoted , is the set of all of the possible products of and a vector in . Symbolically speaking,     The word \"image\" actually comes from the linear transformation perspective. The image of is the set of outputs of the linear transformation given by . While \"image\" is the more common term in advanced mathematics, this set is also called the range of the linear transformation.   But why is it the same thing as the column space?   That is because the matrix-vector product can also be expressed as a linear combination of the columns of , where the coefficients come from entries of (see for more information).  Let's look at the case! Suppose we have a generic matrix and a generic vector . Any vector in the image space of will, by definition, be of the form .  Let . Then This means that the image of consists of all of the linear combinations of the columns of . That is why the image space and the column space are the same thing!  "
+},
+{
+  "id": "subsec-FundamentalSubspaces-9",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-FundamentalSubspaces-9",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": "    S1:  , so there exists a vector in that maps to . Therefore, .     S2: Suppose . By definition, there exist vectors such that and . This implies that Since , we have .     S3: Suppose and . By definition, there exists a vector such that . This implies that Since , we have .    "
+},
+{
+  "id": "subsec-FundamentalSubspaces-10",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-FundamentalSubspaces-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "row space left null space "
+},
+{
+  "id": "subsec-Span-2",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-Span-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "span spanning sets "
+},
+{
+  "id": "def-Span",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#def-Span",
+  "type": "Definition",
+  "number": "5.1.9",
+  "title": "Span and Spanning Sets.",
+  "body": " Span and Spanning Sets   Let be a set of vectors in . The span of , denoted is the set of all linear combinations of the vectors in . Symbolically speaking,   Let . Then is called the spanning set (or generating set) of .   "
+},
+{
+  "id": "thm-SpanSubspace",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#thm-SpanSubspace",
+  "type": "Theorem",
+  "number": "5.1.10",
+  "title": "",
+  "body": "  The span of a set of vectors is the smallest subspace containing those vectors.   "
+},
+{
+  "id": "subsec-Span-11",
+  "level": "2",
+  "url": "sec51-SubspaceSpanning.html#subsec-Span-11",
+  "type": "Example",
+  "number": "5.1.11",
+  "title": "",
+  "body": " Recall that the null space and column space of a matrix are subspaces! So let's describe them using spanning sets!  Let's say we have a matrix . We want to find its null space and column space.  Let's start by finding the null space! Recall that the null space of is the set of solutions to the homogeneous equation . So let's solve the homogeneous equation first!  Using Gaussian elimination algorithm, the reduced row echelon form of the augmented matrix is Observe that and are free variables (by the lack of a pivot position in the second and fourth columns).  So the solution to the homogeneous equation looks like this, in parametric form: where   Observe that the solutions are some linear combinations of the two vectors and . Hence, the null space of is the span of those two vectors:    NOTE: recall we always write the solution to a homogeneous system in parametric form. Now you know why!  In the next section, we will learn that this spanning set of the null space is actually a basis !  Now let's find the column space of ! By definition, the column space of is the span of the columns of . So we can just write down the columns of and say that   In the next section, we will learn that this spanning set of the column space is NOT a basis , in the sense that some of the column vectors in the spanning set are \"redundant\".  "
+},
+{
+  "id": "sec52-IndependenceDimension",
+  "level": "1",
+  "url": "sec52-IndependenceDimension.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Independence and Dimension",
+  "body": " Independence and Dimension   In the previous section, we explored how to build a subspace using a spanning set. But this raises an important question for us to investigate: are all the vectors in a spanning set actually necessary? Sometimes, a set contains \"redundant\" vectors that don't add any new direction to the space.  In this section, we are going to explore the concepts of linear independence and dimension.     After this section, students will be able to:     determine if a set of vectors are linearly independent.    construct a basis for a subspace.    determine the dimension of a subspace.      Linear Independence  When building a span, are all the vectors actually necessary? Sometimes a set contains redundant vectors that don't contribute to the span. Let's keep this in mind as we investigate the concept of linear independence.    An indexed set of vectors , , is linearly independent if the vector equation has only the trivial solution.  If the trivial solution is not unique, we call the set linear dependent .  That is, if a set , , is linearly dependent, then there exists some scalars , not all zero, such that     But how does the vector equation even related to the idea of independence? We will demonstrate the relation in the following example.   Suppose we have a set of three vectors , where Is this set of vectors linearly independent?  Let's follow the definition! That is, we want to determine if the solution to the following vector equation is unique.  We know how to solve this equation! We will first convert it to an augmented matrix: Now let's row reduce this augmented matrix!   Step 1: Adding times Row 1 to Row 2 (and replacing Row 2), we obtain     Step 2: Adding times Row 1 to Row 3 (and replacing Row 3), we obtain    We immediately know that is a free variable since there is no pivot position in the third column. Hence, this vector equation has infinitely many solutions.  By the definition, we know that is linearly dependent .  But what does it mean? Why do we call these three vectors linearly dependent ? Well let's finish solving this vector equation!  Since is a free variable, then we let , where . Then we obtain Okay. This is a general solution to the vector equation. Recall we can obtain a particular solution by assigning a value to our parameter, .  Let's make . Then our particular solution is Then plugging in the solution to the vector equation will make the equation true. That is, we have the following equation: We can isolate one of the three vectors! Just for demonstration purposes, let's isolate ! Then we have Observe that is a linear combination of and ! That is, is dependent on and .   The practical meaning of a linearly dependent set of vectors is that a vector can be expressed as a linear combination of the other vectors in the set. That is, this vector is dependent of other vectors. This specific relation is called the linear dependence relation .  In the above example, a linear dependence relation is since this relation allows us to express a vector, , as a linear combination of the other vectors, and .   Is the set linearly independent?   Yes, this set of vectors is linearly independent .  To justify this, we set up the homogeneous vector equation:   We can solve this by row reducing the corresponding augmented matrix:   Notice that every column in the coefficient matrix contains a pivot position, which means there are no free variables. Therefore, the vector equation has only the trivial solution ( ). Because no vector can be built from the others, the set is linearly independent.    You may notice that the procedure to determine whether a set of column vectors are linearly independent is essentially the same as row reducing an augmented matrix representing a homogeneous system of linear equations. That is, we are essentially solving the homogeneous matrix equation , where consists of the vectors of interest.   If has only the trivial solution, then the columns of are linearly independent;    If has infinitely many solutions, then the columns of are linearly dependent.      Suppose we are given the coefficient matrix . Observe that consists of three column vectors: Are they linearly independent?  We can answer this question by solving the homogeneous matrix equation . The augmented matrix is Of course we know how to row reduce it! Notice that the constant column of zeros will stay unchanged after all the elementary row operations. So we can only row reduce the coefficient matrix part! Recall the constant column will consist of all zeros.  Observe that every column of the coefficient matrix has a pivot position, which implies that there is no free variable. Then this homogeneous matrix equation has only the trivial solution. That is, the only \"linearly dependent relation\" is Well we can't isolate any of the three vectors since all the above relation tells us is that . Hence, it makes sense to call the vectors making up the columns of  linearly independent , in the sense that none of the vector is dependent of other vectors.   It turns out that there are some special theorems to determine whether a set of vectors are linearly independent. Let's look at the following example and see if we can generalize the theorems!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These two vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vector.  Clearly, . That is, the vector is a linear combination of the vector . So is dependent of .    Using the similar argument, we can make sense of the following theorem:    Consider . If for some nonzero constant , then and are linearly dependent.    Now let's look at the next example! Remember the goal is to generalize it!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vectors.  Clearly, we can represent the zero vector as a linear combination of the other two vectors with both scalars being zero. That is, Hence, these three vectors are linearly dependent.    Using the similar argument, we can make sense of the following theorem:    Any set containing is linearly dependent.     When is the set of a single vector linearly independent?   A set containing a single vector is linearly independent if and only if .  By definition, we are looking at the vector equation . If is the zero vector, then the scalar can be any real number (yielding infinitely many solutions), making it a dependent set. If is any non-zero vector, the only way for the equation to hold true is if the scalar (the trivial solution), making it an independent set.    Now let's look at the next example! Remember the goal is to generalize it!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since the homogeneous matrix equation is guaranteed to have infinitely many solutions.  Let . What does the (reduced) row echelon look like after row reductions?  Well there are only two row so there can be at most two pivot positions.  Yet there are three variables in this equation since each vector gets a mystery scalars. That is, at least one variable is a free variable, and hence the homogeneous equation must have infinitely many solutions.  Therefore, these three vectors are linearly dependent.    Using the similar argument, we can make sense of the following theorem:    A set of vectors with more vectors than there are entries in those vectors are linearly dependent.    They are the linear dependence tests we can use to quickly determine if a set of vectors is linearly dependent. If you can apply one of the three tests immediately, great! We can conclude that the set is linearly dependent. But the failure to apply any of these tests doesn't mean the set is linearly independent . It just means we will have to go back to the definition to determine it.    Basis  Recall that a span of a set of vectors is the smallest subspace containing those vectors, and the span of those vectors contains all possible linear combinations of those vectors. If the spanning set is linearly dependent, then it contains redundant vectors that don't contribute to the span. We can remove those redundant vectors and still have the same span. For briefness, we only want to keep the necessary vectors that contribute to the span. That is, we want our spanning set to be linearly independent.  This is essentially the basis of a subspace: a linearly independent spanning set that spans the subspace .  That is, the two criteria for a basis are: (1) the set must span the subspace of interest, and (2) the set must be linearly independent. In a more math-y way, we can define a basis as follows:   Basis of a Subspace of   Let be a subspace of . A set of vectors is called a basis of if         is linearly independent.       A basis should only include the necessary vectors that contribute to the span.   Claim: The set is a basis for .  This claim is true because (1) any vector in can be written as a linear combination of these two vectors (so it spans ) and (2) these two vectors are linearly independent.  Alternatively, is also a basis for . But why... Well this set of vectors also satisfies the two criteria for a basis.  (1) Any vector in can be written as a linear combination of these two vectors. Let be an arbitrary vector in . We want to find scalars and such that Solving this system, we obtain: Therefore, any vector in can be written as a linear combination of these two vectors, so they span .  (2) These two vectors are linearly independent. The set only contains two vectors and they are not scalar multiples of each other, so they are linearly independent.   Amazing Fact about bases! If and are both bases of a subspace , then . In other words, every basis of a given subspace contains exactly the same number of vectors.  So for example, there is no such thing as a basis for that contains one or three vectors. They all must contain exactly two vectors!   But Richard... Why is it true?  Well here is a very interesting approach to prove this fact (and this is also usually the approach to prove two quantities are equal in advanced mathematics!).  Let's assume that and are both bases of a subspace . Then has vectors in it and has vectors in it.  The approach goes like this: we want to show that cannot contain more vectors than (so ), and also that cannot contain more vectors than (so ). Then this will force to be true!  Since is a basis of and spans , then .  And since is a basis of and spans , then .  Together, that means .      Dimensions  Recall that the number of vectors in a basis is a fixed number for a given subspace, and we can generate the whole subspace by taking linear combinations of the vectors in the basis. Then we define the dimension of a subspace as the number of vectors in a basis for that subspace.   Dimension of a Subspace of   Let be a subspace and be a basis of . Then the dimension of , denoted , is the number of vectors in the basis, which is . That is, .     It makes sense to say that the dimension of is and the dimension of is . But how does it match with our definition of dimension?  We can verify this by finding a basis for and easily. Earlier, we saw that is a basis for , so . The basis is called the standard basis for .  Similarly, is a basis for , so . This basis is called the standard basis for .  More generally, the dimension of is since the standard basis for is and there are exactly vectors in this basis.   Recall we talked about two fundamental subspaces associated with a matrix in the last section: the null space and the column space. What about their basis and dimension?  Good news! The technique we use to find a spanning set for the null space of a matrix will automatically give us a basis! So we can find a basis of a null space by just doing what we have been doing: solving the homogeneous equation and writing the solution in parametric form. The vectors corresponding to the free variables will form a basis for the null space.   NOTE: The reason why the vectors corresponding to the free variables will automatically form a basis for the null space is because of the nature of the free variables (talk to Richard if you are super interested in it!). So the only way to end up with the wrong number of vectors in the basis is to have the wrong number of free variables.  Yet the basis for the column space is a bit more tricky to find, as there is no guarantee that the columns of a matrix will be linearly independent. However, we can find a basis for the column space by only including the pivot columns , as these column vectors are guaranteed to be linearly independent (so we essentially take out the free variables to make sure only has the trivial solution).   Let's say we have the matrix and this time we want to find a basis for the null space and the column space.  In the last section, we solved the homogeneous equation . For our convenience, let's copy down the reduced row echelon form of the augmented matrix:  P.S.: Row echelon form is enough as well since all we need to identify are the pivot columns (or not the pivot columns).  Lets' start with the null space first! The solution to the homogeneous equation , in parametric form, looks like this: where . Hence, the null space of is Since these vectors are linearly independent, then a basis for the null space is and hence the null space has dimension .  What about a basis for the column space? Let's stare at the reduced row echelon form of the coefficient matrix part again!  Notice that a pivot position appears in the first, third, and fifth columns. So they do NOT correspond to free variables. Imagine if we remove column 2 and column 4 from the coefficient matrix in the beginning, then we will end up with a homogeneous equation that has no free variable, and hence the columns are linearly independent. Therefore, we can span the column space by just including the first, third, and fifth columns. That is, A basis for the column space is and hence the column space has dimension .   Spoiler: You may have noticed that the dimension of the null space and the dimension of the column space add up to the number of columns in the matrix. This is a BIG theorem in linear algebra! We can sense that this is true because we take the columns with pivot positions to form a basis for the column space and use the columns without pivot positions to figure out a basis for the null space. We will focus on this theorem in section 5.4 (and this theorem is a fundamental theorem of linear algebra!) .    Let .  Find a basis and the dimension for and .     Extending Our Invertible Matrix Theorem!  Back in we saw our first version of the .  Now that we learn more fancy things in linear algebra, we can add a couple more conditions that are equivalent to invertibility:   7. The columns of are linearly independent.    8. The columns of span .    9. The columns of form a basis of .    10. .    11. .    12. .    13. .   They should be immediate results from the Invertible Matrix Theorem, but rephrasing it using all the fancy concepts we learned in this chapter.   "
+},
+{
+  "id": "sec52-IndependenceDimension-3",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#sec52-IndependenceDimension-3",
+  "type": "Objectives",
+  "number": "5.2",
+  "title": "",
+  "body": "  After this section, students will be able to:     determine if a set of vectors are linearly independent.    construct a basis for a subspace.    determine the dimension of a subspace.    "
+},
+{
+  "id": "def-LinearIndependence",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#def-LinearIndependence",
+  "type": "Definition",
+  "number": "5.2.1",
+  "title": "",
+  "body": "  An indexed set of vectors , , is linearly independent if the vector equation has only the trivial solution.  If the trivial solution is not unique, we call the set linear dependent .  That is, if a set , , is linearly dependent, then there exists some scalars , not all zero, such that    "
+},
+{
+  "id": "subsec-LinearIndependence-5",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-5",
+  "type": "Example",
+  "number": "5.2.2",
+  "title": "",
+  "body": " Suppose we have a set of three vectors , where Is this set of vectors linearly independent?  Let's follow the definition! That is, we want to determine if the solution to the following vector equation is unique.  We know how to solve this equation! We will first convert it to an augmented matrix: Now let's row reduce this augmented matrix!   Step 1: Adding times Row 1 to Row 2 (and replacing Row 2), we obtain     Step 2: Adding times Row 1 to Row 3 (and replacing Row 3), we obtain    We immediately know that is a free variable since there is no pivot position in the third column. Hence, this vector equation has infinitely many solutions.  By the definition, we know that is linearly dependent .  But what does it mean? Why do we call these three vectors linearly dependent ? Well let's finish solving this vector equation!  Since is a free variable, then we let , where . Then we obtain Okay. This is a general solution to the vector equation. Recall we can obtain a particular solution by assigning a value to our parameter, .  Let's make . Then our particular solution is Then plugging in the solution to the vector equation will make the equation true. That is, we have the following equation: We can isolate one of the three vectors! Just for demonstration purposes, let's isolate ! Then we have Observe that is a linear combination of and ! That is, is dependent on and .  "
+},
+{
+  "id": "subsec-LinearIndependence-6",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear dependence relation "
+},
+{
+  "id": "subsec-LinearIndependence-8",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-8",
+  "type": "Checkpoint",
+  "number": "5.2.3",
+  "title": "",
+  "body": " Is the set linearly independent?   Yes, this set of vectors is linearly independent .  To justify this, we set up the homogeneous vector equation:   We can solve this by row reducing the corresponding augmented matrix:   Notice that every column in the coefficient matrix contains a pivot position, which means there are no free variables. Therefore, the vector equation has only the trivial solution ( ). Because no vector can be built from the others, the set is linearly independent.   "
+},
+{
+  "id": "subsec-LinearIndependence-10",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-10",
+  "type": "Example",
+  "number": "5.2.4",
+  "title": "",
+  "body": " Suppose we are given the coefficient matrix . Observe that consists of three column vectors: Are they linearly independent?  We can answer this question by solving the homogeneous matrix equation . The augmented matrix is Of course we know how to row reduce it! Notice that the constant column of zeros will stay unchanged after all the elementary row operations. So we can only row reduce the coefficient matrix part! Recall the constant column will consist of all zeros.  Observe that every column of the coefficient matrix has a pivot position, which implies that there is no free variable. Then this homogeneous matrix equation has only the trivial solution. That is, the only \"linearly dependent relation\" is Well we can't isolate any of the three vectors since all the above relation tells us is that . Hence, it makes sense to call the vectors making up the columns of  linearly independent , in the sense that none of the vector is dependent of other vectors.  "
+},
+{
+  "id": "subsec-LinearIndependence-12",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-12",
+  "type": "Example",
+  "number": "5.2.5",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These two vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vector.  Clearly, . That is, the vector is a linear combination of the vector . So is dependent of .   "
+},
+{
+  "id": "thm-LinearlyDependent-SetTwoVectors",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#thm-LinearlyDependent-SetTwoVectors",
+  "type": "Theorem",
+  "number": "5.2.6",
+  "title": "",
+  "body": "  Consider . If for some nonzero constant , then and are linearly dependent.   "
+},
+{
+  "id": "subsec-LinearIndependence-16",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-16",
+  "type": "Example",
+  "number": "5.2.7",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vectors.  Clearly, we can represent the zero vector as a linear combination of the other two vectors with both scalars being zero. That is, Hence, these three vectors are linearly dependent.   "
+},
+{
+  "id": "thm-LinearDependence-ZeroVector",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#thm-LinearDependence-ZeroVector",
+  "type": "Theorem",
+  "number": "5.2.8",
+  "title": "",
+  "body": "  Any set containing is linearly dependent.   "
+},
+{
+  "id": "subsec-LinearIndependence-19",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-19",
+  "type": "Checkpoint",
+  "number": "5.2.9",
+  "title": "",
+  "body": " When is the set of a single vector linearly independent?   A set containing a single vector is linearly independent if and only if .  By definition, we are looking at the vector equation . If is the zero vector, then the scalar can be any real number (yielding infinitely many solutions), making it a dependent set. If is any non-zero vector, the only way for the equation to hold true is if the scalar (the trivial solution), making it an independent set.   "
+},
+{
+  "id": "subsec-LinearIndependence-21",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-LinearIndependence-21",
+  "type": "Example",
+  "number": "5.2.10",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since the homogeneous matrix equation is guaranteed to have infinitely many solutions.  Let . What does the (reduced) row echelon look like after row reductions?  Well there are only two row so there can be at most two pivot positions.  Yet there are three variables in this equation since each vector gets a mystery scalars. That is, at least one variable is a free variable, and hence the homogeneous equation must have infinitely many solutions.  Therefore, these three vectors are linearly dependent.   "
+},
+{
+  "id": "thm-LinearDependence-MoreVectors",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#thm-LinearDependence-MoreVectors",
+  "type": "Theorem",
+  "number": "5.2.11",
+  "title": "",
+  "body": "  A set of vectors with more vectors than there are entries in those vectors are linearly dependent.   "
+},
+{
+  "id": "subsec-Basis-3",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Basis-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "basis "
+},
+{
+  "id": "def-Basis",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#def-Basis",
+  "type": "Definition",
+  "number": "5.2.12",
+  "title": "Basis of a Subspace of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Basis of a Subspace of   Let be a subspace of . A set of vectors is called a basis of if         is linearly independent.      "
+},
+{
+  "id": "subsec-Basis-7",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Basis-7",
+  "type": "Example",
+  "number": "5.2.13",
+  "title": "",
+  "body": " Claim: The set is a basis for .  This claim is true because (1) any vector in can be written as a linear combination of these two vectors (so it spans ) and (2) these two vectors are linearly independent.  Alternatively, is also a basis for . But why... Well this set of vectors also satisfies the two criteria for a basis.  (1) Any vector in can be written as a linear combination of these two vectors. Let be an arbitrary vector in . We want to find scalars and such that Solving this system, we obtain: Therefore, any vector in can be written as a linear combination of these two vectors, so they span .  (2) These two vectors are linearly independent. The set only contains two vectors and they are not scalar multiples of each other, so they are linearly independent.   Amazing Fact about bases! If and are both bases of a subspace , then . In other words, every basis of a given subspace contains exactly the same number of vectors.  So for example, there is no such thing as a basis for that contains one or three vectors. They all must contain exactly two vectors!   But Richard... Why is it true?  Well here is a very interesting approach to prove this fact (and this is also usually the approach to prove two quantities are equal in advanced mathematics!).  Let's assume that and are both bases of a subspace . Then has vectors in it and has vectors in it.  The approach goes like this: we want to show that cannot contain more vectors than (so ), and also that cannot contain more vectors than (so ). Then this will force to be true!  Since is a basis of and spans , then .  And since is a basis of and spans , then .  Together, that means .   "
+},
+{
+  "id": "subsec-Dimensions-2",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Dimensions-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "dimension "
+},
+{
+  "id": "def-Dimensions",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#def-Dimensions",
+  "type": "Definition",
+  "number": "5.2.15",
+  "title": "Dimension of a Subspace of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Dimension of a Subspace of   Let be a subspace and be a basis of . Then the dimension of , denoted , is the number of vectors in the basis, which is . That is, .   "
+},
+{
+  "id": "subsec-Dimensions-4",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Dimensions-4",
+  "type": "Example",
+  "number": "5.2.16",
+  "title": "",
+  "body": " It makes sense to say that the dimension of is and the dimension of is . But how does it match with our definition of dimension?  We can verify this by finding a basis for and easily. Earlier, we saw that is a basis for , so . The basis is called the standard basis for .  Similarly, is a basis for , so . This basis is called the standard basis for .  More generally, the dimension of is since the standard basis for is and there are exactly vectors in this basis.  "
+},
+{
+  "id": "subsec-Dimensions-9",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Dimensions-9",
+  "type": "Example",
+  "number": "5.2.17",
+  "title": "",
+  "body": " Let's say we have the matrix and this time we want to find a basis for the null space and the column space.  In the last section, we solved the homogeneous equation . For our convenience, let's copy down the reduced row echelon form of the augmented matrix:  P.S.: Row echelon form is enough as well since all we need to identify are the pivot columns (or not the pivot columns).  Lets' start with the null space first! The solution to the homogeneous equation , in parametric form, looks like this: where . Hence, the null space of is Since these vectors are linearly independent, then a basis for the null space is and hence the null space has dimension .  What about a basis for the column space? Let's stare at the reduced row echelon form of the coefficient matrix part again!  Notice that a pivot position appears in the first, third, and fifth columns. So they do NOT correspond to free variables. Imagine if we remove column 2 and column 4 from the coefficient matrix in the beginning, then we will end up with a homogeneous equation that has no free variable, and hence the columns are linearly independent. Therefore, we can span the column space by just including the first, third, and fifth columns. That is, A basis for the column space is and hence the column space has dimension .   Spoiler: You may have noticed that the dimension of the null space and the dimension of the column space add up to the number of columns in the matrix. This is a BIG theorem in linear algebra! We can sense that this is true because we take the columns with pivot positions to form a basis for the column space and use the columns without pivot positions to figure out a basis for the null space. We will focus on this theorem in section 5.4 (and this theorem is a fundamental theorem of linear algebra!) .  "
+},
+{
+  "id": "subsec-Dimensions-10",
+  "level": "2",
+  "url": "sec52-IndependenceDimension.html#subsec-Dimensions-10",
+  "type": "Checkpoint",
+  "number": "5.2.18",
+  "title": "",
+  "body": " Let .  Find a basis and the dimension for and .  "
+},
+{
   "id": "secA1-Midterm1Review",
   "level": "1",
   "url": "secA1-Midterm1Review.html",
