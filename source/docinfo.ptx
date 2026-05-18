@@ -39,6 +39,10 @@
     \newcommand{\comp}{\text{comp}}
     \newcommand{\adj}{\text{adj}}
     \newcommand{\rank}{\text{rank}}
+    \newcommand{\Nul}{\text{Nul}}
+    \newcommand{\Col}{\text{Col}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\span}{\text{span}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
