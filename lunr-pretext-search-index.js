@@ -2548,6 +2548,51 @@ var ptx_lunr_docs = [
   "body": " Write the following matrix AND its inverse as a product of elementary matrices.     and    "
 },
 {
+  "id": "secA2-Midterm2Review",
+  "level": "1",
+  "url": "secA2-Midterm2Review.html",
+  "type": "Section",
+  "number": "A.2",
+  "title": "Midterm #1 Review",
+  "body": " Midterm #1 Review   The midterm exam will cover material from Week 5 Day 1 of the class through Week 7 Day 2. That is, it covers material in the following sections:    Linear Transformation     Determinants     Properties of Determinants     Vectors and Lines     Projection and Planes     Subspaces     Independence and Dimensions   On this page, you will find review problems for the midterm exam. The final answers are included for each problem. Make sure you spend some time working through these problems and understanding how things work!   A quick reminder: The class session before the midterm exam #2 on Tuesday, May 19, will be a review session. Usually this will be a work day for you to work through some problems together to prepare for the exam. This is also a great opportunity for you to ask questions about anything that is not clear to you!    Linear Transformations   Let be a linear transformation such that Find a matrix such that is defined by the formula           Determinants (and related stuff)   Let . Find using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form.          Vector Geometry   Find an equation of the plane that contains the points , , and .          Subspaces (and related stuff)   Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for and .     "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-2",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let be a linear transformation such that Find a matrix such that is defined by the formula        "
+},
+{
+  "id": "ws-MidtermReview-Determinants-2",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-Determinants-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let . Find using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form.       "
+},
+{
+  "id": "ws-MidtermReview-VectorGeometry-2",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-VectorGeometry-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Find an equation of the plane that contains the points , , and .       "
+},
+{
+  "id": "ws-Subspaces-2",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-Subspaces-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for and .   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
