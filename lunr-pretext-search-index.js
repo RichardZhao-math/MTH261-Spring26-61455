@@ -2554,7 +2554,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "A.2",
   "title": "Midterm #2 Review",
-  "body": " Midterm #2 Review   The second midterm exam will cover material from Week 5 Day 1 of the class through Week 7 Day 2. That is, it covers material in the following sections:    Linear Transformation     Determinants     Properties of Determinants     Vectors and Lines     Projection and Planes     Subspaces     Independence and Dimensions   On this page, you will find review problems for the midterm exam. The final answers are included for each problem. Make sure you spend some time working through these problems and understanding how things work!   A quick reminder: The class session before the midterm exam #2 on Tuesday, May 19, will be a review session. Usually this will be a work day for you to work through some problems together to prepare for the exam. This is also a great opportunity for you to ask questions about anything that is not clear to you!    Linear Transformations   Let be a linear transformation such that Find a matrix such that is defined by the formula           Determinants (and related stuff)   Let . Find using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form.          Vector Geometry   Determine whether the lines and intersect, and if so, find the point of intersection.   The two lines are parallel of each other. Hence they do not intersect.     Determine whether the lines and intersect, and if so, find the point of intersection.   They intersect at the point      Determine whether the lines and intersect, and if so, find the point of intersection.   These two lines do not intersect. They are skew.     Write the equation of the plane with normal vector passing through the point .         Find an equation of the plane that contains the points , , and .         Find an equation of the plane passing through the three points , , and .         Find the intersection of the line and the plane .         Let denote the line of intersection of the planes and . Find an equation for the line in parametric form.     Subspaces (and related stuff)   Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for and .     Determine if the following set is a subspace of . Justify your reasoning.   Yes     Determine which of the following sets are bases for or . Justify your reasoning.                       This is a basis for .    This is NOT a basis for nor .    This is NOT a basis for nor .        Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is     Yes is in .       Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.    A basis is and the dimension is     "
+  "body": " Midterm #2 Review   The second midterm exam will cover material from Week 5 Day 1 of the class through Week 7 Day 2. That is, it covers material in the following sections:    Linear Transformation     Determinants     Properties of Determinants     Vectors and Lines     Projection and Planes     Subspaces     Independence and Dimensions   On this page, you will find review problems for the midterm exam. The final answers are included for each problem. Make sure you spend some time working through these problems and understanding how things work!   A quick reminder: The class session before the midterm exam #2 on Tuesday, May 19, will be a review session. Usually this will be a work day for you to work through some problems together to prepare for the exam. This is also a great opportunity for you to ask questions about anything that is not clear to you!    Linear Transformations   Let be a linear transformation defined by , where    Find the value of     Is an image of this linear transformation? Justify your reasoning.              No it is not.        Let be a linear transformation defined by , where Is an image of this transformation? Justify your reasoning.   Yes, since      Let be a linear transformation such that Find          Let be a linear transformation such that Find a matrix such that is defined by the formula          Suppose is a linear transformation such that is a rotation by counterclockwise. Find the standard matrix that defines this transformation. That is, find the matrix such that .         Suppose is a linear transformation such that is a reflection across the line by . Find the standard matrix that defines this transformation. That is, find the matrix such that .          Determinants (and related stuff)   Let . Find using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form.         Find the determinant of the following matrices.               Find the determinant of the following matrices.                 Let , , and denote matrices such that Evaluate the following expression.                                 Vector Geometry   Determine whether the lines and intersect, and if so, find the point of intersection.   The two lines are parallel of each other. Hence they do not intersect.     Determine whether the lines and intersect, and if so, find the point of intersection.   They intersect at the point      Determine whether the lines and intersect, and if so, find the point of intersection.   These two lines do not intersect. They are skew.     Write the equation of the plane with normal vector passing through the point .         Find an equation of the plane that contains the points , , and .         Find an equation of the plane passing through the three points , , and .         Find the intersection of the line and the plane .         Let denote the line of intersection of the planes and . Find an equation for the line in parametric form.          Subspaces (and related stuff)   Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for and .     Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for (the empty set) and .     Determine if the following set is a subspace of . Justify your reasoning.   Yes     Is the set linearly independent? Justify your reasoning.   Yes     Is the set linearly independent? Justify your reasoning.   No     Determine which of the following sets are bases for or . Justify your reasoning.                       This is a basis for .    This is NOT a basis for nor .    This is NOT a basis for nor .        Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is     Yes is in .       Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is .    Yes, is in .       Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.   A basis is and the dimension is      "
 },
 {
   "id": "ws-MidtermReview-LinearTransformations-2",
@@ -2563,7 +2563,52 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "1",
   "title": "",
+  "body": " Let be a linear transformation defined by , where    Find the value of     Is an image of this linear transformation? Justify your reasoning.              No it is not.      "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-3",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let be a linear transformation defined by , where Is an image of this transformation? Justify your reasoning.   Yes, since    "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-4",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Let be a linear transformation such that Find        "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-5",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-5",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
   "body": " Let be a linear transformation such that Find a matrix such that is defined by the formula        "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-6",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-6",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": " Suppose is a linear transformation such that is a rotation by counterclockwise. Find the standard matrix that defines this transformation. That is, find the matrix such that .       "
+},
+{
+  "id": "ws-MidtermReview-LinearTransformations-7",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-LinearTransformations-7",
+  "type": "Worksheet Exercise",
+  "number": "6",
+  "title": "",
+  "body": " Suppose is a linear transformation such that is a reflection across the line by . Find the standard matrix that defines this transformation. That is, find the matrix such that .       "
 },
 {
   "id": "ws-MidtermReview-Determinants-2",
@@ -2573,6 +2618,24 @@ var ptx_lunr_docs = [
   "number": "1",
   "title": "",
   "body": " Let . Find using (1) the cofactor expansion, and (2) elementary row operation to convert the matrix into upper triangular form.       "
+},
+{
+  "id": "ws-MidtermReview-Determinants-3",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-Determinants-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Find the determinant of the following matrices.               Find the determinant of the following matrices.               "
+},
+{
+  "id": "ws-MidtermReview-Determinants-4",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-MidtermReview-Determinants-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Let , , and denote matrices such that Evaluate the following expression.                              "
 },
 {
   "id": "ws-MidtermReview-VectorGeometry-2",
@@ -2644,7 +2707,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "8",
   "title": "",
-  "body": " Let denote the line of intersection of the planes and . Find an equation for the line in parametric form.  "
+  "body": " Let denote the line of intersection of the planes and . Find an equation for the line in parametric form.       "
 },
 {
   "id": "ws-Subspaces-2",
@@ -2662,7 +2725,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "2",
   "title": "",
-  "body": " Determine if the following set is a subspace of . Justify your reasoning.   Yes   "
+  "body": " Let . Find a basis and the dimension of the null space and the column space of .   Basis for and .  Basis for (the empty set) and .   "
 },
 {
   "id": "ws-Subspaces-4",
@@ -2671,7 +2734,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "3",
   "title": "",
-  "body": " Determine which of the following sets are bases for or . Justify your reasoning.                       This is a basis for .    This is NOT a basis for nor .    This is NOT a basis for nor .      "
+  "body": " Determine if the following set is a subspace of . Justify your reasoning.   Yes   "
 },
 {
   "id": "ws-Subspaces-5",
@@ -2680,7 +2743,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "4",
   "title": "",
-  "body": " Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is     Yes is in .     "
+  "body": " Is the set linearly independent? Justify your reasoning.   Yes   "
 },
 {
   "id": "ws-Subspaces-6",
@@ -2689,7 +2752,43 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "5",
   "title": "",
-  "body": " Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.  "
+  "body": " Is the set linearly independent? Justify your reasoning.   No   "
+},
+{
+  "id": "ws-Subspaces-7",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-Subspaces-7",
+  "type": "Worksheet Exercise",
+  "number": "6",
+  "title": "",
+  "body": " Determine which of the following sets are bases for or . Justify your reasoning.                       This is a basis for .    This is NOT a basis for nor .    This is NOT a basis for nor .      "
+},
+{
+  "id": "ws-Subspaces-8",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-Subspaces-8",
+  "type": "Worksheet Exercise",
+  "number": "7",
+  "title": "",
+  "body": " Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is     Yes is in .     "
+},
+{
+  "id": "ws-Subspaces-9",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-Subspaces-9",
+  "type": "Worksheet Exercise",
+  "number": "8",
+  "title": "",
+  "body": " Let .   Find a basis for .    Is a vector in ? Justify your reasoning.        A basis for is .    Yes, is in .     "
+},
+{
+  "id": "ws-Subspaces-10",
+  "level": "2",
+  "url": "secA2-Midterm2Review.html#ws-Subspaces-10",
+  "type": "Worksheet Exercise",
+  "number": "9",
+  "title": "",
+  "body": " Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.   A basis is and the dimension is    "
 },
 {
   "id": "backmatter-2",
