@@ -6,5 +6,7 @@
   <!-- include sections -->
   <xi:include href="sec51-SubspaceSpanning.ptx" />
   <xi:include href="sec52-IndependenceDimension.ptx" />
+  <xi:include href="sec53-Orthogonality.ptx" />
+  <xi:include href="sec54-Rank.ptx" />
 
 </chapter>
