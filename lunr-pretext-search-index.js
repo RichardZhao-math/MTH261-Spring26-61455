@@ -1342,6 +1342,213 @@ var ptx_lunr_docs = [
   "body": " We know that We can calculate the determinant of all three matrices and quickly verify that   "
 },
 {
+  "id": "sec33-EigenvaluesEigenvectors",
+  "level": "1",
+  "url": "sec33-EigenvaluesEigenvectors.html",
+  "type": "Section",
+  "number": "3.3",
+  "title": "Eigenvalues and Eigenvectors",
+  "body": " Eigenvalues and Eigenvectors    Suppose and be a linear transformation defined by .    Let . Compute , and then sketch the vectors and . What is their relationship?    Let . Compute , and then sketch the vectors and . What is their relationship?    In the previous investigation, we found that and are parallel, which allows us to express as a scalar multiple of the preimage . Observe that matrix-vector multiplication is hard. But scalar multiplication of a vector is much easier. This is the idea behind eigenvalues and eigenvectors , which allows us to turn a matrix-vector multiplication to a scalar multiplication!   Eigenvalues and Eigenvectors   Let be an matrix. An eigenvector of is a nonzero vector such that for some scalar . Such a scalar is called an eigenvalue of .  We call here an eigenvector corresponding to the eigenvalue .     But Richard... Why can't we allow the zero vector to be an eigenvector?  Great question! Let's do a quick experiment by allowing the zero vector to be an eigenvector.  If is an eigenvector of some square matrix , then we have for some scalar .   Then what are the eigenvalues of this matrix ?   The answer is every scalar ! This is because the equation is always true regardless of the value of (we ended up getting ). Then why bother defining the concept of eigenvalues of a matrix if every scalar is an eigenvalue?  Observe that allowing the zero vector to be an eigenvector will trivialize the concept of eigenvalues. So we exclude the zero vector from being an eigenvector.   The goal of this section is to be able to find the eigenvalues and its corresponding eigenvectors of a matrix. Let's do some verification, and then we will summarize the process that can be applied to any square matrix.   Let . Is an eigenvector of ?  Based on the definition, an eigenvector can turn a matrix-vector multiplication into a scalar multiplication. So let's compute and see if we can express it as a scalar multiple of .  Observe that So we can express this matrix-vector multiplication as scaling the vector by a factor of . Hence, is an eigenvector of , and the corresponding eigenvalue is .  What about ? Is also an eigenvector of ?  Let's do the same thing as before by computing and see if we can express it as a scalar multiple of : Since is not a scalar multiple of , the vector is not an eigenvector of .  Richard claims that an eigenvalue of is . How can we verify this claim?  If , then we can plug this value into the equation and be able to find the corresponding eigenvectors. So let's first plug in into the equation : We can assume and rewrite the equation as This is equivalent to the system of equations Now we can solve this system of equations using augmented matrices: Converting this matrix to row echelon form, we have This implies that and is a free variable. Hence, the corresponding eigenvectors are of the form for any real number of .   Suppose is an eigenvector of . Then must be a solution to the equation for some scalar . If we do some quick algebraic manipulation, we can obtain the following equation Observe that is a common factor of the left-hand side, so we can factor it out and rewrite the equation as Hmm... But this equation doesn't quick make sense... What is \" \"? That is, how can we subtract a scalar from a matrix?  From the previous example, we saw that is an eigenvalue of , and we ended up subtracting from the diagonal entries of . So instead of writing , which makes no sense, we can rewrite it as , where is the identity matrix. Hence, we can rewrite the equation as Now the equation makes sense! This is just a homogeneous equation so the solution (aka the eigenvectors) is captured by the null space of the matrix . Finding the eigenvectors of a matrix corresponding to a matrix is equivalent to finding the null space of the matrix .    Be careful! Recall that we don't allow the zero vector to be an eigenvector. Hence, we want to find the non-trivial solutions to the equation .   Let . An eigenvalue of this matrix is . Let's find the corresponding eigenvectors!  Essentially we want to find the non-trivial solutions to the equation . So let's find the matrix first: Now we can find the null space of the matrix by solving the homogeneous equation using the augmented matrix: Observe that and are free variables, and . Then we can express the solution, in parametric form, as Then the corresponding eigenvectors are of the form for any real numbers of and , except for the case when both and are zero.   Observe that all the eigenvectors corresponding to a specific eigenvalue of a matrix will live in , which is a subspace. Then we can define eigenspace as the null space of the matrix .   Eigenspace   Let be an matrix, and let be an eigenvalue of . The eigenspace of corresponding to the eigenvalue , denoted by , is the null space of the matrix . Symbolically speaking,     It is correct to say that the eigenspace includes all the eigenvectors corresponding to the eigenvalue of a matrix, but it is incorrect to say that everything in the eigenspace is an eigenvector. Remember that the zero vector is always in the subspace, but it is not an eigenvector. So eigenspace is essentially the set of all eigenvectors corresponding to a specific eigenvalue of a matrix, together with the zero vector.   Back to our previous example of with an eigenvalue of , we can find its eigenspace .  We did all the heavy-lifting work in the previous example by solving the homogeneous equation , with the solution, in parametric form, as Then the eigenspace , aka , is the span of those two basis vectors. That is,    Now that we know how to find the eigenvectors corresponding to a specific eigenvalue, the next question is: How do we find the eigenvalues of a matrix?   We can find the eigenvalues of a matrix by, again, observing this equation Recall that eigenvectors are non-trivial solutions to this homogeneous equation, so this equation must have infinitely many solutions. That is, the matrix must be singular (not invertible).  We can say a lot about a non-invertible matrix. The fact that will be super useful to us is that a matrix is non-invertible if and only if its determinant is zero. So we can find all eigenvalues of a matrix by solving the equation .    Let and we want to find all the eigenvalues of this matrix.  Let be an eigenvalue of . Then we want the matrix be non-invertible to guarantee non-trivial solutions to the equation . That is, we want the values such that .  Let's start by computing the determinant of the matrix : This is essentially a quadratic equation in terms of and we can totally solve it! Factoring the quadratic, we have Hence, the eigenvalues of the matrix are and .    Find the eigenvalues of the matrix .   Since the equation captures the characteristics of the matrix that this matrix must be non-invertible, we call this equation the characteristic equation of the matrix .   Characteristic Equations   Let be an matrix. The equation is called the characteristic equation of the matrix . A scalar is an eigenvalue of if and only if it is a solution to the characteristic equation of .  The characteristic equation will always be a polynomial equation, so is called the characteristic polynomial of the matrix .    In practice, finding the eigenvalues of an matrix results in solving a polynomial equation of degree . This is almost always difficult as gets larger. So we will leave this to computers, except in the case and some easy cases.   Let . What are the eigenvalues of this matrix?  We can find the eigenvalues by solving the characteristic equation , so let's start by computing the determinant of the matrix : Since is already factored, we can easily solve the characteristic equation and find the eigenvalues: Hence, the eigenvalues of the matrix are and .   "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-2",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-2",
+  "type": "Investigation",
+  "number": "3.3.1",
+  "title": "",
+  "body": "  Suppose and be a linear transformation defined by .    Let . Compute , and then sketch the vectors and . What is their relationship?    Let . Compute , and then sketch the vectors and . What is their relationship?   "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-3",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "eigenvalues eigenvectors "
+},
+{
+  "id": "def-EigenvaluesEigenvectors",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#def-EigenvaluesEigenvectors",
+  "type": "Definition",
+  "number": "3.3.1",
+  "title": "Eigenvalues and Eigenvectors.",
+  "body": " Eigenvalues and Eigenvectors   Let be an matrix. An eigenvector of is a nonzero vector such that for some scalar . Such a scalar is called an eigenvalue of .  We call here an eigenvector corresponding to the eigenvalue .   "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-5",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-5",
+  "type": "Note",
+  "number": "3.3.2",
+  "title": "But Richard... Why can’t we allow the zero vector to be an eigenvector?",
+  "body": " But Richard... Why can't we allow the zero vector to be an eigenvector?  Great question! Let's do a quick experiment by allowing the zero vector to be an eigenvector.  If is an eigenvector of some square matrix , then we have for some scalar .   Then what are the eigenvalues of this matrix ?   The answer is every scalar ! This is because the equation is always true regardless of the value of (we ended up getting ). Then why bother defining the concept of eigenvalues of a matrix if every scalar is an eigenvalue?  Observe that allowing the zero vector to be an eigenvector will trivialize the concept of eigenvalues. So we exclude the zero vector from being an eigenvector.  "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-7",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-7",
+  "type": "Example",
+  "number": "3.3.3",
+  "title": "",
+  "body": " Let . Is an eigenvector of ?  Based on the definition, an eigenvector can turn a matrix-vector multiplication into a scalar multiplication. So let's compute and see if we can express it as a scalar multiple of .  Observe that So we can express this matrix-vector multiplication as scaling the vector by a factor of . Hence, is an eigenvector of , and the corresponding eigenvalue is .  What about ? Is also an eigenvector of ?  Let's do the same thing as before by computing and see if we can express it as a scalar multiple of : Since is not a scalar multiple of , the vector is not an eigenvector of .  Richard claims that an eigenvalue of is . How can we verify this claim?  If , then we can plug this value into the equation and be able to find the corresponding eigenvectors. So let's first plug in into the equation : We can assume and rewrite the equation as This is equivalent to the system of equations Now we can solve this system of equations using augmented matrices: Converting this matrix to row echelon form, we have This implies that and is a free variable. Hence, the corresponding eigenvectors are of the form for any real number of .  "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-11",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-11",
+  "type": "Example",
+  "number": "3.3.4",
+  "title": "",
+  "body": " Let . An eigenvalue of this matrix is . Let's find the corresponding eigenvectors!  Essentially we want to find the non-trivial solutions to the equation . So let's find the matrix first: Now we can find the null space of the matrix by solving the homogeneous equation using the augmented matrix: Observe that and are free variables, and . Then we can express the solution, in parametric form, as Then the corresponding eigenvectors are of the form for any real numbers of and , except for the case when both and are zero.  "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-12",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "eigenspace "
+},
+{
+  "id": "def-Eigenspace",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#def-Eigenspace",
+  "type": "Definition",
+  "number": "3.3.5",
+  "title": "Eigenspace.",
+  "body": " Eigenspace   Let be an matrix, and let be an eigenvalue of . The eigenspace of corresponding to the eigenvalue , denoted by , is the null space of the matrix . Symbolically speaking,    "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-15",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-15",
+  "type": "Example",
+  "number": "3.3.6",
+  "title": "",
+  "body": " Back to our previous example of with an eigenvalue of , we can find its eigenspace .  We did all the heavy-lifting work in the previous example by solving the homogeneous equation , with the solution, in parametric form, as Then the eigenspace , aka , is the span of those two basis vectors. That is,   "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-19",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-19",
+  "type": "Example",
+  "number": "3.3.7",
+  "title": "",
+  "body": " Let and we want to find all the eigenvalues of this matrix.  Let be an eigenvalue of . Then we want the matrix be non-invertible to guarantee non-trivial solutions to the equation . That is, we want the values such that .  Let's start by computing the determinant of the matrix : This is essentially a quadratic equation in terms of and we can totally solve it! Factoring the quadratic, we have Hence, the eigenvalues of the matrix are and .  "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-20",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-20",
+  "type": "Checkpoint",
+  "number": "3.3.8",
+  "title": "",
+  "body": " Find the eigenvalues of the matrix .  "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-21",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-21",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "characteristic equation "
+},
+{
+  "id": "def-CharacteristicEquation",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#def-CharacteristicEquation",
+  "type": "Definition",
+  "number": "3.3.9",
+  "title": "Characteristic Equations.",
+  "body": " Characteristic Equations   Let be an matrix. The equation is called the characteristic equation of the matrix . A scalar is an eigenvalue of if and only if it is a solution to the characteristic equation of .  The characteristic equation will always be a polynomial equation, so is called the characteristic polynomial of the matrix .   "
+},
+{
+  "id": "sec33-EigenvaluesEigenvectors-24",
+  "level": "2",
+  "url": "sec33-EigenvaluesEigenvectors.html#sec33-EigenvaluesEigenvectors-24",
+  "type": "Example",
+  "number": "3.3.10",
+  "title": "",
+  "body": " Let . What are the eigenvalues of this matrix?  We can find the eigenvalues by solving the characteristic equation , so let's start by computing the determinant of the matrix : Since is already factored, we can easily solve the characteristic equation and find the eigenvalues: Hence, the eigenvalues of the matrix are and .  "
+},
+{
+  "id": "sec34-Diagonalization",
+  "level": "1",
+  "url": "sec34-Diagonalization.html",
+  "type": "Section",
+  "number": "3.4",
+  "title": "Diagonalization",
+  "body": " Diagonalization    Let and .    Find if this is easy to compute. If not, explain why not (and then table it).    Find if this is easy to compute. If not, explain why not (and then table it).     Diagonal Matrices   A diagonal matrix is a square matrix in which all elements outside the main diagonal are zero.    Diagonal matrices are super nice to work with because   It is easy to find their determinants (just multiply the diagonal entries).    It is easy to find their inverses (just take the reciprocals of the diagonal entries).    We can see immediately what they do to the standard basis vectors (just scale them by the diagonal entries).    It is easy to compute the powers of them (just take the powers of the diagonal entries).   So the goal of this section is to diagonalize a square matrix (if possible). That is, we want to find a diagonal matrix that is similar to a given matrix.   Similar Matrices   Let and be matrices. Then is similar to if there exists an invertible matrix such that     If you end up studying advanced linear algebra, what is really going on here is that the columns of the matrix represent an alternative basis of . If you use that basis instead of the standard basis, the matrix for the corresponding linear transformation actually would be diagonal. This alternative basis is actually made up of eigenvectors and that is what we are going to learn about how.  As far as what this class (MTH 261) concerns, we will focus on the fact that if a matrix is similar to a diagonal matrix, then it is still easy to compute powers if we can figure out what the , , and are.  But how do similar matrices makes it easier to compute powers? Let's investigate this in the next example.   Recall in the previous example, and . These two matrices are similar because with the matrix .  Let's first verify it! We can first find the inverse of quickly: Then we have So and are indeed similar!  Now let's try to compute by finding first to find any pattern! Observe that If we want to compute , we can do the same thing and find that So we can find as We saw that can be computed easily, so we can compute easily as well by just multiplying three matrices together (as opposed to multiplying by itself 25 times).   Now that we have seen how similar matrices (to diagonal matrices) can help us compute powers of matrices, then the next question is: how can we diagonalize a matrix by finding the similar diagonal matrix and the special matrix ? It turns out that the key is to find the eigenvalues and eigenvectors of the matrix!  The process of diagonalization is listed as follows:  Find the eigenvalues of the matrix.   For each eigenvalue, find the corresponding eigenvectors . A quick way to do so is to grab the basis vectors in the eigenspace.    Construct the special matrix using the eigenvectors as comlumns, so     Construct the diagonal matrix by putting the corresponding eigenvalues of on the diagonal entries, up to its multiplicity.           But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?  Let's say we have a square matrix . Suppose we let where and are the corresponding eigenvalues and eigenvectors of the matrix . That is, for each . To guarantee that is invertible, the columns of (aka all the eigenvectors) must be linearly independent. That is why we want to just grab the basis vectors of the eigenspace to ensure the invertibility.  Imagine we want to multiply . Then we obtain So we just showed that . Since is invertible, then exists, and we can multiply on the right on both sides of the equation. We obtain So yes! and are similar!    Let . Let's diagonalize this matrix!  We need to find the eigenvalues and its corresponding eigenvectors for the diagonalization. In the last section, we found that the characteristic equation is This implies that the eigenvalues are (with the multiplicity of ) and (with the multiplicity of ). Next, we will find the corresponding eigenvectors of these eigenvalues.  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that and are the free variables, so the solution, in parametric form, is Hence, the eigenvectors that spans the eigenspace are and .  Now let's put together the diagonal matrix and our special matrix for the diagonalization! Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    This is a good place to call it good for diagonalization since we found and . We can next verify it by making sure is indeed .  We can find by reducing to . Hence, .  Now we can verify that    "
+},
+{
+  "id": "sec34-Diagonalization-2",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#sec34-Diagonalization-2",
+  "type": "Investigation",
+  "number": "3.4.1",
+  "title": "",
+  "body": "  Let and .    Find if this is easy to compute. If not, explain why not (and then table it).    Find if this is easy to compute. If not, explain why not (and then table it).   "
+},
+{
+  "id": "def-DiagonalMatrices",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#def-DiagonalMatrices",
+  "type": "Definition",
+  "number": "3.4.1",
+  "title": "Diagonal Matrices.",
+  "body": " Diagonal Matrices   A diagonal matrix is a square matrix in which all elements outside the main diagonal are zero.   "
+},
+{
+  "id": "sec34-Diagonalization-4",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#sec34-Diagonalization-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "diagonalize "
+},
+{
+  "id": "def-SimilarMatrices",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#def-SimilarMatrices",
+  "type": "Definition",
+  "number": "3.4.2",
+  "title": "Similar Matrices.",
+  "body": " Similar Matrices   Let and be matrices. Then is similar to if there exists an invertible matrix such that    "
+},
+{
+  "id": "sec34-Diagonalization-9",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#sec34-Diagonalization-9",
+  "type": "Example",
+  "number": "3.4.3",
+  "title": "",
+  "body": " Recall in the previous example, and . These two matrices are similar because with the matrix .  Let's first verify it! We can first find the inverse of quickly: Then we have So and are indeed similar!  Now let's try to compute by finding first to find any pattern! Observe that If we want to compute , we can do the same thing and find that So we can find as We saw that can be computed easily, so we can compute easily as well by just multiplying three matrices together (as opposed to multiplying by itself 25 times).  "
+},
+{
+  "id": "sec34-Diagonalization-12",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#sec34-Diagonalization-12",
+  "type": "Note",
+  "number": "3.4.4",
+  "title": "But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?",
+  "body": " But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?  Let's say we have a square matrix . Suppose we let where and are the corresponding eigenvalues and eigenvectors of the matrix . That is, for each . To guarantee that is invertible, the columns of (aka all the eigenvectors) must be linearly independent. That is why we want to just grab the basis vectors of the eigenspace to ensure the invertibility.  Imagine we want to multiply . Then we obtain So we just showed that . Since is invertible, then exists, and we can multiply on the right on both sides of the equation. We obtain So yes! and are similar!  "
+},
+{
+  "id": "sec34-Diagonalization-13",
+  "level": "2",
+  "url": "sec34-Diagonalization.html#sec34-Diagonalization-13",
+  "type": "Example",
+  "number": "3.4.5",
+  "title": "",
+  "body": " Let . Let's diagonalize this matrix!  We need to find the eigenvalues and its corresponding eigenvectors for the diagonalization. In the last section, we found that the characteristic equation is This implies that the eigenvalues are (with the multiplicity of ) and (with the multiplicity of ). Next, we will find the corresponding eigenvectors of these eigenvalues.  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that and are the free variables, so the solution, in parametric form, is Hence, the eigenvectors that spans the eigenspace are and .  Now let's put together the diagonal matrix and our special matrix for the diagonalization! Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    This is a good place to call it good for diagonalization since we found and . We can next verify it by making sure is indeed .  We can find by reducing to . Hence, .  Now we can verify that   "
+},
+{
   "id": "sec41-VectorsLines",
   "level": "1",
   "url": "sec41-VectorsLines.html",
@@ -2321,6 +2528,168 @@ var ptx_lunr_docs = [
   "number": "5.2.18",
   "title": "",
   "body": " Let .  Find a basis and the dimension for and .  "
+},
+{
+  "id": "sec53-Orthogonality",
+  "level": "1",
+  "url": "sec53-Orthogonality.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Orthogonality",
+  "body": " Orthogonality  Recall back in , we saw that two vectors are orthogonal if their dot product is in . Similarly, we can define orthogonal sets as a set of orthogonal vectors.   Orthogonal Sets   A set of vectors is an orthogonal set if each pair of distinct vectors from this set is orthogonal. That is, whenever .     Let , , and . Is this set an orthogonal set?  If this is an orthogonal set, then each pair of the distinct vectors is orthogonal. We can form three pairs of distinct vectors in the set, and we will check their orthogonality respectively: Observe that each pair of distinct vectors in the set is orthogonal. Hence this is an orthogonal set.   Sometimes we want to only focus on the direction of a vector. Since the length of a vector has nothing to do with its direction, we want to minimize the effect of the length by making the length to be .   Unit Vectors   A vector with length is called a unit vector .    Given a non-zero vector , we can make its length to be by dividing it by its length . That is, a unit vector in the same direction as is This process of creating a normal vector from is called normalizing .  Given an orthogonal set, we can even normalize each vector in this set! This set is called the orthonormal set .   Orthonormal Sets   A set is an orthonormal set if it is an orthogonal set of unit vectors.     We showed that, in the previous example, that is an orthogonal set, where , , and . Is this set also an orthonormal set?  The answer is no since none of the three vectors have the length of .   But we can make an orthonormal set out of it by normalizing each vector. Since normalization (aka rescaling the vector to have the length of ) will not change the direction, the orthogonality remains.  Observe that Then we can normalize each vector by dividing it by its lengths: The set is now an orthonormal set!   But why do we want orthogonal\/orthonormal sets? That is because these sets are linearly independent so they can become some bases for some subspaces. Also, things are working out nicely with orthogonal\/orthonormal bases, so we like to work with them.  If we want an orthogonal basis for a subspace, we can produce it using the Gram-Schmidt Process . We will not be covering it in this class. Feel free to look into it if you are interested. You should be able to understand the process just fine, as the trick to make the process work is through projection that we learned before!  "
+},
+{
+  "id": "sec53-Orthogonality-2",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthogonal sets "
+},
+{
+  "id": "def-OrthogonalSet",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#def-OrthogonalSet",
+  "type": "Definition",
+  "number": "5.3.1",
+  "title": "Orthogonal Sets.",
+  "body": " Orthogonal Sets   A set of vectors is an orthogonal set if each pair of distinct vectors from this set is orthogonal. That is, whenever .   "
+},
+{
+  "id": "sec53-Orthogonality-4",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-4",
+  "type": "Example",
+  "number": "5.3.2",
+  "title": "",
+  "body": " Let , , and . Is this set an orthogonal set?  If this is an orthogonal set, then each pair of the distinct vectors is orthogonal. We can form three pairs of distinct vectors in the set, and we will check their orthogonality respectively: Observe that each pair of distinct vectors in the set is orthogonal. Hence this is an orthogonal set.  "
+},
+{
+  "id": "def-UnitVector",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#def-UnitVector",
+  "type": "Definition",
+  "number": "5.3.3",
+  "title": "Unit Vectors.",
+  "body": " Unit Vectors   A vector with length is called a unit vector .   "
+},
+{
+  "id": "sec53-Orthogonality-7",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "normalizing "
+},
+{
+  "id": "sec53-Orthogonality-8",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthonormal set "
+},
+{
+  "id": "def-OrthonormalSet",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#def-OrthonormalSet",
+  "type": "Definition",
+  "number": "5.3.4",
+  "title": "Orthonormal Sets.",
+  "body": " Orthonormal Sets   A set is an orthonormal set if it is an orthogonal set of unit vectors.   "
+},
+{
+  "id": "sec53-Orthogonality-10",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-10",
+  "type": "Example",
+  "number": "5.3.5",
+  "title": "",
+  "body": " We showed that, in the previous example, that is an orthogonal set, where , , and . Is this set also an orthonormal set?  The answer is no since none of the three vectors have the length of .   But we can make an orthonormal set out of it by normalizing each vector. Since normalization (aka rescaling the vector to have the length of ) will not change the direction, the orthogonality remains.  Observe that Then we can normalize each vector by dividing it by its lengths: The set is now an orthonormal set!  "
+},
+{
+  "id": "sec53-Orthogonality-12",
+  "level": "2",
+  "url": "sec53-Orthogonality.html#sec53-Orthogonality-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gram-Schmidt Process "
+},
+{
+  "id": "sec54-Rank",
+  "level": "1",
+  "url": "sec54-Rank.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Rank of a Matrix",
+  "body": " Rank of a Matrix  Recall that back in , we investigated two of the four fundamental subspaces as Null Spaces ( ) and Column Spaces ( ). We also saw how we can find a basis for these two subspaces in . There is actually a cool observation about the relationship between their dimensions.   Recall we did an example back in to find a basis for the null space and the column space of the matrix . will link you back to the work if you need a refresher.  If we try finding the dimension of the null space and the dimension of the column space, we may notice that they add up to the number of columns. That is, , , and , so Well this makes sense because a basis of consists of the columns that contains a pivot position, and a basis of can be obtained using the columns without a pivot position. So every column counts.   This observation about the relationship between the dimensions is a fundamental theorem of linear algebra , as it links two of the fundamental subspaces together.  Terminology! The rank of a matrix is the dimension of the column space, and the nullity of a matrix is the dimension of the null space. Then we have the following theorem:   Rank-Nullity Theorem   Let be an matrix. Then That is, the rank plus the nullity equals to the number of columns.    The other two fundamental subspaces are the column space and the null space of the transpose. That is, let be an matrix. Then its four fundamental subspaces are    , the column space of      , the null space of      , the column space of , aka the row space      , the null space of , aka the left-null space      If we apply the Rank-Nullity Theorem to , then we can find the relationship between the dimension of the row space and the left-null space, as follows: And if you think about the connection between the column space and the row space, they should have the same dimension since the number of pivot positions in a matrix should be fixed (unchanged through transpose). That is, This is essentially part of the fundamental theorem of linear algebra , along with the orthogonal condition that we won't be discussing in this class but it is super obvious (look up something called the \"direct sum\"), captured in the following diagram.    Diagram of Fundamental Theorem of Linear Algebra    Fundamental Theorem of Linear Algebra   Let be an matrix with . Then                     There are other statements in the fundamental theorem of linear algebra captured in this diagram (i.e., is the direct sum of the row space and the null space). Essentially, the fundamental theorem of linear algebra is a collection of results about many properties of the four fundamental subspaces. In this class, all we care about here is the connection between the dimensions of the subspaces.  "
+},
+{
+  "id": "sec54-Rank-3",
+  "level": "2",
+  "url": "sec54-Rank.html#sec54-Rank-3",
+  "type": "Example",
+  "number": "5.4.1",
+  "title": "",
+  "body": " Recall we did an example back in to find a basis for the null space and the column space of the matrix . will link you back to the work if you need a refresher.  If we try finding the dimension of the null space and the dimension of the column space, we may notice that they add up to the number of columns. That is, , , and , so Well this makes sense because a basis of consists of the columns that contains a pivot position, and a basis of can be obtained using the columns without a pivot position. So every column counts.  "
+},
+{
+  "id": "sec54-Rank-4",
+  "level": "2",
+  "url": "sec54-Rank.html#sec54-Rank-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "fundamental theorem of linear algebra "
+},
+{
+  "id": "sec54-Rank-5",
+  "level": "2",
+  "url": "sec54-Rank.html#sec54-Rank-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "rank nullity "
+},
+{
+  "id": "thm-RankNullityTheorem",
+  "level": "2",
+  "url": "sec54-Rank.html#thm-RankNullityTheorem",
+  "type": "Theorem",
+  "number": "5.4.2",
+  "title": "Rank-Nullity Theorem.",
+  "body": " Rank-Nullity Theorem   Let be an matrix. Then That is, the rank plus the nullity equals to the number of columns.   "
+},
+{
+  "id": "sec54-Rank-7",
+  "level": "2",
+  "url": "sec54-Rank.html#sec54-Rank-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "row space left-null space "
+},
+{
+  "id": "sec54-Rank-9",
+  "level": "2",
+  "url": "sec54-Rank.html#sec54-Rank-9",
+  "type": "Figure",
+  "number": "5.4.3",
+  "title": "",
+  "body": "  Diagram of Fundamental Theorem of Linear Algebra  "
+},
+{
+  "id": "thm-FundamentalTheoremLinearAlgebra",
+  "level": "2",
+  "url": "sec54-Rank.html#thm-FundamentalTheoremLinearAlgebra",
+  "type": "Theorem",
+  "number": "5.4.4",
+  "title": "Fundamental Theorem of Linear Algebra.",
+  "body": " Fundamental Theorem of Linear Algebra   Let be an matrix with . Then                    "
 },
 {
   "id": "secA1-Midterm1Review",
