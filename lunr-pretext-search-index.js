@@ -3178,6 +3178,123 @@ var ptx_lunr_docs = [
   "body": " Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.   A basis is and the dimension is    "
 },
 {
+  "id": "secA1-Midterm1Review",
+  "level": "1",
+  "url": "secA1-Midterm1Review.html",
+  "type": "Section",
+  "number": "A.3",
+  "title": "Final Review",
+  "body": " Final Review   The final exam will be cumulative, which means it is a fair shot for me to ask anything we covered this term on the final exam (minus the abstract vector space thing we did on Tuesday). Below are the sections we covered after the second midterm exam:    Orthogonality     Rank of a Matrix     Eigenvalues and Eigenvectors     Diagonalization   On this page, you will find review problems that addresses the aforementioned sections. The final answers are included for each problem. Make sure you spend some time working through these problems and understanding how things work!   Note: For review problems that address material covered in the first two midterm exams, please refer to the Midterm #1 Review and Midterm #2 Review.   A quick reminder: The last class session on Thursday, June 4, will be a review session. Usually this will be a work day for you to work through some problems together to prepare for the exam. This is also a great opportunity for you to ask questions about anything that is not clear to you!    Orthogonality   Let , , and . Determine whether this set an orthogonal set. Why or why not?   Nope     Let , , and . Is this set an orthogonal set? Why or why not?   Nope     Let , , and . Is this set an orthogonal set? Why or why not?   Yep     Let , , and . Is this set an orthogonal set? Why or why not?  Is this set an orthonormal set? If not, normalize these vectors to create an orthonormal set?   Yep to the orthogonal set and nope to the orthonormal set.  The normalized version is       Column Space & Null Space   Let .   Find the dimension of .    Find the dimension of .       and      Let .   Find the dimension of .    Find the dimension of .       and      Let be an  invertible matrix.   What is the dimension of ?    What is the dimension of ?       and    P.S: the matrix in the previous exercise is invertible, so you see that every column has a pivot position (and hence ). By the Rank Nullity Theorem, .      Eigen-related Stuff   Let . Find all the eigenvalues of this matrix, and determine the corresponding eigenspace.   The eigenvalue is , with the multiplicity of .  Its corresponding eigenspace is      Let . Find all the eigenvalues of this matrix.   The eigenvalues are (with the multiplicity of ) and (with the multiplicity of )     Diagonalize the matrix if possible. If not, state why.   Yep, is diagonalizable.   and      Diagonalize the matrix if possible. If not, state why.   Yep is diagonalizable.   and      Diagonalize the matrix if possible. If not, state why.   Nope is not diagonalizable.     "
+},
+{
+  "id": "ws-Orthogonality-2",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-Orthogonality-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let , , and . Determine whether this set an orthogonal set. Why or why not?   Nope   "
+},
+{
+  "id": "ws-Orthogonality-3",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-Orthogonality-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let , , and . Is this set an orthogonal set? Why or why not?   Nope   "
+},
+{
+  "id": "ws-Orthogonality-4",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-Orthogonality-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Let , , and . Is this set an orthogonal set? Why or why not?   Yep   "
+},
+{
+  "id": "ws-Orthogonality-5",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-Orthogonality-5",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": " Let , , and . Is this set an orthogonal set? Why or why not?  Is this set an orthonormal set? If not, normalize these vectors to create an orthonormal set?   Yep to the orthogonal set and nope to the orthonormal set.  The normalized version is    "
+},
+{
+  "id": "ws-RankNullity-2",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-RankNullity-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let .   Find the dimension of .    Find the dimension of .       and    "
+},
+{
+  "id": "ws-RankNullity-3",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-RankNullity-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let .   Find the dimension of .    Find the dimension of .       and    "
+},
+{
+  "id": "ws-RankNullity-4",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-RankNullity-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Let be an  invertible matrix.   What is the dimension of ?    What is the dimension of ?       and    P.S: the matrix in the previous exercise is invertible, so you see that every column has a pivot position (and hence ). By the Rank Nullity Theorem, .   "
+},
+{
+  "id": "ws-FinalReview-EigenStuff-2",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-2",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": " Let . Find all the eigenvalues of this matrix, and determine the corresponding eigenspace.   The eigenvalue is , with the multiplicity of .  Its corresponding eigenspace is    "
+},
+{
+  "id": "ws-FinalReview-EigenStuff-3",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-3",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": " Let . Find all the eigenvalues of this matrix.   The eigenvalues are (with the multiplicity of ) and (with the multiplicity of )   "
+},
+{
+  "id": "ws-FinalReview-EigenStuff-4",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-4",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": " Diagonalize the matrix if possible. If not, state why.   Yep, is diagonalizable.   and    "
+},
+{
+  "id": "ws-FinalReview-EigenStuff-5",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-5",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": " Diagonalize the matrix if possible. If not, state why.   Yep is diagonalizable.   and    "
+},
+{
+  "id": "ws-FinalReview-EigenStuff-6",
+  "level": "2",
+  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-6",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": " Diagonalize the matrix if possible. If not, state why.   Nope is not diagonalizable.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
