@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="secA1-Midterm1Review" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Final Review</title>
+
+    <introduction>
+        <p>
+            The final exam will be cumulative, which means it is a fair shot for me to ask anything we covered this term on the final exam (minus the abstract vector space thing we did on Tuesday). 
+            Below are the sections we covered after the second midterm exam: 
+            <ul marker="">
+                <li>
+                    <p>
+                        <xref ref="sec53-Orthogonality"/> Orthogonality
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec54-Rank"/> Rank of a Matrix
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec33-EigenvaluesEigenvectors"/> Eigenvalues and Eigenvectors
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <xref ref="sec34-Diagonalization"/> Diagonalization
+                    </p>
+                </li>
+            </ul>
+            On this page, you will find review problems that addresses the aforementioned sections. 
+            The final answers are included for each problem.
+            Make sure you spend some time working through these problems and understanding how things work! 
+        </p>
+
+        <p>
+            <alert>Note:</alert> For review problems that address material covered in the first two midterm exams, please refer to the <xref ref="secA1-Midterm1Review"/> Midterm #1 Review and <xref ref="secA2-Midterm2Review"/> Midterm #2 Review. 
+        </p>
+
+        <p>
+            <alert>A quick reminder:</alert> The last class session on Thursday, June 4, will be a review session. 
+            Usually this will be a work day for you to work through some problems together to prepare for the exam. 
+            This is also a great opportunity for you to ask questions about anything that is not clear to you! 
+        </p>
+        
+    </introduction>
+
+    <worksheet xml:id="ws-Orthogonality">
+        <title>Orthogonality</title>
+
+        <exercise>
+            <p>
+                Let <m>\v{v}_1 = \begin{bmatrix} 1 \\ -2 \\ 0 \end{bmatrix}</m>, <m>\v{v}_2 = \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}</m>, and <m>\v{v}_3 = \begin{bmatrix} 3 \\ 0 \\ 2 \end{bmatrix}</m>. 
+                Determine whether this set <m>\set{\v{v}_1, \v{v}_2, \v{v}_3}</m> an orthogonal set. 
+                Why or why not? 
+            </p>
+
+            <answer>
+                <p>
+                    Nope
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>\v{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>, <m>\v{v}_2 = \begin{bmatrix} -2 \\ 1 \end{bmatrix}</m>, and <m>\v{v}_3 = \begin{bmatrix} 3 \\ -1 \end{bmatrix}</m>. 
+                Is this set <m>\set{\v{v}_1, \v{v}_2, \v{v}_3}</m> an orthogonal set? 
+                Why or why not? 
+            </p>
+
+            <answer>
+                <p>
+                    Nope
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>\v{v}_1 = \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}</m>, <m>\v{v}_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m>, and <m>\v{v}_3 = \begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix}</m>. 
+                Is this set <m>\set{\v{v}_1, \v{v}_2, \v{v}_3}</m> an orthogonal set? 
+                Why or why not? 
+            </p>
+
+            <answer>
+                <p>
+                    Yep
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>\v{v}_1 = \begin{bmatrix} 2 \\ 3 \\ 6 \end{bmatrix}</m>, <m>\v{v}_2 = \begin{bmatrix} 3 \\ -6 \\ 2 \end{bmatrix}</m>, and <m>\v{v}_3 = \begin{bmatrix} 6 \\ 2 \\ -3 \end{bmatrix}</m>. 
+                Is this set <m>\set{\v{v}_1, \v{v}_2, \v{v}_3}</m> an orthogonal set? 
+                Why or why not? 
+            </p>
+
+            <p>
+                Is this set <m>\set{\v{v}_1, \v{v}_2, \v{v}_3}</m> an orthonormal set? 
+                If not, normalize these vectors to create an orthonormal set?
+            </p>
+
+            <answer>
+                <p>
+                    Yep to the orthogonal set and nope to the orthonormal set. 
+                </p>
+
+                <p>
+                    The normalized version is <m>\left\{\begin{bmatrix} \frac{2}{7} \\ \frac{3}{7} \\ \frac{6}{7} \end{bmatrix}, \begin{bmatrix} \frac{3}{7} \\ -\frac{6}{7} \\ \frac{2}{7} \end{bmatrix}, \begin{bmatrix} \frac{6}{7} \\ \frac{2}{7} \\ -\frac{3}{7} \end{bmatrix}\right\}</m>
+                </p>
+            </answer>
+        </exercise>
+        
+    </worksheet>
+
+    <worksheet xml:id="ws-RankNullity">
+        <title>Column Space &amp; Null Space</title>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 1 \amp -2 \amp 3 \\ -2 \amp 4 \amp -6 \\ 3 \amp -6 \amp 9 \\ 0 \amp 0 \amp 0 \\ -1 \amp 2 \amp -3 \end{bmatrix}</m>. 
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Find the dimension of <m>\Col A</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find the dimension of <m>\Nul A</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <m>\dim \Col A = 1</m> and <m>\dim \Nul A = 2</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>B = \begin{bmatrix} 1 \amp 0 \amp 2 \amp 1 \\ 0 \amp 1 \amp -1 \amp 0 \\ 2 \amp 0 \amp 5 \amp 2 \\ 1 \amp -1 \amp 2 \amp 2 \end{bmatrix}</m>. 
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Find the dimension of <m>\Col B</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find the dimension of <m>\Nul B</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <m>\dim \Col A = 4</m> and <m>\dim \Nul A = 0</m>
+                </p>
+            </answer>
+        </exercise>
+        
+        <exercise>
+            <p>
+                Let <m>A</m> be an <m>n \times n</m> <em>invertible</em> matrix. 
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            What is the dimension of <m>\Col A</m>? 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            What is the dimension of <m>\Nul A</m>? 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <answer>
+                <p>
+                    <m>\dim \Col A = n</m> and <m>\dim \Nul A = 0</m>
+                </p>
+
+                <p>
+                    <em>P.S:</em> the matrix in the previous exercise is invertible, so you see that every column has a pivot position (and hence <m>\dim \Col A = n</m>). 
+                    By the Rank Nullity Theorem, <m>\dim \Nul A = 0</m>. 
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+    <worksheet xml:id="ws-FinalReview-EigenStuff">
+        <title>Eigen-related Stuff</title>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 5 \amp -1 \\ 1 \amp 3 \end{bmatrix}</m>. 
+                Find <em>all</em> the eigenvalues of this matrix, and determine the corresponding eigenspace.
+            </p>
+
+            <answer>
+                <p>
+                    The eigenvalue is <m>\lambda = 4</m>, with the multiplicity of <m>2</m>. 
+                </p>
+
+                <p>
+                    Its corresponding eigenspace is <m>E_4 = \span \left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Let <m>A = \begin{bmatrix} 2 \amp -2 \amp -1 \\ -1 \amp 1 \amp -1 \\ -1 \amp -2 \amp 2 \end{bmatrix}</m>. 
+                Find <em>all</em> the eigenvalues of this matrix. 
+            </p>
+
+            <answer>
+                <p>
+                    The eigenvalues are <m>\lambda = 3</m> (with the multiplicity of <m>2</m>) and <m>\lambda = -1</m> (with the multiplicity of <m>1</m>)
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Diagonalize the matrix <m>A = \begin{bmatrix} 4 \amp -5 \\ -3 \amp 2 \end{bmatrix}</m> if possible. 
+                If not, state why.
+            </p>
+
+            <answer>
+                <p>
+                    Yep, <m>A</m> is diagonalizable. 
+                </p>
+
+                <p>
+                    <m>D = \begin{bmatrix} 7 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m> and <m>P = \begin{bmatrix} 5 \amp 1 \\ -3 \amp 1 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Diagonalize the matrix <m>B = \begin{bmatrix} -1 \amp 2 \amp 2 \\ -2 \amp 3 \amp 1 \\ -2 \amp 2 \amp 4 \end{bmatrix}</m> if possible. 
+                If not, state why. 
+            </p>
+
+            <answer>
+                <p>
+                    Yep <m>B</m> is diagonalizable. 
+                </p>
+
+                <p>
+                    <m>D = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 3 \end{bmatrix}</m> and <m>P = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp 1 \amp 2 \end{bmatrix}</m>
+                </p>
+            </answer>
+        </exercise>
+
+        <exercise>
+            <p>
+                Diagonalize the matrix <m>C = \begin{bmatrix} 0 \amp -6 \amp -4 \\ 5 \amp -11 \amp -6 \\ -6 \amp 9 \amp 4 \end{bmatrix}</m> if possible. 
+                If not, state why. 
+            </p>
+
+            <answer>
+                <p>
+                    Nope <m>C</m> is not diagonalizable. 
+                </p>
+            </answer>
+        </exercise>
+    </worksheet>
+
+</section>
