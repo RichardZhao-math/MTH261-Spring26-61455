@@ -3178,9 +3178,9 @@ var ptx_lunr_docs = [
   "body": " Find a basis for the subspace spanned by the following vectors: Then determine the dimension of this subspace.   A basis is and the dimension is    "
 },
 {
-  "id": "secA1-Midterm1Review",
+  "id": "secA3-FinalReview",
   "level": "1",
-  "url": "secA1-Midterm1Review.html",
+  "url": "secA3-FinalReview.html",
   "type": "Section",
   "number": "A.3",
   "title": "Final Review",
@@ -3189,7 +3189,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-Orthogonality-2",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-Orthogonality-2",
+  "url": "secA3-FinalReview.html#ws-Orthogonality-2",
   "type": "Worksheet Exercise",
   "number": "1",
   "title": "",
@@ -3198,7 +3198,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-Orthogonality-3",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-Orthogonality-3",
+  "url": "secA3-FinalReview.html#ws-Orthogonality-3",
   "type": "Worksheet Exercise",
   "number": "2",
   "title": "",
@@ -3207,7 +3207,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-Orthogonality-4",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-Orthogonality-4",
+  "url": "secA3-FinalReview.html#ws-Orthogonality-4",
   "type": "Worksheet Exercise",
   "number": "3",
   "title": "",
@@ -3216,7 +3216,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-Orthogonality-5",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-Orthogonality-5",
+  "url": "secA3-FinalReview.html#ws-Orthogonality-5",
   "type": "Worksheet Exercise",
   "number": "4",
   "title": "",
@@ -3225,7 +3225,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-RankNullity-2",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-RankNullity-2",
+  "url": "secA3-FinalReview.html#ws-RankNullity-2",
   "type": "Worksheet Exercise",
   "number": "1",
   "title": "",
@@ -3234,7 +3234,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-RankNullity-3",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-RankNullity-3",
+  "url": "secA3-FinalReview.html#ws-RankNullity-3",
   "type": "Worksheet Exercise",
   "number": "2",
   "title": "",
@@ -3243,7 +3243,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-RankNullity-4",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-RankNullity-4",
+  "url": "secA3-FinalReview.html#ws-RankNullity-4",
   "type": "Worksheet Exercise",
   "number": "3",
   "title": "",
@@ -3252,7 +3252,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-FinalReview-EigenStuff-2",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-2",
+  "url": "secA3-FinalReview.html#ws-FinalReview-EigenStuff-2",
   "type": "Worksheet Exercise",
   "number": "1",
   "title": "",
@@ -3261,7 +3261,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-FinalReview-EigenStuff-3",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-3",
+  "url": "secA3-FinalReview.html#ws-FinalReview-EigenStuff-3",
   "type": "Worksheet Exercise",
   "number": "2",
   "title": "",
@@ -3270,7 +3270,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-FinalReview-EigenStuff-4",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-4",
+  "url": "secA3-FinalReview.html#ws-FinalReview-EigenStuff-4",
   "type": "Worksheet Exercise",
   "number": "3",
   "title": "",
@@ -3279,7 +3279,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-FinalReview-EigenStuff-5",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-5",
+  "url": "secA3-FinalReview.html#ws-FinalReview-EigenStuff-5",
   "type": "Worksheet Exercise",
   "number": "4",
   "title": "",
@@ -3288,7 +3288,7 @@ var ptx_lunr_docs = [
 {
   "id": "ws-FinalReview-EigenStuff-6",
   "level": "2",
-  "url": "secA1-Midterm1Review.html#ws-FinalReview-EigenStuff-6",
+  "url": "secA3-FinalReview.html#ws-FinalReview-EigenStuff-6",
   "type": "Worksheet Exercise",
   "number": "5",
   "title": "",
